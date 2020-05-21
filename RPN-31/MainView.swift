@@ -8,7 +8,7 @@
 
 import SwiftUI
 
-struct ContentView: View {
+struct MainView: View {
     @EnvironmentObject var dataRouter: DataRouter
 
         var body: some View {
@@ -23,14 +23,14 @@ struct ContentView: View {
                     
                     VStack(spacing: 0) {
                         
-                        if self.dataRouter.isPad {
-                            MainView()
-                        }
+                        Spacer()
                         
-                        else {
-                            MainView()
-                        }
-                           
+                        ButtonGridView()
+                           .frame(width: geometry.size.width, height: geometry.size.width * self.dataRouter.heightToWidth)
+                        
+                        Rectangle()
+                            .frame(width: geometry.size.width, height: 10)
+                                        
                         
                     }
                 }
@@ -55,11 +55,5 @@ Dimension Calculator:
 9. Of course we can also make the number of rows and columns constants, which we do in the above
 10. But because Swift had some i
 
-However because of how ipad resizes based on height in split screen mode, we want to fix the height
- 
- 1. We will take a full width for buttons
- 2. We wanted each button to be square but this will not be possible, unless height = what is in 8
- 3. 
- 
- 
+
 */

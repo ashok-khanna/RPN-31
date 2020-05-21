@@ -7,15 +7,25 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		80023AF02475BC9300BB62CE /* FirstRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80023AEF2475BC9300BB62CE /* FirstRowView.swift */; };
+		80023B092476DE8500BB62CE /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80023B082476DE8500BB62CE /* MainView.swift */; };
+		80023B0B2476DEB200BB62CE /* AdvanceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80023B0A2476DEB200BB62CE /* AdvanceView.swift */; };
 		808D58DD247070F8000BBD5F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 808D58DC247070F8000BBD5F /* AppDelegate.swift */; };
 		808D58DF247070F8000BBD5F /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 808D58DE247070F8000BBD5F /* SceneDelegate.swift */; };
 		808D58E1247070F8000BBD5F /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 808D58E0247070F8000BBD5F /* ContentView.swift */; };
 		808D58E3247070FF000BBD5F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 808D58E2247070FF000BBD5F /* Assets.xcassets */; };
 		808D58E6247070FF000BBD5F /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 808D58E5247070FF000BBD5F /* Preview Assets.xcassets */; };
 		808D58E9247070FF000BBD5F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 808D58E7247070FF000BBD5F /* LaunchScreen.storyboard */; };
+		808D58F1247071F3000BBD5F /* HostingController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 808D58F0247071F3000BBD5F /* HostingController.swift */; };
+		808D58F324707259000BBD5F /* DataRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 808D58F224707259000BBD5F /* DataRouter.swift */; };
+		808D590124708845000BBD5F /* ButtonGridView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 808D590024708845000BBD5F /* ButtonGridView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		80023AEF2475BC9300BB62CE /* FirstRowView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FirstRowView.swift; sourceTree = "<group>"; };
+		80023B072475E3CC00BB62CE /* RPN-31 copy-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "RPN-31 copy-Info.plist"; path = "/Users/Shared/Xcode Projects/RPN-31/RPN-31 copy-Info.plist"; sourceTree = "<absolute>"; };
+		80023B082476DE8500BB62CE /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
+		80023B0A2476DEB200BB62CE /* AdvanceView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdvanceView.swift; sourceTree = "<group>"; };
 		808D58D9247070F8000BBD5F /* RPN-31.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "RPN-31.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		808D58DC247070F8000BBD5F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		808D58DE247070F8000BBD5F /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -24,6 +34,9 @@
 		808D58E5247070FF000BBD5F /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		808D58E8247070FF000BBD5F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		808D58EA247070FF000BBD5F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		808D58F0247071F3000BBD5F /* HostingController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HostingController.swift; sourceTree = "<group>"; };
+		808D58F224707259000BBD5F /* DataRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataRouter.swift; sourceTree = "<group>"; };
+		808D590024708845000BBD5F /* ButtonGridView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonGridView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -42,6 +55,7 @@
 			children = (
 				808D58DB247070F8000BBD5F /* RPN-31 */,
 				808D58DA247070F8000BBD5F /* Products */,
+				80023B072475E3CC00BB62CE /* RPN-31 copy-Info.plist */,
 			);
 			sourceTree = "<group>";
 		};
@@ -57,8 +71,14 @@
 			isa = PBXGroup;
 			children = (
 				808D58DC247070F8000BBD5F /* AppDelegate.swift */,
+				808D58F0247071F3000BBD5F /* HostingController.swift */,
 				808D58DE247070F8000BBD5F /* SceneDelegate.swift */,
+				808D58F224707259000BBD5F /* DataRouter.swift */,
 				808D58E0247070F8000BBD5F /* ContentView.swift */,
+				80023B082476DE8500BB62CE /* MainView.swift */,
+				808D590024708845000BBD5F /* ButtonGridView.swift */,
+				80023B0A2476DEB200BB62CE /* AdvanceView.swift */,
+				80023AEF2475BC9300BB62CE /* FirstRowView.swift */,
 				808D58E2247070FF000BBD5F /* Assets.xcassets */,
 				808D58E7247070FF000BBD5F /* LaunchScreen.storyboard */,
 				808D58EA247070FF000BBD5F /* Info.plist */,
@@ -146,8 +166,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				808D58F324707259000BBD5F /* DataRouter.swift in Sources */,
+				80023B092476DE8500BB62CE /* MainView.swift in Sources */,
+				808D590124708845000BBD5F /* ButtonGridView.swift in Sources */,
 				808D58DD247070F8000BBD5F /* AppDelegate.swift in Sources */,
 				808D58DF247070F8000BBD5F /* SceneDelegate.swift in Sources */,
+				80023AF02475BC9300BB62CE /* FirstRowView.swift in Sources */,
+				808D58F1247071F3000BBD5F /* HostingController.swift in Sources */,
+				80023B0B2476DEB200BB62CE /* AdvanceView.swift in Sources */,
 				808D58E1247070F8000BBD5F /* ContentView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -289,6 +315,7 @@
 				DEVELOPMENT_TEAM = 7CQ36333N7;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = "RPN-31/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.4;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -309,6 +336,7 @@
 				DEVELOPMENT_TEAM = 7CQ36333N7;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = "RPN-31/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.4;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
