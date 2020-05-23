@@ -17,31 +17,26 @@ struct ButtonGridView: View {
             VStack(alignment: .leading, spacing: 0) {
                 
                 FirstRowView()
-                    .frame(width: geometry.size.width, height: geometry.size.width / self.dataRouter.rowUnits * self.dataRouter.adjustmentFactor) //  The height of each row should be equal to the width of a button
+                    .frame(width: geometry.size.width, height: (geometry.size.height - CGFloat(4) * self.dataRouter.gapWidth * geometry.size.width / self.dataRouter.rowUnits)/self.dataRouter.numRows)
                 
                 Rectangle()
                     .frame(width: geometry.size.width, height: geometry.size.width / self.dataRouter.rowUnits * self.dataRouter.gapWidth) // The gap between each row should be equal to the gap width
                 
-                FirstRowView()
-                    .frame(width: geometry.size.width, height: geometry.size.width / self.dataRouter.rowUnits * self.dataRouter.adjustmentFactor) //  The height of each row should be equal to the width of a button
+                SecondRowView()
+                    .frame(width: geometry.size.width, height: (geometry.size.height - CGFloat(4) * self.dataRouter.gapWidth * geometry.size.width / self.dataRouter.rowUnits)/self.dataRouter.numRows)
                 
                 Rectangle()
                     .frame(width: geometry.size.width, height: geometry.size.width / self.dataRouter.rowUnits * self.dataRouter.gapWidth) // The gap between each row should be equal to the gap width
                 
-                FirstRowView()
-                    .frame(width: geometry.size.width, height: geometry.size.width / self.dataRouter.rowUnits * self.dataRouter.adjustmentFactor) //  The height of each row should be equal to the width of a button
+                ThirdRowView()
+                    .frame(width: geometry.size.width, height: (geometry.size.height - CGFloat(4) * self.dataRouter.gapWidth * geometry.size.width / self.dataRouter.rowUnits)/self.dataRouter.numRows)
                 
                 Rectangle()
                     .frame(width: geometry.size.width, height: geometry.size.width / self.dataRouter.rowUnits * self.dataRouter.gapWidth) // The gap between each row should be equal to the gap width
                 
-                FirstRowView()
-                    .frame(width: geometry.size.width, height: geometry.size.width / self.dataRouter.rowUnits * self.dataRouter.adjustmentFactor) //  The height of each row should be equal to the width of a button
+                FinalRowView()
+                    .frame(width: geometry.size.width, height: CGFloat(2) * (geometry.size.height - CGFloat(4) * self.dataRouter.gapWidth * geometry.size.width / self.dataRouter.rowUnits)/self.dataRouter.numRows + geometry.size.width / self.dataRouter.rowUnits * self.dataRouter.gapWidth)
                 
-                Rectangle()
-                    .frame(width: geometry.size.width, height: geometry.size.width / self.dataRouter.rowUnits * self.dataRouter.gapWidth) // The gap between each row should be equal to the gap width
-                
-                FirstRowView()
-                    .frame(width: geometry.size.width, height: geometry.size.width / self.dataRouter.rowUnits * self.dataRouter.adjustmentFactor) //  The height of each row should be equal to the width of a button
                 
             }
             .padding(0)

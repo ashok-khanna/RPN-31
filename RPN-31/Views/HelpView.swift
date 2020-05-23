@@ -8,9 +8,9 @@
 
 import SwiftUI
 
-struct MainView: View {
+struct HelpView: View {
     @EnvironmentObject var dataRouter: DataRouter
-
+    @State var showFunction: Bool = false
         var body: some View {
 
             GeometryReader { geometry in
@@ -23,13 +23,19 @@ struct MainView: View {
                     
                     VStack(spacing: 0) {
                         
-                        Spacer()
-                        
-                        ButtonGridView()
-                           .frame(width: geometry.size.width, height: geometry.size.width * self.dataRouter.heightToWidth)
-                        
                         Rectangle()
-                            .frame(width: geometry.size.width, height: 10)
+                            .frame(width: 300, height: 25)
+                        
+                        Button(action: { self.dataRouter.helpPage = false }) {
+                            Text("Back to Calculator")
+                                .foregroundColor(.white)
+                                .fixedSize()
+                                .frame(width: 300, height: 50)
+                                .background(Color.orange)
+                                .cornerRadius(15)
+                        }
+                        
+                        Spacer()
                                         
                         
                     }

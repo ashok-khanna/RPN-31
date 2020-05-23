@@ -17,18 +17,29 @@ struct ContentView: View {
                 
                 ZStack {
                     
-                    Color.black
+                    self.dataRouter.screenBackground
                         .edgesIgnoringSafeArea(.all)
                     
                     
                     VStack(spacing: 0) {
                         
                         if self.dataRouter.isPad {
-                            MainView()
+                            
+                            if self.dataRouter.helpPage {
+                                HelpView()
+                            } else {
+                                MainView()
+
+                            }
                         }
-                        
                         else {
-                            MainView()
+                            if self.dataRouter.helpPage {
+                                HelpView()
+                            } else {
+                                MainView()
+
+                            }
+                            
                         }
                            
                         
