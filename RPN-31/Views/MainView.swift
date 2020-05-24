@@ -10,7 +10,6 @@ import SwiftUI
 
 struct MainView: View {
     @EnvironmentObject var dataRouter: DataRouter
-    @State var showFunction: Bool = false
 
         var body: some View {
 
@@ -18,8 +17,8 @@ struct MainView: View {
                 
                 ZStack {
                     
-                    Color.black
-                        .edgesIgnoringSafeArea(.all)
+                    // self.dataRouter.myColors.background(self.dataRouter.darkMode)
+                       // .edgesIgnoringSafeArea(.all)
                     
                     
                     VStack(spacing: 0) {
@@ -32,9 +31,9 @@ struct MainView: View {
                                 
                                 Spacer()
                                 
-                                Text(self.dataRouter.yRegisterFormatter.string(from: NSNumber(value: self.dataRouter.calculator.stackRegisters[1]))!)
+                                Text(self.dataRouter.displayFormatter.string(self.dataRouter.calculator.stackRegisters[1]))
                                     .font(.title)
-                                    .foregroundColor(Color.white)
+                                    .foregroundColor(self.dataRouter.myColors.text(self.dataRouter.darkMode))
                                     .frame(width: geometry.size.width * CGFloat(0.6), alignment: .leading)
                                 .onTapGesture {
                                     self.dataRouter.calculator.swapXY()
@@ -42,7 +41,7 @@ struct MainView: View {
                                                                 
                                 Text(self.dataRouter.calculator.lastRegister.displayText)
                                     .font(.headline)
-                                    .foregroundColor(Color.gray)
+                                    .foregroundColor(self.dataRouter.myColors.lText(self.dataRouter.darkMode))
                                     .frame(width: geometry.size.width * CGFloat(0.6), alignment: .leading)
                                 .onTapGesture {
                                     self.dataRouter.calculator.reverseOperation()
@@ -58,25 +57,25 @@ struct MainView: View {
                                                                
                                 Spacer()
                                 
-                                Text(self.dataRouter.sRegisterFormatter.string(from: NSNumber(value: self.dataRouter.calculator.stackRegisters[4]))!)
+                                Text(self.dataRouter.displayFormatter.string(self.dataRouter.calculator.stackRegisters[4]))
                                     .font(.footnote)
-                                    .foregroundColor(self.dataRouter.stackRegisterTextColor)
+                                    .foregroundColor(self.dataRouter.myColors.stackText(self.dataRouter.darkMode))
                                     .fixedSize()
                                     .padding(0)
                                 
                                 Spacer()
                                 
-                                Text(self.dataRouter.sRegisterFormatter.string(from: NSNumber(value: self.dataRouter.calculator.stackRegisters[3]))!)
+                                Text(self.dataRouter.displayFormatter.string(self.dataRouter.calculator.stackRegisters[3]))
                                      .font(.footnote)
-                                    .foregroundColor(self.dataRouter.stackRegisterTextColor)
+                                    .foregroundColor(self.dataRouter.myColors.stackText(self.dataRouter.darkMode))
                                     .fixedSize()
                                     .padding(0)
                                 
                                 Spacer()
                                 
-                                Text(self.dataRouter.sRegisterFormatter.string(from: NSNumber(value: self.dataRouter.calculator.stackRegisters[2]))!)
+                                Text(self.dataRouter.displayFormatter.string(self.dataRouter.calculator.stackRegisters[2]))
                                     .font(.footnote)
-                                    .foregroundColor(self.dataRouter.stackRegisterTextColor)
+                                    .foregroundColor(self.dataRouter.myColors.stackText(self.dataRouter.darkMode))
                                     .fixedSize()
                                     .padding(0)
                                 
@@ -84,7 +83,7 @@ struct MainView: View {
 
                             }
                             .frame(width: geometry.size.width * CGFloat (0.3), height: geometry.size.height * CGFloat(0.125))
-                            .background(self.dataRouter.stackRegisterColor)
+                            .background(self.dataRouter.myColors.stackRegisters(self.dataRouter.darkMode))
                             .cornerRadius(7.5)
 
                             
@@ -96,21 +95,25 @@ struct MainView: View {
                         
                         Spacer()
                         
-                        Text(self.showFunction ? "Test" : self.dataRouter.xRegisterFormatter.string(from: NSNumber(value: self.dataRouter.calculator.stackRegisters[0]))!)
-                            .font(.largeTitle)
-                            .foregroundColor(Color.white)
-                            .frame(width: geometry.size.width)
+                        Text(self.dataRouter.calculator.showFunction ? self.dataRouter.calculator.functionText : (self.dataRouter.calculator.isNewNumberEntry ? self.dataRouter.displayFormatter.string(self.dataRouter.calculator.stackRegisters[0]) : self.dataRouter.calculator.xRegisterEntryFormatter.string(from: NSNumber(value: self.dataRouter.calculator.stackRegisters[0]))!))
+                            .font(.system(.largeTitle, design: self.dataRouter.calculator.showFunction ? .default : .default))
+                            .minimumScaleFactor(0.01)
+                            .lineLimit(1)
+                            .foregroundColor(self.dataRouter.calculator.showFunction ? self.dataRouter.myColors.brightButton(self.dataRouter.darkMode) : self.dataRouter.myColors.text(self.dataRouter.darkMode))
+                            .frame(width: geometry.size.width * CGFloat(0.9), height: geometry.size.height * CGFloat(0.0875))
                         .onTapGesture {
                             self.dataRouter.calculator.deleteInput()
                         }
                         
                         Rectangle()
+                            .fill(self.dataRouter.myColors.background(self.dataRouter.darkMode))
                             .frame(width: geometry.size.width, height: geometry.size.height * CGFloat(0.035))
-                        
+
                         ButtonGridView()
                            .frame(width: geometry.size.width, height: geometry.size.height * self.dataRouter.gridHeight)
                         
                         Rectangle()
+                            .fill(self.dataRouter.myColors.background(self.dataRouter.darkMode))
                             .frame(width: geometry.size.width, height: geometry.size.height * CGFloat(0.015))
                                         
                         

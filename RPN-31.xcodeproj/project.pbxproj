@@ -12,12 +12,12 @@
 		80023B0D2476EAD700BB62CE /* SecondRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80023B0C2476EAD700BB62CE /* SecondRowView.swift */; };
 		80023B0F2476EB0C00BB62CE /* ThirdRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80023B0E2476EB0C00BB62CE /* ThirdRowView.swift */; };
 		80023B112476EB3200BB62CE /* FinalRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80023B102476EB3200BB62CE /* FinalRowView.swift */; };
-		80023B3324773F5D00BB62CE /* FormattingOLD.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80023B3224773F5D00BB62CE /* FormattingOLD.swift */; };
-		80023B352477D80700BB62CE /* DigitButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80023B342477D80700BB62CE /* DigitButton.swift */; };
+		80023B352477D80700BB62CE /* MainButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80023B342477D80700BB62CE /* MainButton.swift */; };
+		80139585247B12A300C8CD02 /* SliderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80139584247B12A300C8CD02 /* SliderView.swift */; };
+		80139587247B29B200C8CD02 /* FormatButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80139586247B29B200C8CD02 /* FormatButton.swift */; };
 		805CFD6E2478773C005A7447 /* Calculator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 805CFD6D2478773C005A7447 /* Calculator.swift */; };
 		805CFD7024788364005A7447 /* ButtonActions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 805CFD6F24788364005A7447 /* ButtonActions.swift */; };
 		805CFD72247884EF005A7447 /* CalcFunctions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 805CFD71247884EF005A7447 /* CalcFunctions.swift */; };
-		805CFD74247887D6005A7447 /* Ancillary.swift in Sources */ = {isa = PBXBuildFile; fileRef = 805CFD73247887D6005A7447 /* Ancillary.swift */; };
 		805CFD7624788A61005A7447 /* StackManipulation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 805CFD7524788A61005A7447 /* StackManipulation.swift */; };
 		805CFD7824788E78005A7447 /* CalcInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 805CFD7724788E78005A7447 /* CalcInput.swift */; };
 		808D58DD247070F8000BBD5F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 808D58DC247070F8000BBD5F /* AppDelegate.swift */; };
@@ -33,7 +33,10 @@
 		80DC0A7924799F5000694277 /* HelpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80DC0A7824799F5000694277 /* HelpView.swift */; };
 		80DC0A7B2479AF0200694277 /* FunctionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80DC0A7A2479AF0200694277 /* FunctionView.swift */; };
 		80DC0A7D2479BEF600694277 /* StoreRecall.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80DC0A7C2479BEF600694277 /* StoreRecall.swift */; };
-		80DC0A7F2479E88F00694277 /* OperatorButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80DC0A7E2479E88F00694277 /* OperatorButton.swift */; };
+		80DC0A81247AA55E00694277 /* MyNumberFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80DC0A80247AA55E00694277 /* MyNumberFormatter.swift */; };
+		80DC0A83247ACD8900694277 /* MyColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80DC0A82247ACD8900694277 /* MyColors.swift */; };
+		80DC0A85247AFD4400694277 /* OtherButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80DC0A84247AFD4400694277 /* OtherButton.swift */; };
+		80DC0A87247B09F200694277 /* SimpleButtons.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80DC0A86247B09F200694277 /* SimpleButtons.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -43,12 +46,12 @@
 		80023B0C2476EAD700BB62CE /* SecondRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondRowView.swift; sourceTree = "<group>"; };
 		80023B0E2476EB0C00BB62CE /* ThirdRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThirdRowView.swift; sourceTree = "<group>"; };
 		80023B102476EB3200BB62CE /* FinalRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FinalRowView.swift; sourceTree = "<group>"; };
-		80023B3224773F5D00BB62CE /* FormattingOLD.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormattingOLD.swift; sourceTree = "<group>"; };
-		80023B342477D80700BB62CE /* DigitButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DigitButton.swift; sourceTree = "<group>"; };
+		80023B342477D80700BB62CE /* MainButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainButton.swift; sourceTree = "<group>"; };
+		80139584247B12A300C8CD02 /* SliderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SliderView.swift; sourceTree = "<group>"; };
+		80139586247B29B200C8CD02 /* FormatButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormatButton.swift; sourceTree = "<group>"; };
 		805CFD6D2478773C005A7447 /* Calculator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Calculator.swift; sourceTree = "<group>"; };
 		805CFD6F24788364005A7447 /* ButtonActions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonActions.swift; sourceTree = "<group>"; };
 		805CFD71247884EF005A7447 /* CalcFunctions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalcFunctions.swift; sourceTree = "<group>"; };
-		805CFD73247887D6005A7447 /* Ancillary.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Ancillary.swift; sourceTree = "<group>"; };
 		805CFD7524788A61005A7447 /* StackManipulation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StackManipulation.swift; sourceTree = "<group>"; };
 		805CFD7724788E78005A7447 /* CalcInput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalcInput.swift; sourceTree = "<group>"; };
 		808D58D9247070F8000BBD5F /* RPN-31.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "RPN-31.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -66,7 +69,10 @@
 		80DC0A7824799F5000694277 /* HelpView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelpView.swift; sourceTree = "<group>"; };
 		80DC0A7A2479AF0200694277 /* FunctionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FunctionView.swift; sourceTree = "<group>"; };
 		80DC0A7C2479BEF600694277 /* StoreRecall.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreRecall.swift; sourceTree = "<group>"; };
-		80DC0A7E2479E88F00694277 /* OperatorButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OperatorButton.swift; sourceTree = "<group>"; };
+		80DC0A80247AA55E00694277 /* MyNumberFormatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyNumberFormatter.swift; sourceTree = "<group>"; };
+		80DC0A82247ACD8900694277 /* MyColors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyColors.swift; sourceTree = "<group>"; };
+		80DC0A84247AFD4400694277 /* OtherButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OtherButton.swift; sourceTree = "<group>"; };
+		80DC0A86247B09F200694277 /* SimpleButtons.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimpleButtons.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -104,7 +110,7 @@
 				80DC0A72247954E400694277 /* Setup */,
 				80DC0A732479551000694277 /* Views */,
 				80DC0A74247955BF00694277 /* Calculator */,
-				80DC0A75247955F100694277 /* Not Used */,
+				80DC0A75247955F100694277 /* Other */,
 				808D58E2247070FF000BBD5F /* Assets.xcassets */,
 				808D58E7247070FF000BBD5F /* LaunchScreen.storyboard */,
 				808D58EA247070FF000BBD5F /* Info.plist */,
@@ -141,8 +147,9 @@
 				80023B0C2476EAD700BB62CE /* SecondRowView.swift */,
 				80023B0E2476EB0C00BB62CE /* ThirdRowView.swift */,
 				80023B102476EB3200BB62CE /* FinalRowView.swift */,
-				80023B342477D80700BB62CE /* DigitButton.swift */,
-				80DC0A7E2479E88F00694277 /* OperatorButton.swift */,
+				80023B342477D80700BB62CE /* MainButton.swift */,
+				80DC0A84247AFD4400694277 /* OtherButton.swift */,
+				80DC0A86247B09F200694277 /* SimpleButtons.swift */,
 				80DC0A7A2479AF0200694277 /* FunctionView.swift */,
 				80DC0A7824799F5000694277 /* HelpView.swift */,
 			);
@@ -162,14 +169,16 @@
 			path = Calculator;
 			sourceTree = "<group>";
 		};
-		80DC0A75247955F100694277 /* Not Used */ = {
+		80DC0A75247955F100694277 /* Other */ = {
 			isa = PBXGroup;
 			children = (
-				805CFD73247887D6005A7447 /* Ancillary.swift */,
-				80023B3224773F5D00BB62CE /* FormattingOLD.swift */,
+				80DC0A80247AA55E00694277 /* MyNumberFormatter.swift */,
+				80DC0A82247ACD8900694277 /* MyColors.swift */,
 				805CFD6F24788364005A7447 /* ButtonActions.swift */,
+				80139584247B12A300C8CD02 /* SliderView.swift */,
+				80139586247B29B200C8CD02 /* FormatButton.swift */,
 			);
-			path = "Not Used";
+			path = Other;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -188,6 +197,8 @@
 			dependencies = (
 			);
 			name = "RPN-31";
+			packageProductDependencies = (
+			);
 			productName = "RPN-31";
 			productReference = 808D58D9247070F8000BBD5F /* RPN-31.app */;
 			productType = "com.apple.product-type.application";
@@ -216,6 +227,8 @@
 				Base,
 			);
 			mainGroup = 808D58D0247070F8000BBD5F;
+			packageReferences = (
+			);
 			productRefGroup = 808D58DA247070F8000BBD5F /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -249,24 +262,27 @@
 				80023B092476DE8500BB62CE /* MainView.swift in Sources */,
 				80DC0A772479741E00694277 /* LastRegister.swift in Sources */,
 				80DC0A7924799F5000694277 /* HelpView.swift in Sources */,
+				80DC0A81247AA55E00694277 /* MyNumberFormatter.swift in Sources */,
 				80DC0A7D2479BEF600694277 /* StoreRecall.swift in Sources */,
-				80DC0A7F2479E88F00694277 /* OperatorButton.swift in Sources */,
 				80023B112476EB3200BB62CE /* FinalRowView.swift in Sources */,
 				808D590124708845000BBD5F /* ButtonGridView.swift in Sources */,
+				80DC0A85247AFD4400694277 /* OtherButton.swift in Sources */,
 				808D58DD247070F8000BBD5F /* AppDelegate.swift in Sources */,
-				80023B3324773F5D00BB62CE /* FormattingOLD.swift in Sources */,
 				808D58DF247070F8000BBD5F /* SceneDelegate.swift in Sources */,
+				80DC0A83247ACD8900694277 /* MyColors.swift in Sources */,
 				805CFD7624788A61005A7447 /* StackManipulation.swift in Sources */,
-				80023B352477D80700BB62CE /* DigitButton.swift in Sources */,
+				80023B352477D80700BB62CE /* MainButton.swift in Sources */,
 				80023AF02475BC9300BB62CE /* FirstRowView.swift in Sources */,
+				80139587247B29B200C8CD02 /* FormatButton.swift in Sources */,
 				808D58F1247071F3000BBD5F /* HostingController.swift in Sources */,
 				805CFD7024788364005A7447 /* ButtonActions.swift in Sources */,
 				80023B0F2476EB0C00BB62CE /* ThirdRowView.swift in Sources */,
 				80DC0A7B2479AF0200694277 /* FunctionView.swift in Sources */,
 				805CFD72247884EF005A7447 /* CalcFunctions.swift in Sources */,
 				808D58E1247070F8000BBD5F /* ContentView.swift in Sources */,
+				80139585247B12A300C8CD02 /* SliderView.swift in Sources */,
 				80023B0D2476EAD700BB62CE /* SecondRowView.swift in Sources */,
-				805CFD74247887D6005A7447 /* Ancillary.swift in Sources */,
+				80DC0A87247B09F200694277 /* SimpleButtons.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

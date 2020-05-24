@@ -10,38 +10,18 @@ struct FunctionView: View {
             
             ZStack {
                 
-                Color.black
+                self.dataRouter.myColors.background(self.dataRouter.darkMode)
+                .edgesIgnoringSafeArea(.all)
                 
                 VStack {
                     
                     Rectangle()
-                        .fill(self.dataRouter.stackRegisterColor)
+                        .fill(self.dataRouter.myColors.stackRegisters(self.dataRouter.darkMode))
                         .frame(width: geometry.size.width, height: geometry.size.height * CGFloat(0.02))
-                    
-                    
-                    ZStack {
                         
                         Text("Advance Functions")
-                            .foregroundColor(.white)
+                            .foregroundColor(self.dataRouter.myColors.text(self.dataRouter.darkMode))
                             .font(.title)
-                        
-                        HStack {
-                            
-                            Spacer()
-                            
-                            Button(action: {
-                                self.presentFunctionPage = false
-                                
-                            }) {
-                                Image(systemName:"x.circle")
-                                    .foregroundColor(.white)
-                                    .font(Font.title.weight(.regular))
-                            }
-                            .fixedSize()
-                            .frame(width: 100, height: 100)
-                        }
-                        
-                    }
                     
                     Rectangle()
                         .fill(Color.clear)
@@ -61,9 +41,9 @@ struct FunctionView: View {
                                 .font(self.dataRouter.operatorFont)
                                 
                         }
-                        .foregroundColor(.white)
+                        .foregroundColor(self.dataRouter.myColors.advanceButtonText(self.dataRouter.darkMode))
                         .frame(width: geometry.size.width * CGFloat(0.2), height: geometry.size.width * CGFloat(0.2))
-                        .background(Color.blue)
+                        .background(self.dataRouter.myColors.advanceButton(self.dataRouter.darkMode))
                         .cornerRadius(15)
                         
                         Spacer()
@@ -78,9 +58,9 @@ struct FunctionView: View {
                                 .font(self.dataRouter.operatorFont)
                                 
                         }
-                        .foregroundColor(.white)
+                        .foregroundColor(self.dataRouter.myColors.advanceButtonText(self.dataRouter.darkMode))
                         .frame(width: geometry.size.width * CGFloat(0.2), height: geometry.size.width * CGFloat(0.2))
-                        .background(Color.blue)
+                        .background(self.dataRouter.myColors.advanceButton(self.dataRouter.darkMode))
                         .cornerRadius(15)
                         
                         Spacer()
@@ -95,9 +75,9 @@ struct FunctionView: View {
                                 .font(self.dataRouter.operatorFont)
                                 
                         }
-                        .foregroundColor(.white)
+                        .foregroundColor(self.dataRouter.myColors.advanceButtonText(self.dataRouter.darkMode))
                         .frame(width: geometry.size.width * CGFloat(0.2), height: geometry.size.width * CGFloat(0.2))
-                        .background(Color.blue)
+                        .background(self.dataRouter.myColors.advanceButton(self.dataRouter.darkMode))
                         .cornerRadius(15)
                         
                         Spacer()
@@ -117,9 +97,9 @@ struct FunctionView: View {
                                 .font(.caption)
                                 
                         }
-                        .foregroundColor(.white)
+                        .foregroundColor(self.dataRouter.myColors.advanceButtonText(self.dataRouter.darkMode))
                         .frame(width: geometry.size.width * CGFloat(0.2), height: geometry.size.width * CGFloat(0.2))
-                        .background(Color.blue)
+                        .background(self.dataRouter.myColors.advanceButton(self.dataRouter.darkMode))
                         .cornerRadius(15)
                         
                         Spacer()
@@ -145,9 +125,9 @@ struct FunctionView: View {
                                 .font(self.dataRouter.operatorFont)
                                 
                         }
-                        .foregroundColor(.white)
+                        .foregroundColor(self.dataRouter.myColors.advanceButtonText(self.dataRouter.darkMode))
                         .frame(width: geometry.size.width * CGFloat(0.2), height: geometry.size.width * CGFloat(0.2))
-                        .background(Color.blue)
+                        .background(self.dataRouter.myColors.advanceButton(self.dataRouter.darkMode))
                         .cornerRadius(15)
                         
                         Spacer()
@@ -162,9 +142,9 @@ struct FunctionView: View {
                                 .font(self.dataRouter.operatorFont)
                                 
                         }
-                        .foregroundColor(.white)
+                        .foregroundColor(self.dataRouter.myColors.advanceButtonText(self.dataRouter.darkMode))
                         .frame(width: geometry.size.width * CGFloat(0.2), height: geometry.size.width * CGFloat(0.2))
-                        .background(Color.blue)
+                        .background(self.dataRouter.myColors.advanceButton(self.dataRouter.darkMode))
                         .cornerRadius(15)
                         
                         Spacer()
@@ -179,9 +159,9 @@ struct FunctionView: View {
                                 .font(self.dataRouter.operatorFont)
                                 
                         }
-                        .foregroundColor(.white)
+                        .foregroundColor(self.dataRouter.myColors.advanceButtonText(self.dataRouter.darkMode))
                         .frame(width: geometry.size.width * CGFloat(0.2), height: geometry.size.width * CGFloat(0.2))
-                        .background(Color.blue)
+                        .background(self.dataRouter.myColors.advanceButton(self.dataRouter.darkMode))
                         .cornerRadius(15)
                         
                         Spacer()
@@ -201,9 +181,9 @@ struct FunctionView: View {
                                 .font(.caption)
                                 
                         }
-                        .foregroundColor(.white)
+                        .foregroundColor(self.dataRouter.myColors.advanceButtonText(self.dataRouter.darkMode))
                         .frame(width: geometry.size.width * CGFloat(0.2), height: geometry.size.width * CGFloat(0.2))
-                        .background(Color.blue)
+                        .background(self.dataRouter.myColors.advanceButton(self.dataRouter.darkMode))
                         .cornerRadius(15)
                         
                         Spacer()

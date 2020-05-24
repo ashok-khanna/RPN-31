@@ -74,6 +74,16 @@ struct Calculator {
 
     var lastRegister = LastRegister()
     
+    var showFunction: Bool = false
+    var functionText: String = ""
+
+    var xRegisterEntryFormatter = NumberFormatter()
+    
+    init(){
+        
+        xRegisterEntryFormatter.numberStyle = .decimal
+        
+    }
 
               
 }

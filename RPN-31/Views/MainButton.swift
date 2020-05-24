@@ -1,6 +1,6 @@
 import SwiftUI
 
-struct DigitButton: View {
+struct MainButton: View {
 
     @EnvironmentObject var dataRouter: DataRouter
 
@@ -41,7 +41,10 @@ struct DigitButton: View {
                 }
             }
             
-            self.dataRouter.digitColorArray[Int(self.calculatorButton.digitValue)] = self.dataRouter.digitButtonColor
+            self.dataRouter.calculator.showFunction = false
+            self.dataRouter.calculator.functionText = ""
+            
+            self.dataRouter.digitColorArray[Int(self.calculatorButton.digitValue)] = self.dataRouter.myColors.mainButton(self.dataRouter.darkMode)
             
         }
         
@@ -69,6 +72,9 @@ struct DigitButton: View {
                 self.dataRouter.startStoreRecallMode()
             }
             
+            self.dataRouter.calculator.showFunction = true
+            self.dataRouter.calculator.functionText = self.calculatorButton.operatorString
+            
         }
         
         let tapBeforeLongGestures = longTapGesture.sequenced(before:longPressGestureDelay).exclusively(before: shortPressGesture)
@@ -78,12 +84,12 @@ struct DigitButton: View {
             VStack {
                 Text(self.calculatorButton.digitString)
                     .font(self.dataRouter.digitFont)
-                    .foregroundColor(self.dataRouter.digitTextColor)
+                    .foregroundColor(self.dataRouter.myColors.mainButtonText(self.dataRouter.darkMode))
                     .fixedSize()
                     .padding(0)
                 Text(self.calculatorButton.operatorString)
                     .font(self.dataRouter.captionFont)
-                    .foregroundColor(self.dataRouter.digitTextColor)
+                    .foregroundColor(self.dataRouter.myColors.mainButtonText(self.dataRouter.darkMode))
                     .fixedSize()
                     .padding(0)
                 }

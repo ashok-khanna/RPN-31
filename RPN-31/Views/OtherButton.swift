@@ -9,7 +9,7 @@
 import Foundation
 import SwiftUI
 
-struct OperatorButton: View {
+struct OtherButton: View {
 
 @EnvironmentObject var dataRouter: DataRouter
 
@@ -17,6 +17,7 @@ struct OperatorButton: View {
 @State var bgColor: Color
 @State var bgColor1: Color
 @State var highlightColor: Color
+@State var highlightColor2: Color
 @State var fontColor: Color
 @State var font: Font
 @State var width: CGFloat
@@ -84,7 +85,7 @@ var body: some View {
                 .padding(0)
             }
             .frame(width: width, height: height)
-        .background(self.longPress ? self.highlightColor : (self.longDrag ? self.highlightColor : self.bgColor))
+        .background(self.longPress ? self.highlightColor : (self.longDrag ? self.highlightColor2 : self.bgColor))
             .cornerRadius(15)
             .gesture(tapBeforeLongGestures)
 

@@ -22,7 +22,8 @@ extension Calculator {
     }
     
     mutating func processDigit(_ sender: CalculatorButton){
-               
+        
+        
         if sender.digitString == "." {
             decimalInput()
         } else {
@@ -40,6 +41,7 @@ extension Calculator {
             
             if isNewNumberEntry && stackRegisters[0] == 0.0 {
                 isNewNumberEntry = false
+                xRegisterDecimals = 0
             }
             
             var xRegisterNew: Double
@@ -53,9 +55,19 @@ extension Calculator {
             } else {
                 xRegisterNew = xRegisterOld
             }
-                       
+            
             amendStackRegister(value: xRegisterNew, at: 0)
 
+        }
+        
+        if xRegisterDecimals <= 1 {
+            xRegisterEntryFormatter.minimumFractionDigits = 0
+            xRegisterEntryFormatter.maximumFractionDigits = 0
+        }
+        else {
+            xRegisterEntryFormatter.minimumFractionDigits = xRegisterDecimals - 1
+            xRegisterEntryFormatter.maximumFractionDigits = xRegisterDecimals - 1
+            
         }
         
     }
@@ -85,6 +97,8 @@ extension Calculator {
             
         }
         
+        print(xRegisterDecimals)
+        
         if xRegisterDecimals <= 1 {
             
             stackRegisters[0] = Double(floor(stackRegisters[0]/10))
@@ -96,9 +110,20 @@ extension Calculator {
             xRegisterDecimals = xRegisterDecimals - 1
         }
         
-        if xRegisterDecimals <= 2 {
+        if xRegisterDecimals <= 1 {
             xRegisterDecimals = 0
         }
+        
+        if xRegisterDecimals <= 1 {
+            xRegisterEntryFormatter.minimumFractionDigits = 0
+            xRegisterEntryFormatter.maximumFractionDigits = 0
+        }
+        else {
+            xRegisterEntryFormatter.minimumFractionDigits = xRegisterDecimals - 1
+            xRegisterEntryFormatter.maximumFractionDigits = xRegisterDecimals - 1
+        }
+        
+        print(stackRegisters[0])
         
         clearLastRegisters()
     }

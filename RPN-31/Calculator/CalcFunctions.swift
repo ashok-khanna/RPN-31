@@ -40,7 +40,7 @@ extension Calculator {
                 unaryAction = true
             case "%":
                 xRegisterNew = yRegister * xRegister / 100
-            case "%∆":
+            case "% ∆":
                 xRegisterNew = (xRegister - yRegister) / yRegister
             case "% T":
                 xRegisterNew = xRegister / (yRegister + xRegister)

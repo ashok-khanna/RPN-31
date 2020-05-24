@@ -20,18 +20,21 @@ struct ButtonGridView: View {
                     .frame(width: geometry.size.width, height: (geometry.size.height - CGFloat(4) * self.dataRouter.gapWidth * geometry.size.width / self.dataRouter.rowUnits)/self.dataRouter.numRows)
                 
                 Rectangle()
-                    .frame(width: geometry.size.width, height: geometry.size.width / self.dataRouter.rowUnits * self.dataRouter.gapWidth) // The gap between each row should be equal to the gap width
+                .fill(self.dataRouter.myColors.background(self.dataRouter.darkMode))
+                .frame(width: geometry.size.width, height: geometry.size.width / self.dataRouter.rowUnits * self.dataRouter.gapWidth) // The gap between each row should be equal to the gap width
                 
                 SecondRowView()
                     .frame(width: geometry.size.width, height: (geometry.size.height - CGFloat(4) * self.dataRouter.gapWidth * geometry.size.width / self.dataRouter.rowUnits)/self.dataRouter.numRows)
                 
                 Rectangle()
+                    .fill(self.dataRouter.myColors.background(self.dataRouter.darkMode))
                     .frame(width: geometry.size.width, height: geometry.size.width / self.dataRouter.rowUnits * self.dataRouter.gapWidth) // The gap between each row should be equal to the gap width
                 
                 ThirdRowView()
                     .frame(width: geometry.size.width, height: (geometry.size.height - CGFloat(4) * self.dataRouter.gapWidth * geometry.size.width / self.dataRouter.rowUnits)/self.dataRouter.numRows)
                 
                 Rectangle()
+                    .fill(self.dataRouter.myColors.background(self.dataRouter.darkMode))
                     .frame(width: geometry.size.width, height: geometry.size.width / self.dataRouter.rowUnits * self.dataRouter.gapWidth) // The gap between each row should be equal to the gap width
                 
                 FinalRowView()

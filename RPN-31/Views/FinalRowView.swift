@@ -20,6 +20,7 @@ struct FinalRowView: View {
             HStack(spacing: 0) {
                 
                 Rectangle()
+                    .fill(self.dataRouter.myColors.background(self.dataRouter.darkMode))
                     .frame(width: geometry.size.width / self.dataRouter.rowUnits * self.dataRouter.gapWidth, height: geometry.size.height)
                 
                 HStack(spacing: 0) {
@@ -28,22 +29,24 @@ struct FinalRowView: View {
                     VStack(spacing: 0) {
                         HStack(spacing: 0){
                             
-                            DigitButton(width: geometry.size.width / self.dataRouter.rowUnits, height: (geometry.size.height - geometry.size.width / self.dataRouter.rowUnits * self.dataRouter.gapWidth)/CGFloat(2), calculatorButton: self.dataRouter.oneButton, presentFunctionPage: self.$presentFunctionPage, presentHelpPage: self.$presentHelpPage)
+                            MainButton(width: geometry.size.width / self.dataRouter.rowUnits, height: (geometry.size.height - geometry.size.width / self.dataRouter.rowUnits * self.dataRouter.gapWidth)/CGFloat(2), calculatorButton: self.dataRouter.oneButton, presentFunctionPage: self.$presentFunctionPage, presentHelpPage: self.$presentHelpPage)
                             
                             Rectangle()
+                                .fill(self.dataRouter.myColors.background(self.dataRouter.darkMode))
                                 .frame(width: geometry.size.width / self.dataRouter.rowUnits * self.dataRouter.gapWidth, height: (geometry.size.height - geometry.size.width / self.dataRouter.rowUnits * self.dataRouter.gapWidth)/CGFloat(2))
                             
                             
-                            DigitButton(width: geometry.size.width / self.dataRouter.rowUnits, height: (geometry.size.height - geometry.size.width / self.dataRouter.rowUnits * self.dataRouter.gapWidth)/CGFloat(2), calculatorButton: self.dataRouter.twoButton, presentFunctionPage: self.$presentFunctionPage, presentHelpPage: self.$presentHelpPage)
+                            MainButton(width: geometry.size.width / self.dataRouter.rowUnits, height: (geometry.size.height - geometry.size.width / self.dataRouter.rowUnits * self.dataRouter.gapWidth)/CGFloat(2), calculatorButton: self.dataRouter.twoButton, presentFunctionPage: self.$presentFunctionPage, presentHelpPage: self.$presentHelpPage)
                             
                         }
                         .padding(0)
                         
                         Rectangle()
+                            .fill(self.dataRouter.myColors.background(self.dataRouter.darkMode))
                             .frame(width: geometry.size.width / self.dataRouter.rowUnits * (CGFloat(2) + self.dataRouter.gapWidth), height: geometry.size.width / self.dataRouter.rowUnits * self.dataRouter.gapWidth)
                         
                         
-                        DigitButton(width: geometry.size.width / self.dataRouter.rowUnits * (CGFloat(2) + self.dataRouter.gapWidth), height: (geometry.size.height - geometry.size.width / self.dataRouter.rowUnits * self.dataRouter.gapWidth)/CGFloat(2), calculatorButton: self.dataRouter.zeroButton, presentFunctionPage: self.$presentFunctionPage, presentHelpPage: self.$presentHelpPage)
+                        MainButton(width: geometry.size.width / self.dataRouter.rowUnits * (CGFloat(2) + self.dataRouter.gapWidth), height: (geometry.size.height - geometry.size.width / self.dataRouter.rowUnits * self.dataRouter.gapWidth)/CGFloat(2), calculatorButton: self.dataRouter.zeroButton, presentFunctionPage: self.$presentFunctionPage, presentHelpPage: self.$presentHelpPage)
                     }
                     
                     
@@ -52,18 +55,20 @@ struct FinalRowView: View {
                 .padding(0)
                 
                 Rectangle()
+                    .fill(self.dataRouter.myColors.background(self.dataRouter.darkMode))
                     .frame(width: geometry.size.width / self.dataRouter.rowUnits * self.dataRouter.gapWidth, height: geometry.size.height)
                 
                 HStack(spacing: 0) {
                     
                     VStack(spacing: 0){
                         
-                            DigitButton(width: geometry.size.width / self.dataRouter.rowUnits, height: (geometry.size.height - geometry.size.width / self.dataRouter.rowUnits * self.dataRouter.gapWidth)/CGFloat(2), calculatorButton: self.dataRouter.threeButton, presentFunctionPage: self.$presentFunctionPage, presentHelpPage: self.$presentHelpPage)
+                            MainButton(width: geometry.size.width / self.dataRouter.rowUnits, height: (geometry.size.height - geometry.size.width / self.dataRouter.rowUnits * self.dataRouter.gapWidth)/CGFloat(2), calculatorButton: self.dataRouter.threeButton, presentFunctionPage: self.$presentFunctionPage, presentHelpPage: self.$presentHelpPage)
                         
                         Rectangle()
+                            .fill(self.dataRouter.myColors.background(self.dataRouter.darkMode))
                             .frame(width: geometry.size.width / self.dataRouter.rowUnits, height: geometry.size.width / self.dataRouter.rowUnits * self.dataRouter.gapWidth)
                         
-                        DigitButton(width: geometry.size.width / self.dataRouter.rowUnits, height: (geometry.size.height - geometry.size.width / self.dataRouter.rowUnits * self.dataRouter.gapWidth)/CGFloat(2), calculatorButton: self.dataRouter.decimalButton, presentFunctionPage: self.$presentFunctionPage, presentHelpPage: self.$presentHelpPage)
+                        MainButton(width: geometry.size.width / self.dataRouter.rowUnits, height: (geometry.size.height - geometry.size.width / self.dataRouter.rowUnits * self.dataRouter.gapWidth)/CGFloat(2), calculatorButton: self.dataRouter.decimalButton, presentFunctionPage: self.$presentFunctionPage, presentHelpPage: self.$presentHelpPage)
                             .sheet(isPresented: self.$presentHelpPage) {
                                 HelpView(presentHelpPage: self.$presentHelpPage).environmentObject(self.dataRouter)
                         }
@@ -71,15 +76,17 @@ struct FinalRowView: View {
                     }
                     
                     Rectangle()
+                        .fill(self.dataRouter.myColors.background(self.dataRouter.darkMode))
                         .frame(width: geometry.size.width / self.dataRouter.rowUnits * self.dataRouter.gapWidth, height: geometry.size.height)
                     
-                    OperatorButton(operatorString: "ENTER", bgColor: self.dataRouter.brightButtonColor, bgColor1: self.dataRouter.brightButtonColor, highlightColor: self.dataRouter.brightButtonHighlight, fontColor: self.dataRouter.brightTextColor, font: self.dataRouter.operatorFont, width: geometry.size.width / self.dataRouter.rowUnits, height: geometry.size.height)
+                    OtherButton(operatorString: "ENTER", bgColor: self.dataRouter.myColors.brightButton(self.dataRouter.darkMode), bgColor1: self.dataRouter.myColors.brightButton(self.dataRouter.darkMode), highlightColor: self.dataRouter.myColors.brightShortPress(self.dataRouter.darkMode), highlightColor2: self.dataRouter.myColors.brightShortPress(self.dataRouter.darkMode), fontColor: self.dataRouter.myColors.brightButtonText(self.dataRouter.darkMode), font: self.dataRouter.operatorFont, width: geometry.size.width / self.dataRouter.rowUnits, height: geometry.size.height)
                     
                 }
                 .padding(0)
                 
                 
                 Rectangle()
+                    .fill(self.dataRouter.myColors.background(self.dataRouter.darkMode))
                     .frame(width: geometry.size.width / self.dataRouter.rowUnits * self.dataRouter.gapWidth, height: geometry.size.height)
                 
             }

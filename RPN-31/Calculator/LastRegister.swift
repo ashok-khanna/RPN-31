@@ -93,7 +93,7 @@ struct LastRegister {
             displayText = "atan(" + lastYString + ")"
         default:
             if unaryAction {
-                displayText = lastOperator + "  " + lastXString
+               displayText = lastOperator + "  " + lastXString
             } else {
                displayText = lastYString + "  " + lastOperator + "  " + lastXString
             }

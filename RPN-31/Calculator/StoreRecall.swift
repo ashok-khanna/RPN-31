@@ -10,9 +10,9 @@ extension DataRouter {
         // Reset digit buttons
         
         for i in 1...9 {
-            digitColorArray[i] = digitButtonColor
-            digitHighlightArray[i] = lightButtonColor
-            digitBrightArray[i] = brightButtonColor
+            digitColorArray[i] = myColors.mainButton(darkMode)
+            digitHighlightArray[i] = myColors.mainShortPress(darkMode)
+            digitBrightArray[i] = myColors.mainLongPress(darkMode)
         }
     
 
@@ -25,61 +25,61 @@ extension DataRouter {
         // Check if there are non-zero values and then color those blue
         
         for i in 1...9 {
-            digitHighlightArray[i] = Color(UIColor.blue.lighter(by: 25.0))
-            digitBrightArray[i] = Color(UIColor.blue.lighter(by: 25.0))
+            digitHighlightArray[i] = myColors.storeRecallHighlight(darkMode)
+            digitBrightArray[i] = myColors.storeRecallHighlight(darkMode)
         }
         
         if defaults.double(forKey: "1") != 0.0 {
-            digitColorArray[1] = storeRecallHighlight
-            digitBrightArray[1] = Color(UIColor.red)
+            digitColorArray[1] = myColors.storeRecall(darkMode)
+            digitBrightArray[1] = myColors.deleteHighlight(darkMode)
 
         }
         
         if defaults.double(forKey: "2") != 0.0 {
-            digitColorArray[2]  = storeRecallHighlight
-            digitBrightArray[2] = Color(UIColor.red)
+            digitColorArray[2]  = myColors.storeRecall(darkMode)
+            digitBrightArray[2] = myColors.deleteHighlight(darkMode)
 
         }
         
         if defaults.double(forKey: "3") != 0.0 {
-            digitColorArray[3]  = storeRecallHighlight
-            digitBrightArray[3] = Color(UIColor.red)
+            digitColorArray[3]  = myColors.storeRecall(darkMode)
+            digitBrightArray[3] = myColors.deleteHighlight(darkMode)
 
         }
         
         if defaults.double(forKey: "4") != 0.0 {
-            digitColorArray[4]  = storeRecallHighlight
-            digitBrightArray[4] = Color(UIColor.red)
+            digitColorArray[4]  = myColors.storeRecall(darkMode)
+            digitBrightArray[4] = myColors.deleteHighlight(darkMode)
 
         }
         
         if defaults.double(forKey: "5") != 0.0 {
-            digitColorArray[5]  = storeRecallHighlight
-            digitBrightArray[5] = Color(UIColor.red)
+            digitColorArray[5]  = myColors.storeRecall(darkMode)
+            digitBrightArray[5] = myColors.deleteHighlight(darkMode)
 
         }
         
         if defaults.double(forKey: "6") != 0.0 {
-            digitColorArray[6]  = storeRecallHighlight
-            digitBrightArray[6] = Color(UIColor.red)
+            digitColorArray[6]  = myColors.storeRecall(darkMode)
+            digitBrightArray[6] = myColors.deleteHighlight(darkMode)
 
         }
         
         if defaults.double(forKey: "7") != 0.0 {
-            digitColorArray[7]  = storeRecallHighlight
-            digitBrightArray[7] = Color(UIColor.red)
+            digitColorArray[7]  = myColors.storeRecall(darkMode)
+            digitBrightArray[7] = myColors.deleteHighlight(darkMode)
 
         }
         
         if defaults.double(forKey: "8") != 0.0 {
-            digitColorArray[8]  = storeRecallHighlight
-            digitBrightArray[8] = Color(UIColor.red)
+            digitColorArray[8]  = myColors.storeRecall(darkMode)
+            digitBrightArray[8] = myColors.deleteHighlight(darkMode)
 
         }
         
         if defaults.double(forKey: "9") != 0.0 {
-            digitColorArray[9]  = storeRecallHighlight
-            digitBrightArray[9] = Color(UIColor.red)
+            digitColorArray[9]  = myColors.storeRecall(darkMode)
+            digitBrightArray[9] = myColors.deleteHighlight(darkMode)
 
         }
         

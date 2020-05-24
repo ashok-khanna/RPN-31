@@ -17,7 +17,7 @@ struct ContentView: View {
             
             ZStack {
                 
-                self.dataRouter.screenBackground
+                self.dataRouter.myColors.background(self.dataRouter.darkMode)
                     .edgesIgnoringSafeArea(.all)
                 
                 

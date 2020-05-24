@@ -15,6 +15,12 @@ class DataRouter: ObservableObject {
     //MARK: Properties
     let defaults = UserDefaults.standard
     
+    @Published var isPad: Bool
+    @Published var landscape: Bool = false
+
+    @Published var darkMode:Bool = true
+    @Published var myColors = MyColors()
+    
     @Published var helpPage: Bool = false
     @Published var storeRecall: Bool = false
 
@@ -30,32 +36,9 @@ class DataRouter: ObservableObject {
     @Published var gapWidthPortrait: CGFloat
     @Published var gapWidthLandscape: CGFloat
     
-    @Published var landscape: Bool = false
-
-    @Published var isPad: Bool
-
-    @Published var digitButtonColor = Color(UIColor.darkGray)
-    @Published var digitTextColor = Color(UIColor.white)
-
-    @Published var lightButtonColor = Color(UIColor.lightGray)
-    @Published var brightButtonColor = Color(UIColor.orange)
-    @Published var lightTextColor = Color(UIColor.black)
-
-    @Published var brightTextColor = Color(UIColor.white)
-    @Published var lightButtonHighlight =  Color(UIColor.lightGray.lighter(by: 25.0))
-    @Published var darkButtonHighlight = Color(UIColor.lightGray)
-    @Published var brightButtonHighlight = Color(UIColor.orange.lighter(by: 37.5))
-    @Published var clearAllHighlight = Color(UIColor.red)
-    @Published var storeRecallHighlight = Color(UIColor.blue)
-    
     @Published var digitColorArray = [Color]()
     @Published var digitHighlightArray = [Color]()
     @Published var digitBrightArray = [Color]()
-
-    @Published var stackRegisterColor = Color(UIColor.darkGray.darker(by: 75.0))
-    @Published var stackRegisterTextColor = Color(UIColor.white)
-
-    @Published var screenBackground = Color(UIColor.black)
     
     @Published var digitFont = Font.title
     @Published var operatorFont = Font.headline
@@ -68,17 +51,15 @@ class DataRouter: ObservableObject {
     @Published var threeButton = CalculatorButton(digitValue: 3.0, digitString: "3", operatorString: "1/x")
     @Published var fourButton = CalculatorButton(digitValue: 4.0, digitString: "4", operatorString: "%")
     @Published var fiveButton = CalculatorButton(digitValue: 5.0, digitString: "5", operatorString: "ADV")
-    @Published var sixButton = CalculatorButton(digitValue: 6.0, digitString: "6", operatorString: "%∆")
+    @Published var sixButton = CalculatorButton(digitValue: 6.0, digitString: "6", operatorString: "% ∆")
     @Published var sevenButton = CalculatorButton(digitValue: 7.0, digitString: "7", operatorString: "e^x")
     @Published var eightButton = CalculatorButton(digitValue: 8.0, digitString: "8", operatorString: "ln x")
     @Published var nineButton = CalculatorButton(digitValue: 9.0, digitString: "9", operatorString: "y^x")
     @Published var decimalButton = CalculatorButton(digitValue: 10.0, digitString: ".", operatorString: "HELP")
     
     // Set up number formatters
-    @Published var xRegisterFormatter = NumberFormatter()
-    @Published var yRegisterFormatter = NumberFormatter()
-    @Published var sRegisterFormatter = NumberFormatter()
-    
+    @Published var displayFormatter = MyNumberFormatter()
+            
     @Published var calculator = Calculator()
      
     init(_ isPad: Bool, numCols: CGFloat, numRows: CGFloat, _ gridHeightPortrait: CGFloat, _ gridHeightLandscape: CGFloat, _ gapWidthPortrait: CGFloat, _ gapWidthLandscape: CGFloat, _ fontStyle: Font, isLandscape: Bool) {
@@ -115,21 +96,13 @@ class DataRouter: ObservableObject {
         self.rowUnits = numCols + (numCols + CGFloat(1)) * tempGapWidth
         
         for _ in 0...10 {
-            digitColorArray.append(Color(UIColor.darkGray))
-            digitHighlightArray.append(Color(UIColor.lightGray))
-            digitBrightArray.append(Color(UIColor.orange))
+            digitColorArray.append(myColors.mainButton(darkMode))
+            digitHighlightArray.append(myColors.mainShortPress(darkMode))
+            digitBrightArray.append(myColors.mainLongPress(darkMode))
         }
         
-        xRegisterFormatter.numberStyle = .decimal
-        xRegisterFormatter.maximumFractionDigits = 5
         
-        yRegisterFormatter.numberStyle = .decimal
-        yRegisterFormatter.maximumFractionDigits = 5
-        
-
-        
-        sRegisterFormatter.numberStyle = .decimal
-        sRegisterFormatter.maximumFractionDigits = 5
+ 
         
         NotificationCenter.default.addObserver(self, selector: #selector(onViewWillTransition(notification:)), name: .my_onViewWillTransition, object: nil)
 

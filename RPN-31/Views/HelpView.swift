@@ -1,4 +1,5 @@
 import SwiftUI
+import Sliders
 
 struct HelpView: View {
     @EnvironmentObject var dataRouter: DataRouter
@@ -6,55 +7,91 @@ struct HelpView: View {
     
     var body: some View {
         
-        VStack {
+        GeometryReader { geometry in
             
-            
-            HStack {
+            ZStack {
                 
-                Spacer()
-                
-                Button(action: {
-                    self.presentHelpPage = false
-                    
-                }) {
-                    Image(systemName:"x.circle")
-                        .foregroundColor(.black)
-                        .font(Font.title.weight(.regular))
-                }
-                .fixedSize()
-                .frame(width: 50, height: 50)
-                
-            }
-            
-            Button(action: {
+                self.dataRouter.myColors.background(self.dataRouter.darkMode)
+                .edgesIgnoringSafeArea(.all)
 
-                self.presentHelpPage = false
+                VStack {
                     
-                }) {
-                Text("Add Quote")
+                    Rectangle()
+                        .fill(self.dataRouter.myColors.stackRegisters(self.dataRouter.darkMode))
+                        .frame(width: geometry.size.width, height: geometry.size.height * CGFloat(0.02))
+                        
+                        Text("Help / Settings")
+                            .foregroundColor(self.dataRouter.myColors.text(self.dataRouter.darkMode))
+                            .font(.title)
+                    
+                    Rectangle()
+                        .fill(Color.clear)
+                        .frame(width:geometry.size.width, height: geometry.size.height * 0.05)
+                    
+                    // Spacer()
+                    
+                    Button(action: {
+
+                      self.presentHelpPage = false
+                      
+                      }) {
+                      Text("Button Configurator")
+                          .font(self.dataRouter.operatorFont)
+                          
+                  }
+                  .foregroundColor(self.dataRouter.myColors.specialBackgroundText(self.dataRouter.darkMode))
+                  .frame(width: geometry.size.width * CGFloat(0.9), height: geometry.size.width * CGFloat(0.2))
+                  .background(self.dataRouter.myColors.specialBackground(self.dataRouter.darkMode))
+                  .cornerRadius(15)
+                    
+                    Spacer()
+                    
+                    
+                    // Number Formatted Section
+                    
+                    VStack(spacing: 0) {
+                        
+                        HStack {
+                                                    
+                            
+                            FormatButton(operatorString: "DECIMAL", font: self.dataRouter.operatorFont, width: geometry.size.width * CGFloat(0.25), height: geometry.size.width * CGFloat(0.15))
+                            
+                       
+                                
+                                Spacer()
+                                
+                            FormatButton(operatorString: "SCIENCE", font: self.dataRouter.operatorFont, width: geometry.size.width * CGFloat(0.25), height: geometry.size.width * CGFloat(0.15))
+                                
+                                Spacer()
+                                
+                            FormatButton(operatorString: "SPECIAL", font: self.dataRouter.operatorFont, width: geometry.size.width * CGFloat(0.25), height: geometry.size.width * CGFloat(0.15))
+                            
+                            }
+                            .frame(width: geometry.size.width * CGFloat(0.9))
+                            
+                        
+                            Rectangle()
+                                .fill(Color.clear)
+                                .frame(width:geometry.size.width, height: geometry.size.height * 0.05)
+                            
+                        SliderView()
+                            .accentColor(.red)
+                                .frame(width: geometry.size.width * CGFloat(0.9), height: geometry.size.width * CGFloat(0.15))
+                        
+                            Rectangle()
+                            .fill(Color.clear)
+                            .frame(width:geometry.size.width, height: geometry.size.height * 0.05)
+                        
+                    }
+                    
+                    Spacer()
+                    
+                    
+                }
             }
-            .foregroundColor(.white)
-            .fixedSize()
-            .frame(width: 300, height: 50)
-            .background(Color.blue)
-            .cornerRadius(10)
             
-            Rectangle()
-                .frame(width: 0, height: 10)
             
-            Rectangle()
-                .background(Color.black)
-                .frame(width: 400, height: 3)
-            
-            Rectangle()
-                .frame(width: 0, height: 5)
-            
-            Spacer()
-            
-            Text("Type Below")
-            
-            Spacer()
-            
-            }
+        }
+        
     }
 }

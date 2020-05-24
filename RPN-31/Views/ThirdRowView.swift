@@ -21,30 +21,34 @@ struct ThirdRowView: View {
 
                 
                 Rectangle()
+                    .fill(self.dataRouter.myColors.background(self.dataRouter.darkMode))
                     .frame(width: geometry.size.width / self.dataRouter.rowUnits * self.dataRouter.gapWidth, height: geometry.size.height)
                 
-                DigitButton(width: geometry.size.width / self.dataRouter.rowUnits, height: geometry.size.height, calculatorButton: self.dataRouter.fourButton, presentFunctionPage: self.$presentFunctionPage, presentHelpPage: self.$presentHelpPage)
+                MainButton(width: geometry.size.width / self.dataRouter.rowUnits, height: geometry.size.height, calculatorButton: self.dataRouter.fourButton, presentFunctionPage: self.$presentFunctionPage, presentHelpPage: self.$presentHelpPage)
                 
                 Rectangle()
+                    .fill(self.dataRouter.myColors.background(self.dataRouter.darkMode))
                     .frame(width: geometry.size.width / self.dataRouter.rowUnits * self.dataRouter.gapWidth, height: geometry.size.height)
                 
-                DigitButton(width: geometry.size.width / self.dataRouter.rowUnits, height: geometry.size.height, calculatorButton: self.dataRouter.fiveButton, presentFunctionPage: self.$presentFunctionPage, presentHelpPage: self.$presentHelpPage)
+                MainButton(width: geometry.size.width / self.dataRouter.rowUnits, height: geometry.size.height, calculatorButton: self.dataRouter.fiveButton, presentFunctionPage: self.$presentFunctionPage, presentHelpPage: self.$presentHelpPage)
                     .sheet(isPresented: self.$presentFunctionPage) {
                         FunctionView(presentFunctionPage: self.$presentFunctionPage).environmentObject(self.dataRouter)
                 }
                 
                 Rectangle()
+                    .fill(self.dataRouter.myColors.background(self.dataRouter.darkMode))
                     .frame(width: geometry.size.width / self.dataRouter.rowUnits * self.dataRouter.gapWidth, height: geometry.size.height)
                 
-                
-                DigitButton(width: geometry.size.width / self.dataRouter.rowUnits, height: geometry.size.height, calculatorButton: self.dataRouter.sixButton, presentFunctionPage: self.$presentFunctionPage, presentHelpPage: self.$presentHelpPage)
+                MainButton(width: geometry.size.width / self.dataRouter.rowUnits, height: geometry.size.height, calculatorButton: self.dataRouter.sixButton, presentFunctionPage: self.$presentFunctionPage, presentHelpPage: self.$presentHelpPage)
                 
                 Rectangle()
+                    .fill(self.dataRouter.myColors.background(self.dataRouter.darkMode))
                     .frame(width: geometry.size.width / self.dataRouter.rowUnits * self.dataRouter.gapWidth, height: geometry.size.height)
                 
-                OperatorButton(operatorString: "+", bgColor: self.dataRouter.brightButtonColor, bgColor1: self.dataRouter.brightButtonColor, highlightColor: self.dataRouter.brightButtonHighlight, fontColor: self.dataRouter.brightTextColor, font: self.dataRouter.digitFont, width: geometry.size.width / self.dataRouter.rowUnits, height: geometry.size.height)
+                OtherButton(operatorString: "+", bgColor: self.dataRouter.myColors.brightButton(self.dataRouter.darkMode), bgColor1: self.dataRouter.myColors.brightButton(self.dataRouter.darkMode), highlightColor: self.dataRouter.myColors.brightShortPress(self.dataRouter.darkMode), highlightColor2: self.dataRouter.myColors.brightShortPress(self.dataRouter.darkMode), fontColor: self.dataRouter.myColors.brightButtonText(self.dataRouter.darkMode), font: self.dataRouter.digitFont, width: geometry.size.width / self.dataRouter.rowUnits, height: geometry.size.height)
                 
                 Rectangle()
+                    .fill(self.dataRouter.myColors.background(self.dataRouter.darkMode))
                     .frame(width: geometry.size.width / self.dataRouter.rowUnits * self.dataRouter.gapWidth, height: geometry.size.height)
                 
             }
