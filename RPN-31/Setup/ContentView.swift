@@ -10,44 +10,29 @@ import SwiftUI
 
 struct ContentView: View {
     @EnvironmentObject var dataRouter: DataRouter
-
-        var body: some View {
-
-            GeometryReader { geometry in
+    
+    var body: some View {
+        
+        GeometryReader { geometry in
+            
+            ZStack {
                 
-                ZStack {
+                self.dataRouter.screenBackground
+                    .edgesIgnoringSafeArea(.all)
+                
+                
+                VStack(spacing: 0) {
                     
-                    self.dataRouter.screenBackground
-                        .edgesIgnoringSafeArea(.all)
-                    
-                    
-                    VStack(spacing: 0) {
-                        
-                        if self.dataRouter.isPad {
-                            
-                            if self.dataRouter.helpPage {
-                                HelpView()
-                            } else {
-                                MainView()
-
-                            }
-                        }
-                        else {
-                            if self.dataRouter.helpPage {
-                                HelpView()
-                            } else {
-                                MainView()
-
-                            }
-                            
-                        }
-                           
-                        
+                    if self.dataRouter.isPad {
+                        MainView()
+                    }
+                    else {
+                        MainView()
                     }
                 }
             }
-            
-}
+        }
+    }
 }
 
 

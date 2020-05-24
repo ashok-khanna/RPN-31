@@ -10,7 +10,8 @@ import SwiftUI
 
 struct ThirdRowView: View {
 @EnvironmentObject var dataRouter: DataRouter
-@State var isPresented = false
+@State var presentFunctionPage = false
+@State var presentHelpPage = false
     
     var body: some View {
         
@@ -22,21 +23,21 @@ struct ThirdRowView: View {
                 Rectangle()
                     .frame(width: geometry.size.width / self.dataRouter.rowUnits * self.dataRouter.gapWidth, height: geometry.size.height)
                 
-                AdvanceButton(width: geometry.size.width / self.dataRouter.rowUnits, height: geometry.size.height, bgColor: self.dataRouter.darkButtonColor, bgColor1: self.dataRouter.darkButtonColor, calculatorButton: self.dataRouter.fourButton, isPresented: self.$isPresented)
+                DigitButton(width: geometry.size.width / self.dataRouter.rowUnits, height: geometry.size.height, calculatorButton: self.dataRouter.fourButton, presentFunctionPage: self.$presentFunctionPage, presentHelpPage: self.$presentHelpPage)
                 
                 Rectangle()
                     .frame(width: geometry.size.width / self.dataRouter.rowUnits * self.dataRouter.gapWidth, height: geometry.size.height)
                 
-                AdvanceButton(width: geometry.size.width / self.dataRouter.rowUnits, height: geometry.size.height, bgColor: self.dataRouter.darkButtonColor, bgColor1: self.dataRouter.darkButtonColor, calculatorButton: self.dataRouter.fiveButton, isPresented: self.$isPresented)
-                    .sheet(isPresented: self.$isPresented) {
-                        AdvanceView(isPresented: self.$isPresented).environmentObject(self.dataRouter)
+                DigitButton(width: geometry.size.width / self.dataRouter.rowUnits, height: geometry.size.height, calculatorButton: self.dataRouter.fiveButton, presentFunctionPage: self.$presentFunctionPage, presentHelpPage: self.$presentHelpPage)
+                    .sheet(isPresented: self.$presentFunctionPage) {
+                        FunctionView(presentFunctionPage: self.$presentFunctionPage).environmentObject(self.dataRouter)
                 }
                 
                 Rectangle()
                     .frame(width: geometry.size.width / self.dataRouter.rowUnits * self.dataRouter.gapWidth, height: geometry.size.height)
                 
                 
-                AdvanceButton(width: geometry.size.width / self.dataRouter.rowUnits, height: geometry.size.height, bgColor: self.dataRouter.darkButtonColor, bgColor1: self.dataRouter.darkButtonColor, calculatorButton: self.dataRouter.sixButton, isPresented: self.$isPresented)
+                DigitButton(width: geometry.size.width / self.dataRouter.rowUnits, height: geometry.size.height, calculatorButton: self.dataRouter.sixButton, presentFunctionPage: self.$presentFunctionPage, presentHelpPage: self.$presentHelpPage)
                 
                 Rectangle()
                     .frame(width: geometry.size.width / self.dataRouter.rowUnits * self.dataRouter.gapWidth, height: geometry.size.height)

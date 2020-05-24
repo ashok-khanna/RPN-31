@@ -33,12 +33,14 @@ class DataRouter: ObservableObject {
     @Published var landscape: Bool = false
 
     @Published var isPad: Bool
-    
+
+    @Published var digitButtonColor = Color(UIColor.darkGray)
+    @Published var digitTextColor = Color(UIColor.white)
+
     @Published var lightButtonColor = Color(UIColor.lightGray)
-    @Published var darkButtonColor = Color(UIColor.darkGray)
     @Published var brightButtonColor = Color(UIColor.orange)
     @Published var lightTextColor = Color(UIColor.black)
-    @Published var darkTextColor = Color(UIColor.white)
+
     @Published var brightTextColor = Color(UIColor.white)
     @Published var lightButtonHighlight =  Color(UIColor.lightGray.lighter(by: 25.0))
     @Published var darkButtonHighlight = Color(UIColor.lightGray)
@@ -47,6 +49,8 @@ class DataRouter: ObservableObject {
     @Published var storeRecallHighlight = Color(UIColor.blue)
     
     @Published var digitColorArray = [Color]()
+    @Published var digitHighlightArray = [Color]()
+    @Published var digitBrightArray = [Color]()
 
     @Published var stackRegisterColor = Color(UIColor.darkGray.darker(by: 75.0))
     @Published var stackRegisterTextColor = Color(UIColor.white)
@@ -112,6 +116,8 @@ class DataRouter: ObservableObject {
         
         for _ in 0...10 {
             digitColorArray.append(Color(UIColor.darkGray))
+            digitHighlightArray.append(Color(UIColor.lightGray))
+            digitBrightArray.append(Color(UIColor.orange))
         }
         
         xRegisterFormatter.numberStyle = .decimal

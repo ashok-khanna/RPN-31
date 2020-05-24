@@ -13,7 +13,7 @@
 		80023B0F2476EB0C00BB62CE /* ThirdRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80023B0E2476EB0C00BB62CE /* ThirdRowView.swift */; };
 		80023B112476EB3200BB62CE /* FinalRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80023B102476EB3200BB62CE /* FinalRowView.swift */; };
 		80023B3324773F5D00BB62CE /* FormattingOLD.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80023B3224773F5D00BB62CE /* FormattingOLD.swift */; };
-		80023B352477D80700BB62CE /* AdvanceButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80023B342477D80700BB62CE /* AdvanceButton.swift */; };
+		80023B352477D80700BB62CE /* DigitButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80023B342477D80700BB62CE /* DigitButton.swift */; };
 		805CFD6E2478773C005A7447 /* Calculator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 805CFD6D2478773C005A7447 /* Calculator.swift */; };
 		805CFD7024788364005A7447 /* ButtonActions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 805CFD6F24788364005A7447 /* ButtonActions.swift */; };
 		805CFD72247884EF005A7447 /* CalcFunctions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 805CFD71247884EF005A7447 /* CalcFunctions.swift */; };
@@ -31,8 +31,9 @@
 		808D590124708845000BBD5F /* ButtonGridView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 808D590024708845000BBD5F /* ButtonGridView.swift */; };
 		80DC0A772479741E00694277 /* LastRegister.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80DC0A762479741E00694277 /* LastRegister.swift */; };
 		80DC0A7924799F5000694277 /* HelpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80DC0A7824799F5000694277 /* HelpView.swift */; };
-		80DC0A7B2479AF0200694277 /* AdvanceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80DC0A7A2479AF0200694277 /* AdvanceView.swift */; };
+		80DC0A7B2479AF0200694277 /* FunctionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80DC0A7A2479AF0200694277 /* FunctionView.swift */; };
 		80DC0A7D2479BEF600694277 /* StoreRecall.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80DC0A7C2479BEF600694277 /* StoreRecall.swift */; };
+		80DC0A7F2479E88F00694277 /* OperatorButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80DC0A7E2479E88F00694277 /* OperatorButton.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -43,7 +44,7 @@
 		80023B0E2476EB0C00BB62CE /* ThirdRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThirdRowView.swift; sourceTree = "<group>"; };
 		80023B102476EB3200BB62CE /* FinalRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FinalRowView.swift; sourceTree = "<group>"; };
 		80023B3224773F5D00BB62CE /* FormattingOLD.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormattingOLD.swift; sourceTree = "<group>"; };
-		80023B342477D80700BB62CE /* AdvanceButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdvanceButton.swift; sourceTree = "<group>"; };
+		80023B342477D80700BB62CE /* DigitButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DigitButton.swift; sourceTree = "<group>"; };
 		805CFD6D2478773C005A7447 /* Calculator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Calculator.swift; sourceTree = "<group>"; };
 		805CFD6F24788364005A7447 /* ButtonActions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonActions.swift; sourceTree = "<group>"; };
 		805CFD71247884EF005A7447 /* CalcFunctions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalcFunctions.swift; sourceTree = "<group>"; };
@@ -63,8 +64,9 @@
 		808D590024708845000BBD5F /* ButtonGridView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonGridView.swift; sourceTree = "<group>"; };
 		80DC0A762479741E00694277 /* LastRegister.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LastRegister.swift; sourceTree = "<group>"; };
 		80DC0A7824799F5000694277 /* HelpView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelpView.swift; sourceTree = "<group>"; };
-		80DC0A7A2479AF0200694277 /* AdvanceView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdvanceView.swift; sourceTree = "<group>"; };
+		80DC0A7A2479AF0200694277 /* FunctionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FunctionView.swift; sourceTree = "<group>"; };
 		80DC0A7C2479BEF600694277 /* StoreRecall.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreRecall.swift; sourceTree = "<group>"; };
+		80DC0A7E2479E88F00694277 /* OperatorButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OperatorButton.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -134,14 +136,15 @@
 			isa = PBXGroup;
 			children = (
 				80023B082476DE8500BB62CE /* MainView.swift */,
-				80DC0A7824799F5000694277 /* HelpView.swift */,
 				808D590024708845000BBD5F /* ButtonGridView.swift */,
 				80023AEF2475BC9300BB62CE /* FirstRowView.swift */,
 				80023B0C2476EAD700BB62CE /* SecondRowView.swift */,
 				80023B0E2476EB0C00BB62CE /* ThirdRowView.swift */,
 				80023B102476EB3200BB62CE /* FinalRowView.swift */,
-				80023B342477D80700BB62CE /* AdvanceButton.swift */,
-				80DC0A7A2479AF0200694277 /* AdvanceView.swift */,
+				80023B342477D80700BB62CE /* DigitButton.swift */,
+				80DC0A7E2479E88F00694277 /* OperatorButton.swift */,
+				80DC0A7A2479AF0200694277 /* FunctionView.swift */,
+				80DC0A7824799F5000694277 /* HelpView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -247,18 +250,19 @@
 				80DC0A772479741E00694277 /* LastRegister.swift in Sources */,
 				80DC0A7924799F5000694277 /* HelpView.swift in Sources */,
 				80DC0A7D2479BEF600694277 /* StoreRecall.swift in Sources */,
+				80DC0A7F2479E88F00694277 /* OperatorButton.swift in Sources */,
 				80023B112476EB3200BB62CE /* FinalRowView.swift in Sources */,
 				808D590124708845000BBD5F /* ButtonGridView.swift in Sources */,
 				808D58DD247070F8000BBD5F /* AppDelegate.swift in Sources */,
 				80023B3324773F5D00BB62CE /* FormattingOLD.swift in Sources */,
 				808D58DF247070F8000BBD5F /* SceneDelegate.swift in Sources */,
 				805CFD7624788A61005A7447 /* StackManipulation.swift in Sources */,
-				80023B352477D80700BB62CE /* AdvanceButton.swift in Sources */,
+				80023B352477D80700BB62CE /* DigitButton.swift in Sources */,
 				80023AF02475BC9300BB62CE /* FirstRowView.swift in Sources */,
 				808D58F1247071F3000BBD5F /* HostingController.swift in Sources */,
 				805CFD7024788364005A7447 /* ButtonActions.swift in Sources */,
 				80023B0F2476EB0C00BB62CE /* ThirdRowView.swift in Sources */,
-				80DC0A7B2479AF0200694277 /* AdvanceView.swift in Sources */,
+				80DC0A7B2479AF0200694277 /* FunctionView.swift in Sources */,
 				805CFD72247884EF005A7447 /* CalcFunctions.swift in Sources */,
 				808D58E1247070F8000BBD5F /* ContentView.swift in Sources */,
 				80023B0D2476EAD700BB62CE /* SecondRowView.swift in Sources */,

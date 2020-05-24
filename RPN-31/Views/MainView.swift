@@ -11,6 +11,7 @@ import SwiftUI
 struct MainView: View {
     @EnvironmentObject var dataRouter: DataRouter
     @State var showFunction: Bool = false
+
         var body: some View {
 
             GeometryReader { geometry in

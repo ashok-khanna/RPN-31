@@ -1,4 +1,5 @@
 import Foundation
+import UIKit
 
 extension Calculator {
     
@@ -100,6 +101,23 @@ extension Calculator {
                 
         clearLastRegisters()
 
+    }
+    
+    func copyToClipboard(){
+        UIPasteboard.general.string = String(stackRegisters[0])
+    }
+    
+    mutating func pasteFromClipboard(){
+        if let myString = UIPasteboard.general.string {
+            if let xRegisterNew = Double(myString) {
+                if xRegisterNew != 0.0 {
+                stackRegisters[0] = xRegisterNew
+                isNewNumberEntry = true
+                clearLastRegisters()
+                print("hello")
+            }
+            }
+        }
     }
     
 }
