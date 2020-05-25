@@ -39,7 +39,7 @@ struct MyNumberFormatter {
         decimalFormatter.numberStyle = .decimal
         scientificFormatter.numberStyle = .scientific
         
-         if defaults.integer(forKey: "decimals") == 0 {
+         if defaults.string(forKey: "displayMode") == nil {
              decimalFormatter.maximumFractionDigits = defaultDecimals
              maximumFractionDigits = defaultDecimals
 
@@ -49,7 +49,7 @@ struct MyNumberFormatter {
 
          }
          
-         if defaults.integer(forKey: "sigDigits") == 0 {
+         if defaults.string(forKey: "displayMode") == nil  {
                 scientificFormatter.maximumSignificantDigits = defaultSigDigits
                 maximumSignificantDigits = defaultSigDigits
              
@@ -72,6 +72,7 @@ struct MyNumberFormatter {
          default:
              mode = .special
              relevantModeIsDecimals = true
+             defaults.set("SPECIAL", forKey: "displayMode")
 
          }
         
@@ -89,24 +90,12 @@ struct MyNumberFormatter {
     
     mutating func rebuild(){
         
-        if defaults.integer(forKey: "decimals") == 0 {
-            decimalFormatter.maximumFractionDigits = defaultDecimals
-            maximumFractionDigits = defaultDecimals
+        decimalFormatter.maximumFractionDigits = defaults.integer(forKey: "decimals")
+        maximumFractionDigits = defaults.integer(forKey: "decimals")
 
-        } else {
-               decimalFormatter.maximumFractionDigits = defaults.integer(forKey: "decimals")
-               maximumFractionDigits = defaults.integer(forKey: "decimals")
-
-        }
+        scientificFormatter.maximumSignificantDigits = defaults.integer(forKey: "sigDigits")
+        maximumSignificantDigits = defaults.integer(forKey: "sigDigits")
         
-        if defaults.integer(forKey: "sigDigits") == 0 {
-               scientificFormatter.maximumSignificantDigits = defaultSigDigits
-               maximumSignificantDigits = defaultSigDigits
-            
-        } else {
-               scientificFormatter.maximumSignificantDigits = defaults.integer(forKey: "sigDigits")
-               maximumSignificantDigits = defaults.integer(forKey: "sigDigits")
-        }
         
         switch defaults.string(forKey: "displayMode") {
         case "DECIMAL":

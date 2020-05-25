@@ -13,15 +13,11 @@ struct ButtonConfiguratorView: View {
                 Color.white
                 .edgesIgnoringSafeArea(.all)
                 
-                VStack {
+                VStack(spacing: 0) {
                     
                     Rectangle()
                         .fill(self.dataRouter.myColors.stackRegisters(self.dataRouter.darkMode))
                         .frame(width: geometry.size.width, height: geometry.size.height * CGFloat(0.02))
-                    
-                    Rectangle()
-                        .fill(Color.clear)
-                        .frame(width:geometry.size.width, height: geometry.size.height * 0.03)
                         
                         Text("Button Configurator")
                             .foregroundColor(Color.black)
@@ -29,15 +25,15 @@ struct ButtonConfiguratorView: View {
                     
                     Rectangle()
                         .fill(Color.clear)
-                        .frame(width:geometry.size.width, height: geometry.size.height * 0.03)
+                        .frame(width:geometry.size.width, height: geometry.size.height * 0.02)
                     
-                        Text("Reorder the below list of functions by moving each row (long press on the three grey lines to the right and then drag the row up or down). Dismiss this page when done (all changes are autosaved).")
+                        Text("Reorder by touching down on the three grey lines to the right and then drag the row up or down. Dismiss this page when done (all changes are autosaved).")
                             .foregroundColor(Color.black)
                             .font(.body)
                     
                     Rectangle()
                         .fill(Color.clear)
-                        .frame(width:geometry.size.width, height: geometry.size.height * 0.01)
+                        .frame(width:geometry.size.width, height: geometry.size.height * 0.025)
                     
                     Button(action: {
 

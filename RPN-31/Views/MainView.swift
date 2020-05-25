@@ -99,7 +99,7 @@ struct MainView: View {
                             .font(.system(.largeTitle, design: self.dataRouter.calculator.showFunction ? .default : .default))
                             .minimumScaleFactor(0.01)
                             .lineLimit(1)
-                            .foregroundColor(self.dataRouter.calculator.showFunction ? self.dataRouter.myColors.brightButton(self.dataRouter.darkMode) : self.dataRouter.myColors.text(self.dataRouter.darkMode))
+                            .foregroundColor(self.dataRouter.calculator.showFunction ? self.dataRouter.myColors.functionDisplayText(self.dataRouter.darkMode) : self.dataRouter.myColors.text(self.dataRouter.darkMode))
                             .frame(width: geometry.size.width * CGFloat(0.9), height: geometry.size.height * CGFloat(0.0875))
                         .onTapGesture {
                             self.dataRouter.calculator.deleteInput()
