@@ -98,6 +98,8 @@ var body: some View {
         
         HStack {
             
+            Spacer()
+            
             if self.buttonText == "Copy" {
                 Image(systemName:"doc.on.doc.fill")
                 .foregroundColor(self.dataRouter.myColors.advanceButtonText(self.dataRouter.darkMode))
@@ -111,12 +113,15 @@ var body: some View {
                     .foregroundColor(self.dataRouter.myColors.advanceButtonText(self.dataRouter.darkMode))
                     .font(Font.title.weight(.regular))
             }
-            
+                        
             Text(self.buttonText)
                 .font(self.dataRouter.operatorFont)
                 .foregroundColor(self.dataRouter.myColors.advanceButtonText(self.dataRouter.darkMode))
                 .fixedSize()
                 .padding(0)
+            
+            Spacer()
+                        
             }
         .frame(width: width, height: height)
         .background(self.longPress ? self.highlightColor : self.bgColor)

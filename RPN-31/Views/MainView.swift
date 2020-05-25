@@ -33,8 +33,10 @@ struct MainView: View {
                                 .frame(width: geometry.size.width * self.dataRouter.mySizes.topLeftGapWidth, height: geometry.size.height * self.dataRouter.mySizes.stackHeight)
                             
                             VStack(spacing: 0) {
+                                
+                                Spacer()
                                                                 
-                                Text((geometry.size.width).description /* self.dataRouter.displayFormatter.string(self.dataRouter.calculator.stackRegisters[1])*/)
+                                Text(self.dataRouter.displayFormatter.string(self.dataRouter.calculator.stackRegisters[1]))
                                     .font(.title)
                                     .minimumScaleFactor(0.01)
                                     .lineLimit(1)
@@ -43,6 +45,8 @@ struct MainView: View {
                                 .onTapGesture {
                                     self.dataRouter.calculator.swapXY()
                                 }
+                                
+                                Spacer()
                                                                 
                                 Text(self.dataRouter.calculator.lastRegister.displayText)
                                     .font(.headline)

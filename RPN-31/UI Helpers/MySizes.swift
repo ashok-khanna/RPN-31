@@ -160,18 +160,18 @@ struct MySizes {
             gapWidthPortrait = CGFloat(0.2)
             gapWidthLandscape = CGFloat(0.17)
             
-            yRegisterHeightPortrait = CGFloat(0.1)
-            yRegisterHeightLandscape = CGFloat(0.1)
+            yRegisterHeightPortrait = CGFloat(0.05)
+            yRegisterHeightLandscape = CGFloat(0.05)
             yRegisterWidthPortrait = CGFloat(0.5)
             yRegisterWidthLandscape = CGFloat(0.5)
             
-            lRegisterHeightPortrait = CGFloat(0.1)
-            lRegisterHeightLandscape = CGFloat(0.1)
+            lRegisterHeightPortrait = CGFloat(0.05)
+            lRegisterHeightLandscape = CGFloat(0.05)
             lRegisterWidthPortrait = CGFloat(0.5)
             lRegisterWidthLandscape = CGFloat(0.5)
             
-            stackHeightPortrait = CGFloat(0.2)
-            stackHeightLandscape = CGFloat(0.2)
+            stackHeightPortrait = CGFloat(0.15)
+            stackHeightLandscape = CGFloat(0.15)
             stackWidthPortrait = CGFloat(0.3)
             stackWidthLandscape = CGFloat(0.3)
             

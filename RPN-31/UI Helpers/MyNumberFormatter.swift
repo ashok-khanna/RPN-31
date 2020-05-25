@@ -39,7 +39,6 @@ struct MyNumberFormatter {
         decimalFormatter.numberStyle = .decimal
         scientificFormatter.numberStyle = .scientific
 
-        
          if defaults.string(forKey: "displayMode") == nil {
              decimalFormatter.maximumFractionDigits = defaultDecimals
              maximumFractionDigits = defaultDecimals
@@ -148,7 +147,11 @@ struct MyNumberFormatter {
     
     func powerString(_ myScienceNumber: String) -> String {
 
-        let numberComponents = myScienceNumber.split(separator: "E")
+        var numberComponents = myScienceNumber.split(separator: "E")
+        
+        if numberComponents.count <= 1 {
+            numberComponents = myScienceNumber.split(separator: "e")
+        }
         
         if numberComponents.count <= 1 {
             return myScienceNumber
