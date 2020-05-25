@@ -25,25 +25,29 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
             let window = UIWindow(windowScene: windowScene)
             
             
-            var gridHeightPortrait = CGFloat(0.65)
-            var gridHeightLandscape = CGFloat(0.65)
-            var gapWidthPortrait = CGFloat(0.2)
-            var gapWidthLandscape = CGFloat(0.17)
+
+            
+            
             var fontStyle = Font.title
             var isPad = false
             
             if UIDevice.current.userInterfaceIdiom == .pad {
                 
-                gridHeightPortrait = CGFloat(0.65)
-                gridHeightLandscape = CGFloat(0.65)
-                gapWidthPortrait = CGFloat(0.17)
-                gapWidthLandscape = CGFloat(0.1)
+
                 fontStyle = Font.largeTitle
                 isPad = true
                 
             }
             
-            let dataRouter = DataRouter(isPad, numCols: CGFloat(4), numRows: CGFloat(5), gridHeightPortrait, gridHeightLandscape, gapWidthPortrait, gapWidthLandscape, fontStyle, isLandscape: windowScene.interfaceOrientation.isLandscape)
+            var mySizes = MySizes(isPad)
+            
+            if windowScene.interfaceOrientation.isLandscape {
+                mySizes.makeLandscape()
+            } else {
+                mySizes.makePortrait()
+            }
+            
+            let dataRouter = DataRouter(isPad, mySizes: mySizes, numCols: CGFloat(4), numRows: CGFloat(5), fontStyle, isLandscape: windowScene.interfaceOrientation.isLandscape)
             let contentView = ContentView().environmentObject(dataRouter)
 
             window.rootViewController = HostingController(rootView: AnyView(contentView))

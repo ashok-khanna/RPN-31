@@ -14,13 +14,14 @@ import SwiftUI
 class DataRouter: ObservableObject {
     //MARK: Properties
     let defaults = UserDefaults.standard
-    let defaultButtonList = ["EE", "√x", "1/x", "%", "∆ %", "e^x", "ln x", "y^x", "SIN", "COS", "TAN", "ASIN", "ACOS", "ATAN", "14", "15", "16", "17", "18", "19", "20", "21", "22", "23", "24", "25", "26", "27", "28", "29", "30", "31", "32"]
+    let defaultButtonList = ["EE", "√x", "1/x", "%", "% ∆", "e ᵡ", "ln x", "y ᵡ", "SIN", "COS", "TAN", "ASIN", "ACOS", "ATAN", "x!", "log10 x", "log2 x", "10 ᵡ", "2 ᵡ", "nPr", "nCr", "MEAN", "STDEV", "IRR", "NPV", "n", "i", "PV", "PMT", "FV", "DET", "π", "D→R", "R→D", "x√y", "e", "EXTRA1", "EXTRA2", "EXTRA3", "EXTRA4"]
 
     @Published var buttonList = [String]()
     @Published var altFunctions = false
     
     @Published var isPad: Bool
     @Published var landscape: Bool = false
+    @Published var mySizes: MySizes
 
     @Published var darkMode:Bool = true
     @Published var myColors = MyColors()
@@ -31,14 +32,6 @@ class DataRouter: ObservableObject {
     @Published var numCols: CGFloat
     @Published var numRows: CGFloat
     @Published var rowUnits: CGFloat
-    
-    @Published var gridHeight: CGFloat
-    @Published var gridHeightPortrait: CGFloat
-    @Published var gridHeightLandscape: CGFloat
-    
-    @Published var gapWidth: CGFloat
-    @Published var gapWidthPortrait: CGFloat
-    @Published var gapWidthLandscape: CGFloat
     
     @Published var digitColorArray = [Color]()
     @Published var digitHighlightArray = [Color]()
@@ -55,10 +48,10 @@ class DataRouter: ObservableObject {
     @Published var threeButton = CalculatorButton(digitValue: 3.0, digitString: "3", operatorString: "1/x")
     @Published var fourButton = CalculatorButton(digitValue: 4.0, digitString: "4", operatorString: "%")
     @Published var fiveButton = CalculatorButton(digitValue: 5.0, digitString: "5", operatorString: "ADV")
-    @Published var sixButton = CalculatorButton(digitValue: 6.0, digitString: "6", operatorString: "∆ %")
-    @Published var sevenButton = CalculatorButton(digitValue: 7.0, digitString: "7", operatorString: "e^x")
+    @Published var sixButton = CalculatorButton(digitValue: 6.0, digitString: "6", operatorString: "% ∆")
+    @Published var sevenButton = CalculatorButton(digitValue: 7.0, digitString: "7", operatorString: "e ᵡ")
     @Published var eightButton = CalculatorButton(digitValue: 8.0, digitString: "8", operatorString: "ln x")
-    @Published var nineButton = CalculatorButton(digitValue: 9.0, digitString: "9", operatorString: "y^x")
+    @Published var nineButton = CalculatorButton(digitValue: 9.0, digitString: "9", operatorString: "y ᵡ")
     @Published var decimalButton = CalculatorButton(digitValue: 10.0, digitString: ".", operatorString: "HELP")
     
     // Set up number formatters
@@ -66,38 +59,18 @@ class DataRouter: ObservableObject {
             
     @Published var calculator = Calculator()
      
-    init(_ isPad: Bool, numCols: CGFloat, numRows: CGFloat, _ gridHeightPortrait: CGFloat, _ gridHeightLandscape: CGFloat, _ gapWidthPortrait: CGFloat, _ gapWidthLandscape: CGFloat, _ fontStyle: Font, isLandscape: Bool) {
+    init(_ isPad: Bool, mySizes: MySizes, numCols: CGFloat, numRows: CGFloat, _ fontStyle: Font, isLandscape: Bool) {
         
         self.isPad = isPad
+        self.mySizes = mySizes
         self.digitFont = fontStyle
         
         self.numCols  = numCols
         self.numRows = numRows
         
         self.landscape = isLandscape
-        self.gridHeightPortrait = gridHeightPortrait
-        self.gridHeightLandscape = gridHeightLandscape
-        self.gapWidthPortrait = gapWidthPortrait
-        self.gapWidthLandscape = gapWidthLandscape
-        
-        let tempGapWidth, tempGridHeight: CGFloat
-        
-        if isLandscape {
-            self.gridHeight = gridHeightLandscape
-            self.gapWidth = gapWidthLandscape
-            tempGridHeight = gridHeightLandscape
-            tempGapWidth = gapWidthLandscape
-            
-
-        } else {
-            self.gridHeight = gridHeightPortrait
-            self.gapWidth = gapWidthPortrait
-            tempGridHeight = gridHeightPortrait
-            tempGapWidth = gapWidthPortrait
-        
-        }
     
-        self.rowUnits = numCols + (numCols + CGFloat(1)) * tempGapWidth
+        self.rowUnits = numCols + (numCols + CGFloat(1)) * mySizes.gapWidth
         
         for _ in 0...10 {
             digitColorArray.append(myColors.mainButton(darkMode))
@@ -117,22 +90,28 @@ class DataRouter: ObservableObject {
 
     }
     
+    
+    
     @objc func onViewWillTransition(notification: Notification) {
         guard let size = notification.userInfo?["size"] as? CGSize else { return }
 
+        print("test")
+        
         landscape = size.width > size.height
         
+        print(landscape)
+        
         if landscape {
-            gridHeight = gridHeightLandscape
-            gapWidth = gapWidthLandscape
+            mySizes.makeLandscape()
 
         } else {
-            gridHeight = gridHeightPortrait
-            gapWidth = gapWidthPortrait
+            mySizes.makePortrait()
             
         }
         
-        rowUnits = numCols + (numCols + CGFloat(1)) * gapWidth
+        rowUnits = numCols + (numCols + CGFloat(1)) * mySizes.gapWidth
+        
+        print(rowUnits)
     }
 }
    

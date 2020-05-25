@@ -11,7 +11,7 @@ extension Calculator {
                 clearLastRegisters()
             }
             isNewNumberEntry = false
-            amendStackRegister(value: 0.0, at: 0)
+            stackRegisters[0] = 0.0
             xRegisterDecimals = 0
         }
         
@@ -34,7 +34,7 @@ extension Calculator {
             }
             
             if isNewNumberEntry && stackRegisters[0] != 0.0 {
-                amendStackRegister(value: 0.0, at: 0)
+                stackRegisters[0] = 0.0
                 isNewNumberEntry = false
                 xRegisterDecimals = 0
             }
@@ -56,7 +56,7 @@ extension Calculator {
                 xRegisterNew = xRegisterOld
             }
             
-            amendStackRegister(value: xRegisterNew, at: 0)
+            stackRegisters[0] = xRegisterNew
 
         }
         

@@ -15,21 +15,30 @@ struct HelpView: View {
 
                 VStack {
                     
-                    Rectangle()
+                     Rectangle()
                         .fill(self.dataRouter.myColors.stackRegisters(self.dataRouter.darkMode))
-                        .frame(width: geometry.size.width, height: geometry.size.height * CGFloat(0.02))
-                        
+                        .frame(width: geometry.size.width, height: geometry.size.height * self.dataRouter.mySizes.subPageTopDivider)
+
+                    Rectangle()
+                        .fill(Color.clear)
+                        .frame(width: geometry.size.width, height: geometry.size.height * self.dataRouter.mySizes.subPageHeaderGap)
+                    
                         Text("Help")
-                            .foregroundColor(self.dataRouter.myColors.text(self.dataRouter.darkMode))
+                            .foregroundColor(Color.white)
                             .font(.title)
                     
                     Rectangle()
                         .fill(Color.clear)
-                        .frame(width:geometry.size.width, height: geometry.size.height * 0.05)
+                        .frame(width:geometry.size.width, height: geometry.size.height * self.dataRouter.mySizes.subPageBodyGap)
                     
-                    // Spacer()
+                        Text("Help instructions go here. Also note settings below")
+                            .foregroundColor(Color.white)
+                            .font(.body)
+                            .padding(self.dataRouter.mySizes.textPadding)
                     
-                    Spacer()
+                    Rectangle()
+                        .fill(Color.clear)
+                        .frame(width:geometry.size.width, height: geometry.size.height * self.dataRouter.mySizes.subPageTableGap)
                     
                     
                     // Number Formatted Section
@@ -40,8 +49,6 @@ struct HelpView: View {
                                                     
                             
                             FormatButton(operatorString: "DECIMAL", font: self.dataRouter.operatorFont, width: geometry.size.width * CGFloat(0.25), height: geometry.size.width * CGFloat(0.15))
-                            
-                       
                                 
                                 Spacer()
                                 
@@ -53,7 +60,6 @@ struct HelpView: View {
                             
                             }
                             .frame(width: geometry.size.width * CGFloat(0.9))
-                            
                         
                             Rectangle()
                                 .fill(Color.clear)
@@ -63,9 +69,7 @@ struct HelpView: View {
                             .accentColor(.red)
                                 .frame(width: geometry.size.width * CGFloat(0.9), height: geometry.size.width * CGFloat(0.15))
                         
-                            Rectangle()
-                            .fill(Color.clear)
-                            .frame(width:geometry.size.width, height: geometry.size.height * 0.05)
+
                         
                     }
                     

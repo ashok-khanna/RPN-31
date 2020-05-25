@@ -3,7 +3,6 @@ import SwiftUI
 struct MainButton: View {
 
     @EnvironmentObject var dataRouter: DataRouter
-
     @State var width: CGFloat
     @State var height: CGFloat
     @State var calculatorButton: CalculatorButton
@@ -21,10 +20,6 @@ struct MainButton: View {
                     gestureState = true
             }
         .onEnded { value in
-            // print(value.translation) We can use value.translation to see how far away our finger moved and accordingly cancel the action (code not shown here)
-           
-            print(value.translation.width)
-            print(value.translation.height)
             
             if(abs(value.translation.width) < (self.width * CGFloat(0.75)) && abs(value.translation.height) < (self.height * CGFloat(0.75))) {
                 if self.calculatorButton.operatorString == "STORE/RECALL" {
@@ -116,7 +111,8 @@ struct MainButton: View {
                     .fixedSize()
                     .padding(0)
                 }
-                .frame(width: width, height: height)
+                .frame(minWidth: 0, maxWidth: .infinity, minHeight: 0, maxHeight: .infinity)
+                //.frame(width: width, height: height)
                 .background(self.longPress ? self.dataRouter.digitHighlightArray[Int(self.calculatorButton.digitValue)] : (self.longDrag ? self.dataRouter.digitBrightArray[Int(self.calculatorButton.digitValue)] : self.dataRouter.digitColorArray[Int(self.calculatorButton.digitValue)]))
                 .cornerRadius(15)
                 .gesture(tapBeforeLongGestures)

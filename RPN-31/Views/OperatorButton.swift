@@ -85,7 +85,8 @@ var body: some View {
                 .fixedSize()
                 .padding(0)
             }
-            .frame(width: width, height: height)
+            .frame(minWidth: 0, maxWidth: .infinity, minHeight: 0, maxHeight: .infinity)
+            //.frame(width: width, height: height)
         .background(self.longPress ? self.highlightColor : (self.longDrag ? self.highlightColor2 : self.bgColor))
             .cornerRadius(15)
             .gesture(tapBeforeLongGestures)

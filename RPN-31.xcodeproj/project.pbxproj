@@ -35,6 +35,8 @@
 		808E2080247C15AE00C34187 /* GuideView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 808E207F247C15AE00C34187 /* GuideView.swift */; };
 		808E2082247C170A00C34187 /* SimpleButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 808E2081247C170A00C34187 /* SimpleButton.swift */; };
 		808E2084247C238700C34187 /* ReadMe.md in Resources */ = {isa = PBXBuildFile; fileRef = 808E2083247C238700C34187 /* ReadMe.md */; };
+		808E2086247C552800C34187 /* MySizes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 808E2085247C552800C34187 /* MySizes.swift */; };
+		808E2088247C554A00C34187 /* MyFonts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 808E2087247C554A00C34187 /* MyFonts.swift */; };
 		80DC0A772479741E00694277 /* LastRegister.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80DC0A762479741E00694277 /* LastRegister.swift */; };
 		80DC0A7924799F5000694277 /* HelpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80DC0A7824799F5000694277 /* HelpView.swift */; };
 		80DC0A7B2479AF0200694277 /* FunctionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80DC0A7A2479AF0200694277 /* FunctionView.swift */; };
@@ -76,6 +78,8 @@
 		808E207F247C15AE00C34187 /* GuideView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GuideView.swift; sourceTree = "<group>"; };
 		808E2081247C170A00C34187 /* SimpleButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimpleButton.swift; sourceTree = "<group>"; };
 		808E2083247C238700C34187 /* ReadMe.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = ReadMe.md; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = "<none>"; };
+		808E2085247C552800C34187 /* MySizes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MySizes.swift; sourceTree = "<group>"; };
+		808E2087247C554A00C34187 /* MyFonts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyFonts.swift; sourceTree = "<group>"; };
 		80DC0A762479741E00694277 /* LastRegister.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LastRegister.swift; sourceTree = "<group>"; };
 		80DC0A7824799F5000694277 /* HelpView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelpView.swift; sourceTree = "<group>"; };
 		80DC0A7A2479AF0200694277 /* FunctionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FunctionView.swift; sourceTree = "<group>"; };
@@ -139,7 +143,7 @@
 				80DC0A732479551000694277 /* Views */,
 				80139588247B335900C8CD02 /* Additional Views */,
 				80DC0A74247955BF00694277 /* Calculator */,
-				80DC0A75247955F100694277 /* Other */,
+				80DC0A75247955F100694277 /* UI Helpers */,
 				808D58E2247070FF000BBD5F /* Assets.xcassets */,
 				808D58E7247070FF000BBD5F /* LaunchScreen.storyboard */,
 				808D58EA247070FF000BBD5F /* Info.plist */,
@@ -195,14 +199,16 @@
 			path = Calculator;
 			sourceTree = "<group>";
 		};
-		80DC0A75247955F100694277 /* Other */ = {
+		80DC0A75247955F100694277 /* UI Helpers */ = {
 			isa = PBXGroup;
 			children = (
 				80DC0A82247ACD8900694277 /* MyColors.swift */,
+				808E2085247C552800C34187 /* MySizes.swift */,
+				808E2087247C554A00C34187 /* MyFonts.swift */,
 				80DC0A80247AA55E00694277 /* MyNumberFormatter.swift */,
 				808E2083247C238700C34187 /* ReadMe.md */,
 			);
-			path = Other;
+			path = "UI Helpers";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -301,6 +307,7 @@
 				80DC0A83247ACD8900694277 /* MyColors.swift in Sources */,
 				805CFD7624788A61005A7447 /* StackManipulation.swift in Sources */,
 				80023B352477D80700BB62CE /* MainButton.swift in Sources */,
+				808E2088247C554A00C34187 /* MyFonts.swift in Sources */,
 				808E2080247C15AE00C34187 /* GuideView.swift in Sources */,
 				80023AF02475BC9300BB62CE /* FirstRowView.swift in Sources */,
 				80139587247B29B200C8CD02 /* FormatButton.swift in Sources */,
@@ -310,6 +317,7 @@
 				80DC0A7B2479AF0200694277 /* FunctionView.swift in Sources */,
 				805CFD72247884EF005A7447 /* CalcFunctions.swift in Sources */,
 				808D58E1247070F8000BBD5F /* ContentView.swift in Sources */,
+				808E2086247C552800C34187 /* MySizes.swift in Sources */,
 				80139585247B12A300C8CD02 /* SliderView.swift in Sources */,
 				80023B0D2476EAD700BB62CE /* SecondRowView.swift in Sources */,
 				80DC0A87247B09F200694277 /* AdvanceButton.swift in Sources */,
@@ -458,7 +466,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.99;
+				MARKETING_VERSION = 1.999;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.ashok.RPN-30";
 				PRODUCT_NAME = "RPN 30";
 				SWIFT_VERSION = 5.0;
@@ -480,7 +488,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.99;
+				MARKETING_VERSION = 1.999;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.ashok.RPN-30";
 				PRODUCT_NAME = "RPN 30";
 				SWIFT_VERSION = 5.0;

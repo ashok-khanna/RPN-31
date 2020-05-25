@@ -17,25 +17,28 @@ struct StackView: View {
                     
                     Rectangle()
                         .fill(self.dataRouter.myColors.stackRegisters(self.dataRouter.darkMode))
-                        .frame(width: geometry.size.width, height: geometry.size.height * CGFloat(0.02))
-                        
+                        .frame(width: geometry.size.width, height: geometry.size.height * self.dataRouter.mySizes.subPageTopDivider)
+
+                    Rectangle()
+                        .fill(Color.clear)
+                        .frame(width: geometry.size.width, height: geometry.size.height * self.dataRouter.mySizes.subPageHeaderGap)
+                    
                         Text("Stack View")
                             .foregroundColor(Color.black)
                             .font(.title)
                     
                     Rectangle()
                         .fill(Color.clear)
-                        .frame(width:geometry.size.width, height: geometry.size.height * 0.02)
+                        .frame(width:geometry.size.width, height: geometry.size.height * self.dataRouter.mySizes.subPageBodyGap)
                     
                         Text("Reorder by touching down on the three grey lines to the right and then drag the row up or down. Dismiss this page when done (all changes are autosaved).")
                             .foregroundColor(Color.black)
                             .font(.body)
-                    
-                    
+                            .padding(self.dataRouter.mySizes.textPadding)
                     
                     Rectangle()
                         .fill(Color.clear)
-                        .frame(width:geometry.size.width, height: geometry.size.height * 0.03)
+                        .frame(width:geometry.size.width, height: geometry.size.height * self.dataRouter.mySizes.subPageTableGap)
                     
                     NavigationView {
                             List {
@@ -50,11 +53,8 @@ struct StackView: View {
                             .navigationBarHidden(true)
                     }
 
-   
-                    
+
                     }
-                    
-                    
                         
                     }
 

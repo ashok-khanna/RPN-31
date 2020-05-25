@@ -19,14 +19,19 @@ struct FunctionView: View {
                     
                     Rectangle()
                         .fill(self.dataRouter.myColors.stackRegisters(self.dataRouter.darkMode))
-                        .frame(width: geometry.size.width  * CGFloat(0.2), height: geometry.size.height * CGFloat(0.02))
-                        
+                        .frame(width: geometry.size.width, height: geometry.size.height * self.dataRouter.mySizes.subPageTopDivider)
+                      
+                    Rectangle()
+                        .fill(Color.clear)
+                          .frame(width: geometry.size.width, height: geometry.size.height * self.dataRouter.mySizes.subPageHeaderGap)
+                    
                         Text("Advance Functions")
                             .foregroundColor(self.dataRouter.myColors.text(self.dataRouter.darkMode))
                             .font(.title)
                     
-                    
-                      Spacer()
+                    Rectangle()
+                        .fill(Color.clear)
+                          .frame(width: geometry.size.width, height: geometry.size.height * self.dataRouter.mySizes.subPageBodyGap)
 
                     AdvanceButton2(buttonText: "Button Configurator", width: geometry.size.width * CGFloat(0.9), height: geometry.size.width * CGFloat(0.1), presentFunctionPage: self.$presentFunctionPage, presentButtonConfigurator: self.$presentButtonConfigurator, presentGuidePage: self.$presentGuidePage, bgColor: self.dataRouter.myColors.specialBackground(self.dataRouter.darkMode), bgColor1: self.dataRouter.myColors.specialBackground(self.dataRouter.darkMode), highlightColor: self.dataRouter.myColors.advanceHighlight(self.dataRouter.darkMode))
                     .sheet(isPresented: self.$presentButtonConfigurator) {

@@ -40,17 +40,22 @@ extension Calculator {
                 unaryAction = true
             case "%":
                 xRegisterNew = yRegister * xRegister / 100
-            case "∆ %":
+            case "% ∆":
                 xRegisterNew = (xRegister - yRegister) / yRegister
             case "% T":
                 xRegisterNew = xRegister / (yRegister + xRegister)
-            case "e^x":
+            case "e ᵡ":
                 xRegisterNew = exp(xRegister)
                 unaryAction = true
+            
+            case "e":
+                xRegisterNew = exp(1)
+                unaryAction = true
+            
             case "ln x":
                 xRegisterNew = log(xRegister)
                 unaryAction = true
-            case "y^x":
+            case "y ᵡ":
                 xRegisterNew = pow(yRegister, xRegister)
                 
             case "x!":
@@ -59,10 +64,19 @@ extension Calculator {
             case "log10 x":
                 xRegisterNew = log(xRegister)/log(10.0)
                 unaryAction = true
-            case "log x":
+            case "log2 x":
                 xRegisterNew = log(xRegister)/log(2.0)
                 unaryAction = true
-
+            case "10 ᵡ":
+                    xRegisterNew = pow(10.0, xRegister)
+                    unaryAction = true
+            case "2 ᵡ":
+                    xRegisterNew = pow(2.0, xRegister)
+                    unaryAction = true
+            case "nPr":
+                    xRegisterNew = tgamma(yRegister + 1)/tgamma(yRegister - xRegister + 1)
+            case "nCr":
+                     xRegisterNew = tgamma(yRegister + 1)/(tgamma(xRegister + 1) * tgamma(yRegister - xRegister + 1))
             case "SIN":
                 xRegisterNew = sin(yRegister)
                 unaryAction = true
@@ -104,8 +118,8 @@ extension Calculator {
                 dropStackRegistersAfterBinaryOperation()
             }
             
-        amendStackRegister(value: xRegisterNew, at: 0)
-            
+            stackRegisters[0] = xRegisterNew
+        
         if operation != "CHS" {
                 xRegisterDecimals = 0
             }

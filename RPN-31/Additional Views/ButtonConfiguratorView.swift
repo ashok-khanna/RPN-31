@@ -17,7 +17,7 @@ struct ButtonConfiguratorView: View {
                     
                     Rectangle()
                         .fill(self.dataRouter.myColors.stackRegisters(self.dataRouter.darkMode))
-                        .frame(width: geometry.size.width, height: geometry.size.height * CGFloat(0.02))
+                        .frame(width: geometry.size.width, height: geometry.size.height * self.dataRouter.mySizes.subPageTopDivider)
                         
                         Text("Button Configurator")
                             .foregroundColor(Color.black)

@@ -3,10 +3,7 @@ import UIKit
 
 extension Calculator {
     
-    mutating func amendStackRegister(value: Double, at: Int){
-        stackRegisters[at] = value
-    }
-    
+   
     mutating func liftStackRegisters(){ // Keep X and copy rest up
         stackRegisters.insert(stackRegisters[0], at: 0)
     }

@@ -23,8 +23,6 @@ struct AdvanceButton: View {
 @State var highlightColor: Color
 
 
-
-
 @GestureState var longPress = false
 @GestureState var longDrag = false
 
@@ -40,6 +38,7 @@ var body: some View {
         if(abs(value.translation.width) < (self.width * CGFloat(0.75)) && abs(value.translation.height) < (self.height * CGFloat(0.75))) {
             self.dataRouter.calculator.processOperation(self.dataRouter.buttonList[self.dataRouter.altFunctions ? (self.index + 12) : self.index])
             self.presentFunctionPage = false
+
         }
         
         self.bgColor = self.bgColor1

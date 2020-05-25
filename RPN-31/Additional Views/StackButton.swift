@@ -67,7 +67,7 @@ struct StackButton: View {
                     .lineLimit(1)
                     .foregroundColor(self.dataRouter.myColors.stackText(self.dataRouter.darkMode))
                     .frame(width: self.width * CGFloat(0.8))
-                    .padding(0)
+                    .padding(self.dataRouter.mySizes.textPadding)
                 
                 Spacer()
                 
@@ -76,8 +76,7 @@ struct StackButton: View {
                     .minimumScaleFactor(0.01)
                     .lineLimit(1)
                     .foregroundColor(self.dataRouter.myColors.stackText(self.dataRouter.darkMode))
-                    .frame(width: self.width * CGFloat(0.8))
-                    .padding(0)
+                    .padding(self.dataRouter.mySizes.textPadding)
                 
                 Spacer()
                 
@@ -86,14 +85,13 @@ struct StackButton: View {
                     .minimumScaleFactor(0.01)
                     .lineLimit(1)
                     .foregroundColor(self.dataRouter.myColors.stackText(self.dataRouter.darkMode))
-                    .frame(width: self.width * CGFloat(0.8))
-                    .padding(0)
+                    .padding(self.dataRouter.mySizes.textPadding)
                 
                 Spacer()
                 
             }
-            .frame(width: self.width, height: self.height)
-    .background(self.longPress ? self.dataRouter.myColors.mainButton(self.dataRouter.darkMode) : (self.longDrag ? self.dataRouter.myColors.brightButton(self.dataRouter.darkMode) : self.bgColor1))
+            .frame(minWidth: 0, maxWidth: .infinity, minHeight: 0, maxHeight: .infinity)
+            .background(self.longPress ? self.dataRouter.myColors.mainButton(self.dataRouter.darkMode) : (self.longDrag ? self.dataRouter.myColors.brightButton(self.dataRouter.darkMode) : self.bgColor1))
             .cornerRadius(7.5)
             .gesture(tapBeforeLongGestures)
         
