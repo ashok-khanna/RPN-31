@@ -15,6 +15,7 @@
 		80023B352477D80700BB62CE /* MainButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80023B342477D80700BB62CE /* MainButton.swift */; };
 		80139585247B12A300C8CD02 /* SliderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80139584247B12A300C8CD02 /* SliderView.swift */; };
 		80139587247B29B200C8CD02 /* FormatButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80139586247B29B200C8CD02 /* FormatButton.swift */; };
+		8013958A247B33DC00C8CD02 /* ButtonConfiguratorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80139589247B33DC00C8CD02 /* ButtonConfiguratorView.swift */; };
 		805CFD6E2478773C005A7447 /* Calculator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 805CFD6D2478773C005A7447 /* Calculator.swift */; };
 		805CFD7024788364005A7447 /* ButtonActions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 805CFD6F24788364005A7447 /* ButtonActions.swift */; };
 		805CFD72247884EF005A7447 /* CalcFunctions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 805CFD71247884EF005A7447 /* CalcFunctions.swift */; };
@@ -49,6 +50,7 @@
 		80023B342477D80700BB62CE /* MainButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainButton.swift; sourceTree = "<group>"; };
 		80139584247B12A300C8CD02 /* SliderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SliderView.swift; sourceTree = "<group>"; };
 		80139586247B29B200C8CD02 /* FormatButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormatButton.swift; sourceTree = "<group>"; };
+		80139589247B33DC00C8CD02 /* ButtonConfiguratorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonConfiguratorView.swift; sourceTree = "<group>"; };
 		805CFD6D2478773C005A7447 /* Calculator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Calculator.swift; sourceTree = "<group>"; };
 		805CFD6F24788364005A7447 /* ButtonActions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonActions.swift; sourceTree = "<group>"; };
 		805CFD71247884EF005A7447 /* CalcFunctions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalcFunctions.swift; sourceTree = "<group>"; };
@@ -86,6 +88,18 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		80139588247B335900C8CD02 /* Additional Views */ = {
+			isa = PBXGroup;
+			children = (
+				80DC0A7A2479AF0200694277 /* FunctionView.swift */,
+				80139589247B33DC00C8CD02 /* ButtonConfiguratorView.swift */,
+				80DC0A7824799F5000694277 /* HelpView.swift */,
+				80DC0A86247B09F200694277 /* SimpleButtons.swift */,
+				80139586247B29B200C8CD02 /* FormatButton.swift */,
+			);
+			path = "Additional Views";
+			sourceTree = "<group>";
+		};
 		808D58D0247070F8000BBD5F = {
 			isa = PBXGroup;
 			children = (
@@ -109,6 +123,7 @@
 				808D58F224707259000BBD5F /* DataRouter.swift */,
 				80DC0A72247954E400694277 /* Setup */,
 				80DC0A732479551000694277 /* Views */,
+				80139588247B335900C8CD02 /* Additional Views */,
 				80DC0A74247955BF00694277 /* Calculator */,
 				80DC0A75247955F100694277 /* Other */,
 				808D58E2247070FF000BBD5F /* Assets.xcassets */,
@@ -149,9 +164,6 @@
 				80023B102476EB3200BB62CE /* FinalRowView.swift */,
 				80023B342477D80700BB62CE /* MainButton.swift */,
 				80DC0A84247AFD4400694277 /* OtherButton.swift */,
-				80DC0A86247B09F200694277 /* SimpleButtons.swift */,
-				80DC0A7A2479AF0200694277 /* FunctionView.swift */,
-				80DC0A7824799F5000694277 /* HelpView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -176,7 +188,6 @@
 				80DC0A82247ACD8900694277 /* MyColors.swift */,
 				805CFD6F24788364005A7447 /* ButtonActions.swift */,
 				80139584247B12A300C8CD02 /* SliderView.swift */,
-				80139586247B29B200C8CD02 /* FormatButton.swift */,
 			);
 			path = Other;
 			sourceTree = "<group>";
@@ -257,6 +268,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				805CFD6E2478773C005A7447 /* Calculator.swift in Sources */,
+				8013958A247B33DC00C8CD02 /* ButtonConfiguratorView.swift in Sources */,
 				805CFD7824788E78005A7447 /* CalcInput.swift in Sources */,
 				808D58F324707259000BBD5F /* DataRouter.swift in Sources */,
 				80023B092476DE8500BB62CE /* MainView.swift in Sources */,

@@ -3,7 +3,8 @@ import SwiftUI
 struct FunctionView: View {
     @EnvironmentObject var dataRouter: DataRouter
     @Binding var presentFunctionPage: Bool
-    
+    @State var presentButtonConfigurator = false
+
     var body: some View {
         
         GeometryReader { geometry in
@@ -33,11 +34,11 @@ struct FunctionView: View {
                         
                         Button(action: {
 
-                            self.dataRouter.calculator.processOperation("sin x")
+                            self.dataRouter.calculator.processOperation(self.dataRouter.buttonList[8])
                             self.presentFunctionPage = false
                             
                             }) {
-                            Text("SIN")
+                            Text(self.dataRouter.buttonList[8])
                                 .font(self.dataRouter.operatorFont)
                                 
                         }
@@ -50,11 +51,11 @@ struct FunctionView: View {
                         
                         Button(action: {
 
-                            self.dataRouter.calculator.processOperation("cos x")
+                            self.dataRouter.calculator.processOperation(self.dataRouter.buttonList[9])
                             self.presentFunctionPage = false
                             
                             }) {
-                            Text("COS")
+                            Text(self.dataRouter.buttonList[9])
                                 .font(self.dataRouter.operatorFont)
                                 
                         }
@@ -67,11 +68,11 @@ struct FunctionView: View {
                         
                         Button(action: {
 
-                            self.dataRouter.calculator.processOperation("tan x")
+                            self.dataRouter.calculator.processOperation(self.dataRouter.buttonList[10])
                             self.presentFunctionPage = false
                             
                             }) {
-                            Text("TAN")
+                            Text(self.dataRouter.buttonList[10])
                                 .font(self.dataRouter.operatorFont)
                                 
                         }
@@ -117,11 +118,11 @@ struct FunctionView: View {
                         
                         Button(action: {
 
-                            self.dataRouter.calculator.processOperation("asin x")
+                            self.dataRouter.calculator.processOperation(self.dataRouter.buttonList[11])
                             self.presentFunctionPage = false
                             
                             }) {
-                            Text("ASIN")
+                            Text(self.dataRouter.buttonList[11])
                                 .font(self.dataRouter.operatorFont)
                                 
                         }
@@ -134,11 +135,11 @@ struct FunctionView: View {
                         
                         Button(action: {
 
-                            self.dataRouter.calculator.processOperation("acos x")
+                            self.dataRouter.calculator.processOperation(self.dataRouter.buttonList[12])
                             self.presentFunctionPage = false
                             
                             }) {
-                            Text("ACOS")
+                            Text(self.dataRouter.buttonList[12])
                                 .font(self.dataRouter.operatorFont)
                                 
                         }
@@ -151,11 +152,11 @@ struct FunctionView: View {
                         
                         Button(action: {
 
-                            self.dataRouter.calculator.processOperation("atan x")
+                            self.dataRouter.calculator.processOperation(self.dataRouter.buttonList[13])
                             self.presentFunctionPage = false
                             
                             }) {
-                            Text("ATAN")
+                            Text(self.dataRouter.buttonList[13])
                                 .font(self.dataRouter.operatorFont)
                                 
                         }
@@ -192,6 +193,23 @@ struct FunctionView: View {
                     }
 
                     
+                      Button(action: {
+
+                        self.presentButtonConfigurator = true
+
+                        
+                        }) {
+                        Text("Button Configurator")
+                            .font(self.dataRouter.operatorFont)
+                            
+                    }
+                    .foregroundColor(self.dataRouter.myColors.specialBackgroundText(self.dataRouter.darkMode))
+                    .frame(width: geometry.size.width * CGFloat(0.9), height: geometry.size.width * CGFloat(0.2))
+                    .background(self.dataRouter.myColors.specialBackground(self.dataRouter.darkMode))
+                    .cornerRadius(15)
+                    .sheet(isPresented: self.$presentButtonConfigurator) {
+                        ButtonConfiguratorView(presentButtonConfigurator: self.$presentButtonConfigurator).environmentObject(self.dataRouter)
+                    }
                     Spacer()
                     
                 }

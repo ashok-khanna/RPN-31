@@ -133,17 +133,15 @@ struct MyNumberFormatter {
             return String(0)
         }
         
-        print(mode)
-        
         switch mode {
             
         case .special:
-            print("test")
+
             if abs(number) > smallNumber && abs(number) < largeNumber {
-                print("inner")
+
                 return decimalFormatter.string(from: NSNumber(value: number)) ?? ""
             } else {
-                print("outer")
+
                 return scientificFormatter.string(from: NSNumber(value: number)) ?? ""
             }
 

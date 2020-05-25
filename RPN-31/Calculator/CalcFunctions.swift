@@ -63,22 +63,22 @@ extension Calculator {
                 xRegisterNew = log(xRegister)/log(2.0)
                 unaryAction = true
 
-            case "sin x":
+            case "SIN":
                 xRegisterNew = sin(yRegister)
                 unaryAction = true
-            case "cos x":
+            case "COS":
                 xRegisterNew = cos(yRegister)
                 unaryAction = true
-            case "tan x":
+            case "TAN":
                 xRegisterNew = tan(yRegister)
                 unaryAction = true
-            case "asin x":
+            case "ASIN":
                 xRegisterNew = asin(yRegister)
                 unaryAction = true
-            case "acos x":
+            case "ACOS":
                 xRegisterNew = acos(yRegister)
                 unaryAction = true
-            case "atan x":
+            case "TAN":
                 xRegisterNew = atan(yRegister)
                 unaryAction = true
             case "π":

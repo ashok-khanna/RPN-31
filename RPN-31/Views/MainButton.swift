@@ -36,7 +36,12 @@ struct MainButton: View {
                 case "ADV":
                     self.presentFunctionPage = true
                 default:
-                    self.dataRouter.calculator.processOperation(self.calculatorButton.operatorString)
+                    if self.calculatorButton.digitValue < 5.0 {
+                        self.dataRouter.calculator.processOperation(self.dataRouter.buttonList[Int(self.calculatorButton.digitValue - 1.0)])
+                    } else {
+                        self.dataRouter.calculator.processOperation(self.dataRouter.buttonList[Int(self.calculatorButton.digitValue - 2.0)])
+                    }
+
 
                 }
             }
@@ -73,7 +78,18 @@ struct MainButton: View {
             }
             
             self.dataRouter.calculator.showFunction = true
-            self.dataRouter.calculator.functionText = self.calculatorButton.operatorString
+            if self.dataRouter.buttonList.contains(self.calculatorButton.operatorString) {
+                if self.calculatorButton.digitValue <= 5.0 {
+                    self.dataRouter.calculator.functionText = self.dataRouter.buttonList[Int(self.calculatorButton.digitValue - 1.0)]
+                } else {
+                    self.dataRouter.calculator.functionText = self.dataRouter.buttonList[Int(self.calculatorButton.digitValue - 2.0)]
+                }
+            } else {
+                
+                self.dataRouter.calculator.functionText = self.calculatorButton.operatorString
+
+                
+            }
             
         }
         
@@ -87,7 +103,7 @@ struct MainButton: View {
                     .foregroundColor(self.dataRouter.myColors.mainButtonText(self.dataRouter.darkMode))
                     .fixedSize()
                     .padding(0)
-                Text(self.calculatorButton.operatorString)
+                Text(self.dataRouter.buttonList.contains(self.calculatorButton.operatorString) ? (self.calculatorButton.digitValue <= 5 ? self.dataRouter.buttonList[Int(self.calculatorButton.digitValue - 1.0)] : self.dataRouter.buttonList[Int(self.calculatorButton.digitValue - 2.0)]) : self.calculatorButton.operatorString)
                     .font(self.dataRouter.captionFont)
                     .foregroundColor(self.dataRouter.myColors.mainButtonText(self.dataRouter.darkMode))
                     .fixedSize()

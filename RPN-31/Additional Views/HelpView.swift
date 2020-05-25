@@ -1,5 +1,4 @@
 import SwiftUI
-import Sliders
 
 struct HelpView: View {
     @EnvironmentObject var dataRouter: DataRouter
@@ -20,7 +19,7 @@ struct HelpView: View {
                         .fill(self.dataRouter.myColors.stackRegisters(self.dataRouter.darkMode))
                         .frame(width: geometry.size.width, height: geometry.size.height * CGFloat(0.02))
                         
-                        Text("Help / Settings")
+                        Text("Help")
                             .foregroundColor(self.dataRouter.myColors.text(self.dataRouter.darkMode))
                             .font(.title)
                     
@@ -29,20 +28,6 @@ struct HelpView: View {
                         .frame(width:geometry.size.width, height: geometry.size.height * 0.05)
                     
                     // Spacer()
-                    
-                    Button(action: {
-
-                      self.presentHelpPage = false
-                      
-                      }) {
-                      Text("Button Configurator")
-                          .font(self.dataRouter.operatorFont)
-                          
-                  }
-                  .foregroundColor(self.dataRouter.myColors.specialBackgroundText(self.dataRouter.darkMode))
-                  .frame(width: geometry.size.width * CGFloat(0.9), height: geometry.size.width * CGFloat(0.2))
-                  .background(self.dataRouter.myColors.specialBackground(self.dataRouter.darkMode))
-                  .cornerRadius(15)
                     
                     Spacer()
                     

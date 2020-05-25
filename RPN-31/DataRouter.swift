@@ -14,6 +14,9 @@ import SwiftUI
 class DataRouter: ObservableObject {
     //MARK: Properties
     let defaults = UserDefaults.standard
+    let defaultButtonList = ["EE", "√x", "1/x", "%", "% ∆", "e^x", "ln x", "y^x", "SIN", "COS", "TAN", "ASIN", "ACOS", "ATAN"]
+
+    @Published var buttonList = [String]()
     
     @Published var isPad: Bool
     @Published var landscape: Bool = false
@@ -101,8 +104,13 @@ class DataRouter: ObservableObject {
             digitBrightArray.append(myColors.mainLongPress(darkMode))
         }
         
+        let myButtonList = defaults.stringArray(forKey: "SavedButtonList") ?? [String]()
         
- 
+        if myButtonList.count != 0 {
+            buttonList = myButtonList
+        } else {
+            buttonList = defaultButtonList
+        }
         
         NotificationCenter.default.addObserver(self, selector: #selector(onViewWillTransition(notification:)), name: .my_onViewWillTransition, object: nil)
 
