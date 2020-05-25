@@ -23,28 +23,35 @@ struct MainButton: View {
         .onEnded { value in
             // print(value.translation) We can use value.translation to see how far away our finger moved and accordingly cancel the action (code not shown here)
            
-            if self.calculatorButton.operatorString == "STORE/RECALL" {
-                self.dataRouter.exitStoreRecallMode()
-            } else if self.dataRouter.storeRecall {
-                if (self.calculatorButton.digitString != "0" && self.calculatorButton.digitString != ".") {
-                    self.dataRouter.longPressStoreRecall(self.calculatorButton.digitString)
-                }
-            } else {
-                switch self.calculatorButton.operatorString {
-                case "HELP":
-                    self.presentHelpPage = true
-                case "ADV":
-                    self.presentFunctionPage = true
-                default:
-                    if self.calculatorButton.digitValue < 5.0 {
-                        self.dataRouter.calculator.processOperation(self.dataRouter.buttonList[Int(self.calculatorButton.digitValue - 1.0)])
-                    } else {
-                        self.dataRouter.calculator.processOperation(self.dataRouter.buttonList[Int(self.calculatorButton.digitValue - 2.0)])
-                    }
-
-
-                }
+            print(value.translation.width)
+            print(value.translation.height)
+            
+            if(abs(value.translation.width) < (self.width * CGFloat(0.75)) && abs(value.translation.height) < (self.height * CGFloat(0.75))) {
+                if self.calculatorButton.operatorString == "STORE/RECALL" {
+                     self.dataRouter.exitStoreRecallMode()
+                 } else if self.dataRouter.storeRecall {
+                     if (self.calculatorButton.digitString != "0" && self.calculatorButton.digitString != ".") {
+                         self.dataRouter.longPressStoreRecall(self.calculatorButton.digitString)
+                     }
+                 } else {
+                     switch self.calculatorButton.operatorString {
+                     case "HELP":
+                         self.presentHelpPage = true
+                     case "ADV":
+                         self.presentFunctionPage = true
+                     default:
+                         if self.calculatorButton.digitValue < 5.0 {
+                             self.dataRouter.calculator.processOperation(self.dataRouter.buttonList[Int(self.calculatorButton.digitValue - 1.0)])
+                         } else {
+                             self.dataRouter.calculator.processOperation(self.dataRouter.buttonList[Int(self.calculatorButton.digitValue - 2.0)])
+                         }
+                     }
+                 }
             }
+            
+                if self.calculatorButton.operatorString == "STORE/RECALL" {
+                    self.dataRouter.exitStoreRecallMode()
+                }
             
             self.dataRouter.calculator.showFunction = false
             self.dataRouter.calculator.functionText = ""

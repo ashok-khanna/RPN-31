@@ -4,6 +4,7 @@ struct FunctionView: View {
     @EnvironmentObject var dataRouter: DataRouter
     @Binding var presentFunctionPage: Bool
     @State var presentButtonConfigurator = false
+    @State var presentGuidePage = false
 
     var body: some View {
         
@@ -18,198 +19,139 @@ struct FunctionView: View {
                     
                     Rectangle()
                         .fill(self.dataRouter.myColors.stackRegisters(self.dataRouter.darkMode))
-                        .frame(width: geometry.size.width, height: geometry.size.height * CGFloat(0.02))
+                        .frame(width: geometry.size.width  * CGFloat(0.2), height: geometry.size.height * CGFloat(0.02))
                         
                         Text("Advance Functions")
                             .foregroundColor(self.dataRouter.myColors.text(self.dataRouter.darkMode))
                             .font(.title)
                     
-                    Rectangle()
-                        .fill(Color.clear)
-                        .frame(width:geometry.size.width, height: geometry.size.height * 0.05)
                     
-                    HStack {
-                        
-                        Spacer()
-                        
-                        Button(action: {
+                      Spacer()
 
-                            self.dataRouter.calculator.processOperation(self.dataRouter.buttonList[8])
-                            self.presentFunctionPage = false
-                            
-                            }) {
-                            Text(self.dataRouter.buttonList[8])
-                                .font(self.dataRouter.operatorFont)
-                                
-                        }
-                        .foregroundColor(self.dataRouter.myColors.advanceButtonText(self.dataRouter.darkMode))
-                        .frame(width: geometry.size.width * CGFloat(0.2), height: geometry.size.width * CGFloat(0.2))
-                        .background(self.dataRouter.myColors.advanceButton(self.dataRouter.darkMode))
-                        .cornerRadius(15)
-                        
-                        Spacer()
-                        
-                        Button(action: {
-
-                            self.dataRouter.calculator.processOperation(self.dataRouter.buttonList[9])
-                            self.presentFunctionPage = false
-                            
-                            }) {
-                            Text(self.dataRouter.buttonList[9])
-                                .font(self.dataRouter.operatorFont)
-                                
-                        }
-                        .foregroundColor(self.dataRouter.myColors.advanceButtonText(self.dataRouter.darkMode))
-                        .frame(width: geometry.size.width * CGFloat(0.2), height: geometry.size.width * CGFloat(0.2))
-                        .background(self.dataRouter.myColors.advanceButton(self.dataRouter.darkMode))
-                        .cornerRadius(15)
-                        
-                        Spacer()
-                        
-                        Button(action: {
-
-                            self.dataRouter.calculator.processOperation(self.dataRouter.buttonList[10])
-                            self.presentFunctionPage = false
-                            
-                            }) {
-                            Text(self.dataRouter.buttonList[10])
-                                .font(self.dataRouter.operatorFont)
-                                
-                        }
-                        .foregroundColor(self.dataRouter.myColors.advanceButtonText(self.dataRouter.darkMode))
-                        .frame(width: geometry.size.width * CGFloat(0.2), height: geometry.size.width * CGFloat(0.2))
-                        .background(self.dataRouter.myColors.advanceButton(self.dataRouter.darkMode))
-                        .cornerRadius(15)
-                        
-                        Spacer()
-                        
-                        Button(action: {
-
-                            self.dataRouter.calculator.copyToClipboard()
-                            self.presentFunctionPage = false
-                            
-                            }) {
-                            Image(systemName:"doc.on.doc.fill")
-                                .foregroundColor(.white)
-                                .font(Font.title.weight(.regular))
-                                
-                            Text("Copy")
-                                .foregroundColor(.white)
-                                .font(.caption)
-                                
-                        }
-                        .foregroundColor(self.dataRouter.myColors.advanceButtonText(self.dataRouter.darkMode))
-                        .frame(width: geometry.size.width * CGFloat(0.2), height: geometry.size.width * CGFloat(0.2))
-                        .background(self.dataRouter.myColors.advanceButton(self.dataRouter.darkMode))
-                        .cornerRadius(15)
-                        
-                        Spacer()
-                        
-                        
-                    }
-                    
-                    Rectangle()
-                        .fill(Color.clear)
-                        .frame(width:geometry.size.width, height: geometry.size.width * 0.02)
-                    
-                    HStack {
-                        
-                        Spacer()
-                        
-                        Button(action: {
-
-                            self.dataRouter.calculator.processOperation(self.dataRouter.buttonList[11])
-                            self.presentFunctionPage = false
-                            
-                            }) {
-                            Text(self.dataRouter.buttonList[11])
-                                .font(self.dataRouter.operatorFont)
-                                
-                        }
-                        .foregroundColor(self.dataRouter.myColors.advanceButtonText(self.dataRouter.darkMode))
-                        .frame(width: geometry.size.width * CGFloat(0.2), height: geometry.size.width * CGFloat(0.2))
-                        .background(self.dataRouter.myColors.advanceButton(self.dataRouter.darkMode))
-                        .cornerRadius(15)
-                        
-                        Spacer()
-                        
-                        Button(action: {
-
-                            self.dataRouter.calculator.processOperation(self.dataRouter.buttonList[12])
-                            self.presentFunctionPage = false
-                            
-                            }) {
-                            Text(self.dataRouter.buttonList[12])
-                                .font(self.dataRouter.operatorFont)
-                                
-                        }
-                        .foregroundColor(self.dataRouter.myColors.advanceButtonText(self.dataRouter.darkMode))
-                        .frame(width: geometry.size.width * CGFloat(0.2), height: geometry.size.width * CGFloat(0.2))
-                        .background(self.dataRouter.myColors.advanceButton(self.dataRouter.darkMode))
-                        .cornerRadius(15)
-                        
-                        Spacer()
-                        
-                        Button(action: {
-
-                            self.dataRouter.calculator.processOperation(self.dataRouter.buttonList[13])
-                            self.presentFunctionPage = false
-                            
-                            }) {
-                            Text(self.dataRouter.buttonList[13])
-                                .font(self.dataRouter.operatorFont)
-                                
-                        }
-                        .foregroundColor(self.dataRouter.myColors.advanceButtonText(self.dataRouter.darkMode))
-                        .frame(width: geometry.size.width * CGFloat(0.2), height: geometry.size.width * CGFloat(0.2))
-                        .background(self.dataRouter.myColors.advanceButton(self.dataRouter.darkMode))
-                        .cornerRadius(15)
-                        
-                        Spacer()
-                        
-                        Button(action: {
-
-                            self.dataRouter.calculator.pasteFromClipboard()
-                            self.presentFunctionPage = false
-                            
-                            }) {
-                            Image(systemName:"doc.richtext")
-                                .foregroundColor(.white)
-                                .font(Font.title.weight(.regular))
-                                
-                            Text("Paste")
-                                .foregroundColor(.white)
-                                .font(.caption)
-                                
-                        }
-                        .foregroundColor(self.dataRouter.myColors.advanceButtonText(self.dataRouter.darkMode))
-                        .frame(width: geometry.size.width * CGFloat(0.2), height: geometry.size.width * CGFloat(0.2))
-                        .background(self.dataRouter.myColors.advanceButton(self.dataRouter.darkMode))
-                        .cornerRadius(15)
-                        
-                        Spacer()
-                        
-                        
-                    }
-
-                    
-                      Button(action: {
-
-                        self.presentButtonConfigurator = true
-
-                        
-                        }) {
-                        Text("Button Configurator")
-                            .font(self.dataRouter.operatorFont)
-                            
-                    }
-                    .foregroundColor(self.dataRouter.myColors.specialBackgroundText(self.dataRouter.darkMode))
-                    .frame(width: geometry.size.width * CGFloat(0.9), height: geometry.size.width * CGFloat(0.2))
-                    .background(self.dataRouter.myColors.specialBackground(self.dataRouter.darkMode))
-                    .cornerRadius(15)
+                    AdvanceButton2(buttonText: "Button Configurator", width: geometry.size.width * CGFloat(0.9), height: geometry.size.width * CGFloat(0.1), presentFunctionPage: self.$presentFunctionPage, presentButtonConfigurator: self.$presentButtonConfigurator, presentGuidePage: self.$presentGuidePage, bgColor: self.dataRouter.myColors.specialBackground(self.dataRouter.darkMode), bgColor1: self.dataRouter.myColors.specialBackground(self.dataRouter.darkMode), highlightColor: self.dataRouter.myColors.advanceHighlight(self.dataRouter.darkMode))
                     .sheet(isPresented: self.$presentButtonConfigurator) {
-                        ButtonConfiguratorView(presentButtonConfigurator: self.$presentButtonConfigurator).environmentObject(self.dataRouter)
+                    ButtonConfiguratorView(presentButtonConfigurator: self.$presentButtonConfigurator).environmentObject(self.dataRouter)
                     }
+                    
+                    Spacer()
+                    
+                    
+                    VStack(spacing: 0) {
+                            
+                        HStack(spacing: 0) {
+                            
+                            Spacer()
+                            
+                            AdvanceButton(index: 8, width: geometry.size.width  * CGFloat(0.2), height: geometry.size.width  * CGFloat(0.2), presentFunctionPage: self.$presentFunctionPage, bgColor: self.dataRouter.myColors.advanceButton(self.dataRouter.darkMode), bgColor1: self.dataRouter.myColors.advanceButton(self.dataRouter.darkMode), highlightColor: self.dataRouter.myColors.advanceHighlight(self.dataRouter.darkMode))
+                                
+                            Spacer()
+                            
+                            AdvanceButton(index: 9, width: geometry.size.width  * CGFloat(0.2), height: geometry.size.width  * CGFloat(0.2), presentFunctionPage: self.$presentFunctionPage, bgColor: self.dataRouter.myColors.advanceButton(self.dataRouter.darkMode), bgColor1: self.dataRouter.myColors.advanceButton(self.dataRouter.darkMode), highlightColor: self.dataRouter.myColors.advanceHighlight(self.dataRouter.darkMode))
+                            
+                            Spacer()
+                            
+                            AdvanceButton(index: 10, width: geometry.size.width  * CGFloat(0.2), height: geometry.size.width  * CGFloat(0.2), presentFunctionPage: self.$presentFunctionPage, bgColor: self.dataRouter.myColors.advanceButton(self.dataRouter.darkMode), bgColor1: self.dataRouter.myColors.advanceButton(self.dataRouter.darkMode), highlightColor: self.dataRouter.myColors.advanceHighlight(self.dataRouter.darkMode))
+                            
+                            Spacer()
+                            
+                            AdvanceButton2(buttonText: "Copy", width: geometry.size.width  * CGFloat(0.2), height: geometry.size.width  * CGFloat(0.2), presentFunctionPage: self.$presentFunctionPage, presentButtonConfigurator: self.$presentButtonConfigurator, presentGuidePage: self.$presentGuidePage, bgColor: self.dataRouter.myColors.advanceButton(self.dataRouter.darkMode), bgColor1: self.dataRouter.myColors.advanceButton(self.dataRouter.darkMode), highlightColor: self.dataRouter.myColors.advanceHighlight(self.dataRouter.darkMode))
+                            
+                            
+                            Spacer()
+                            
+                            
+                        }
+                        
+                        Rectangle()
+                            .fill(Color.clear)
+                            .frame(width:geometry.size.width, height: geometry.size.width * 0.04)
+                        
+                        HStack(spacing: 0) {
+                            
+                            Spacer()
+                            
+                            AdvanceButton(index: 11, width: geometry.size.width  * CGFloat(0.2), height: geometry.size.width  * CGFloat(0.2), presentFunctionPage: self.$presentFunctionPage, bgColor: self.dataRouter.myColors.advanceButton(self.dataRouter.darkMode), bgColor1: self.dataRouter.myColors.advanceButton(self.dataRouter.darkMode), highlightColor: self.dataRouter.myColors.advanceHighlight(self.dataRouter.darkMode))
+                            
+                            Spacer()
+                            
+                            AdvanceButton(index: 12, width: geometry.size.width  * CGFloat(0.2), height: geometry.size.width  * CGFloat(0.2), presentFunctionPage: self.$presentFunctionPage, bgColor: self.dataRouter.myColors.advanceButton(self.dataRouter.darkMode), bgColor1: self.dataRouter.myColors.advanceButton(self.dataRouter.darkMode), highlightColor: self.dataRouter.myColors.advanceHighlight(self.dataRouter.darkMode))
+                            
+                            Spacer()
+                            
+                            AdvanceButton(index: 13, width: geometry.size.width  * CGFloat(0.2), height: geometry.size.width  * CGFloat(0.2), presentFunctionPage: self.$presentFunctionPage, bgColor: self.dataRouter.myColors.advanceButton(self.dataRouter.darkMode), bgColor1: self.dataRouter.myColors.advanceButton(self.dataRouter.darkMode), highlightColor: self.dataRouter.myColors.advanceHighlight(self.dataRouter.darkMode))
+                            
+                            Spacer()
+                            
+                            AdvanceButton2(buttonText: "Paste", width: geometry.size.width  * CGFloat(0.2), height: geometry.size.width  * CGFloat(0.2), presentFunctionPage: self.$presentFunctionPage, presentButtonConfigurator: self.$presentButtonConfigurator, presentGuidePage: self.$presentGuidePage, bgColor: self.dataRouter.myColors.advanceButton(self.dataRouter.darkMode), bgColor1: self.dataRouter.myColors.advanceButton(self.dataRouter.darkMode), highlightColor: self.dataRouter.myColors.advanceHighlight(self.dataRouter.darkMode))
+                            
+                            
+                            Spacer()
+                            
+                            
+                        }
+                        
+                        Rectangle()
+                            .fill(Color.clear)
+                            .frame(width:geometry.size.width, height: geometry.size.width * 0.04)
+                        
+                        HStack(spacing: 0) {
+                        
+                        Spacer()
+                        
+                            AdvanceButton(index: 14, width: geometry.size.width  * CGFloat(0.2), height: geometry.size.width  * CGFloat(0.2), presentFunctionPage: self.$presentFunctionPage, bgColor: self.dataRouter.myColors.advanceButton(self.dataRouter.darkMode), bgColor1: self.dataRouter.myColors.advanceButton(self.dataRouter.darkMode), highlightColor: self.dataRouter.myColors.advanceHighlight(self.dataRouter.darkMode))
+                        
+                        Spacer()
+                        
+                            AdvanceButton(index: 15, width: geometry.size.width  * CGFloat(0.2), height: geometry.size.width  * CGFloat(0.2), presentFunctionPage: self.$presentFunctionPage, bgColor: self.dataRouter.myColors.advanceButton(self.dataRouter.darkMode), bgColor1: self.dataRouter.myColors.advanceButton(self.dataRouter.darkMode), highlightColor: self.dataRouter.myColors.advanceHighlight(self.dataRouter.darkMode))
+                        
+                        Spacer()
+                        
+                            AdvanceButton(index: 16, width: geometry.size.width  * CGFloat(0.2), height: geometry.size.width  * CGFloat(0.2), presentFunctionPage: self.$presentFunctionPage, bgColor: self.dataRouter.myColors.advanceButton(self.dataRouter.darkMode), bgColor1: self.dataRouter.myColors.advanceButton(self.dataRouter.darkMode), highlightColor: self.dataRouter.myColors.advanceHighlight(self.dataRouter.darkMode))
+                        
+                        Spacer()
+                            
+                            AdvanceButton2(buttonText: "Guide", width: geometry.size.width  * CGFloat(0.2), height: geometry.size.width  * CGFloat(0.2), presentFunctionPage: self.$presentFunctionPage, presentButtonConfigurator: self.$presentButtonConfigurator, presentGuidePage: self.$presentGuidePage, bgColor: self.dataRouter.myColors.advanceButton(self.dataRouter.darkMode), bgColor1: self.dataRouter.myColors.advanceButton(self.dataRouter.darkMode), highlightColor: self.dataRouter.myColors.advanceHighlight(self.dataRouter.darkMode))
+                                .sheet(isPresented: self.$presentGuidePage) {
+                                    GuideView(presentGuidePage: self.$presentGuidePage).environmentObject(self.dataRouter)
+                            }
+                            
+                        Spacer()
+                            
+                        }
+                        
+                        Rectangle()
+                            .fill(Color.clear)
+                            .frame(width:geometry.size.width, height: geometry.size.width * 0.04)
+                        
+                        HStack(spacing: 0) {
+                        
+                        Spacer()
+                        
+                            AdvanceButton(index: 17, width: geometry.size.width  * CGFloat(0.2), height: geometry.size.width  * CGFloat(0.2), presentFunctionPage: self.$presentFunctionPage, bgColor: self.dataRouter.myColors.advanceButton(self.dataRouter.darkMode), bgColor1: self.dataRouter.myColors.advanceButton(self.dataRouter.darkMode), highlightColor: self.dataRouter.myColors.advanceHighlight(self.dataRouter.darkMode))
+                        
+                        Spacer()
+                        
+                            AdvanceButton(index: 18, width: geometry.size.width  * CGFloat(0.2), height: geometry.size.width  * CGFloat(0.2), presentFunctionPage: self.$presentFunctionPage, bgColor: self.dataRouter.myColors.advanceButton(self.dataRouter.darkMode), bgColor1: self.dataRouter.myColors.advanceButton(self.dataRouter.darkMode), highlightColor: self.dataRouter.myColors.advanceHighlight(self.dataRouter.darkMode))
+                        
+                        Spacer()
+                        
+                            AdvanceButton(index: 19, width: geometry.size.width  * CGFloat(0.2), height: geometry.size.width  * CGFloat(0.2), presentFunctionPage: self.$presentFunctionPage, bgColor: self.dataRouter.myColors.advanceButton(self.dataRouter.darkMode), bgColor1: self.dataRouter.myColors.advanceButton(self.dataRouter.darkMode), highlightColor: self.dataRouter.myColors.advanceHighlight(self.dataRouter.darkMode))
+                        
+                        Spacer()
+                            
+                            AdvanceButton2(buttonText: "ALT", width: geometry.size.width  * CGFloat(0.2), height: geometry.size.width  * CGFloat(0.2), presentFunctionPage: self.$presentFunctionPage, presentButtonConfigurator: self.$presentButtonConfigurator, presentGuidePage: self.$presentGuidePage, bgColor: self.dataRouter.myColors.advanceButton(self.dataRouter.darkMode), bgColor1: self.dataRouter.myColors.advanceButton(self.dataRouter.darkMode), highlightColor: self.dataRouter.myColors.advanceHighlight(self.dataRouter.darkMode))
+                            
+                        Spacer()
+                            
+                        }
+                        
+                        Rectangle()
+                            .fill(Color.clear)
+                            .frame(width:geometry.size.width, height: geometry.size.width * 0.04)
+                        
+                    }
+
+                    
                     Spacer()
                     
                 }

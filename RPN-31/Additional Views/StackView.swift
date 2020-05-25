@@ -1,8 +1,8 @@
 import SwiftUI
 
-struct ButtonConfiguratorView: View {
+struct StackView: View {
     @EnvironmentObject var dataRouter: DataRouter
-    @Binding var presentButtonConfigurator: Bool
+    @Binding var presentStackRegister: Bool
     
     var body: some View {
         
@@ -19,7 +19,7 @@ struct ButtonConfiguratorView: View {
                         .fill(self.dataRouter.myColors.stackRegisters(self.dataRouter.darkMode))
                         .frame(width: geometry.size.width, height: geometry.size.height * CGFloat(0.02))
                         
-                        Text("Button Configurator")
+                        Text("Stack View")
                             .foregroundColor(Color.black)
                             .font(.title)
                     
@@ -31,13 +31,7 @@ struct ButtonConfiguratorView: View {
                             .foregroundColor(Color.black)
                             .font(.body)
                     
-                    Rectangle()
-                        .fill(Color.clear)
-                        .frame(width:geometry.size.width, height: geometry.size.height * 0.025)
                     
-                    
-                    SimpleButton(buttonText: "Reset to Defaults", width: geometry.size.width * CGFloat(0.9), height: geometry.size.width * CGFloat(0.1), bgColor: self.dataRouter.myColors.deleteHighlight(self.dataRouter.darkMode), bgColor1: self.dataRouter.myColors.deleteHighlight(self.dataRouter.darkMode), highlightColor: self.dataRouter.myColors.advanceHighlight(self.dataRouter.darkMode))
-                   
                     
                     Rectangle()
                         .fill(Color.clear)
@@ -45,8 +39,8 @@ struct ButtonConfiguratorView: View {
                     
                     NavigationView {
                             List {
-                                ForEach(self.dataRouter.buttonList, id: \.self) { user in
-                                    Text(user)
+                                ForEach(self.dataRouter.calculator.stackRegisters, id: \.self) { user in
+                                    Text(self.dataRouter.displayFormatter.string(user))
                                 }
                                 .onMove(perform: self.move)
                             }
@@ -70,9 +64,9 @@ struct ButtonConfiguratorView: View {
             }
             
             func move(from source: IndexSet, to destination: Int) {
-                self.dataRouter.buttonList.move(fromOffsets: source, toOffset: destination)
-                self.dataRouter.defaults.set(self.dataRouter.buttonList, forKey: "SavedButtonList")
+                self.dataRouter.calculator.stackRegisters.move(fromOffsets: source, toOffset: destination)
         }
         
 }
+
 

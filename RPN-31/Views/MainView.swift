@@ -10,6 +10,7 @@ import SwiftUI
 
 struct MainView: View {
     @EnvironmentObject var dataRouter: DataRouter
+    @State var presentStackRegister = false
 
         var body: some View {
 
@@ -27,12 +28,18 @@ struct MainView: View {
                         
                         HStack(spacing: 0) {
                             
+                            Rectangle()
+                                .fill(self.dataRouter.myColors.background(self.dataRouter.darkMode))
+                                .frame(width: geometry.size.width * CGFloat(0.05), height: geometry.size.height * CGFloat(0.125))
+                            
                             VStack(spacing: 0) {
                                 
                                 Spacer()
                                 
                                 Text(self.dataRouter.displayFormatter.string(self.dataRouter.calculator.stackRegisters[1]))
                                     .font(.title)
+                                    .minimumScaleFactor(0.01)
+                                    .lineLimit(1)
                                     .foregroundColor(self.dataRouter.myColors.text(self.dataRouter.darkMode))
                                     .frame(width: geometry.size.width * CGFloat(0.6), alignment: .leading)
                                 .onTapGesture {
@@ -41,6 +48,8 @@ struct MainView: View {
                                                                 
                                 Text(self.dataRouter.calculator.lastRegister.displayText)
                                     .font(.headline)
+                                    .minimumScaleFactor(0.01)
+                                    .lineLimit(1)
                                     .foregroundColor(self.dataRouter.myColors.lText(self.dataRouter.darkMode))
                                     .frame(width: geometry.size.width * CGFloat(0.6), alignment: .leading)
                                 .onTapGesture {
@@ -51,41 +60,16 @@ struct MainView: View {
                                 
                             }
 
+                            Spacer()
                             
-                            
-                            VStack {
-                                                               
-                                Spacer()
-                                
-                                Text(self.dataRouter.displayFormatter.string(self.dataRouter.calculator.stackRegisters[4]))
-                                    .font(.footnote)
-                                    .foregroundColor(self.dataRouter.myColors.stackText(self.dataRouter.darkMode))
-                                    .fixedSize()
-                                    .padding(0)
-                                
-                                Spacer()
-                                
-                                Text(self.dataRouter.displayFormatter.string(self.dataRouter.calculator.stackRegisters[3]))
-                                     .font(.footnote)
-                                    .foregroundColor(self.dataRouter.myColors.stackText(self.dataRouter.darkMode))
-                                    .fixedSize()
-                                    .padding(0)
-                                
-                                Spacer()
-                                
-                                Text(self.dataRouter.displayFormatter.string(self.dataRouter.calculator.stackRegisters[2]))
-                                    .font(.footnote)
-                                    .foregroundColor(self.dataRouter.myColors.stackText(self.dataRouter.darkMode))
-                                    .fixedSize()
-                                    .padding(0)
-                                
-                                Spacer()
-
+                            StackButton(width: geometry.size.width * CGFloat (0.3), height: geometry.size.height * CGFloat(0.125), bgColor1: self.dataRouter.myColors.stackRegisters(self.dataRouter.darkMode), presentStackRegister: self.$presentStackRegister)
+                            .sheet(isPresented: self.$presentStackRegister) {
+                            StackView(presentStackRegister: self.$presentStackRegister).environmentObject(self.dataRouter)
                             }
-                            .frame(width: geometry.size.width * CGFloat (0.3), height: geometry.size.height * CGFloat(0.125))
-                            .background(self.dataRouter.myColors.stackRegisters(self.dataRouter.darkMode))
-                            .cornerRadius(7.5)
-
+                            
+                            Rectangle()
+                                .fill(self.dataRouter.myColors.background(self.dataRouter.darkMode))
+                                .frame(width: geometry.size.width * CGFloat(0.05), height: geometry.size.height * CGFloat(0.125))
                             
  
 

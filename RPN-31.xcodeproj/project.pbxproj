@@ -16,6 +16,9 @@
 		80139585247B12A300C8CD02 /* SliderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80139584247B12A300C8CD02 /* SliderView.swift */; };
 		80139587247B29B200C8CD02 /* FormatButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80139586247B29B200C8CD02 /* FormatButton.swift */; };
 		8013958A247B33DC00C8CD02 /* ButtonConfiguratorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80139589247B33DC00C8CD02 /* ButtonConfiguratorView.swift */; };
+		8013958E247B85B700C8CD02 /* StackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8013958D247B85B700C8CD02 /* StackView.swift */; };
+		80139590247B874600C8CD02 /* StackButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8013958F247B874600C8CD02 /* StackButton.swift */; };
+		80139592247B9F8200C8CD02 /* AdvanceButton2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80139591247B9F8200C8CD02 /* AdvanceButton2.swift */; };
 		805CFD6E2478773C005A7447 /* Calculator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 805CFD6D2478773C005A7447 /* Calculator.swift */; };
 		805CFD7024788364005A7447 /* ButtonActions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 805CFD6F24788364005A7447 /* ButtonActions.swift */; };
 		805CFD72247884EF005A7447 /* CalcFunctions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 805CFD71247884EF005A7447 /* CalcFunctions.swift */; };
@@ -30,14 +33,16 @@
 		808D58F1247071F3000BBD5F /* HostingController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 808D58F0247071F3000BBD5F /* HostingController.swift */; };
 		808D58F324707259000BBD5F /* DataRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 808D58F224707259000BBD5F /* DataRouter.swift */; };
 		808D590124708845000BBD5F /* ButtonGridView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 808D590024708845000BBD5F /* ButtonGridView.swift */; };
+		808E2080247C15AE00C34187 /* GuideView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 808E207F247C15AE00C34187 /* GuideView.swift */; };
+		808E2082247C170A00C34187 /* SimpleButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 808E2081247C170A00C34187 /* SimpleButton.swift */; };
 		80DC0A772479741E00694277 /* LastRegister.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80DC0A762479741E00694277 /* LastRegister.swift */; };
 		80DC0A7924799F5000694277 /* HelpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80DC0A7824799F5000694277 /* HelpView.swift */; };
 		80DC0A7B2479AF0200694277 /* FunctionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80DC0A7A2479AF0200694277 /* FunctionView.swift */; };
 		80DC0A7D2479BEF600694277 /* StoreRecall.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80DC0A7C2479BEF600694277 /* StoreRecall.swift */; };
 		80DC0A81247AA55E00694277 /* MyNumberFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80DC0A80247AA55E00694277 /* MyNumberFormatter.swift */; };
 		80DC0A83247ACD8900694277 /* MyColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80DC0A82247ACD8900694277 /* MyColors.swift */; };
-		80DC0A85247AFD4400694277 /* OtherButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80DC0A84247AFD4400694277 /* OtherButton.swift */; };
-		80DC0A87247B09F200694277 /* SimpleButtons.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80DC0A86247B09F200694277 /* SimpleButtons.swift */; };
+		80DC0A85247AFD4400694277 /* OperatorButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80DC0A84247AFD4400694277 /* OperatorButton.swift */; };
+		80DC0A87247B09F200694277 /* AdvanceButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80DC0A86247B09F200694277 /* AdvanceButton.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -51,6 +56,9 @@
 		80139584247B12A300C8CD02 /* SliderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SliderView.swift; sourceTree = "<group>"; };
 		80139586247B29B200C8CD02 /* FormatButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormatButton.swift; sourceTree = "<group>"; };
 		80139589247B33DC00C8CD02 /* ButtonConfiguratorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonConfiguratorView.swift; sourceTree = "<group>"; };
+		8013958D247B85B700C8CD02 /* StackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StackView.swift; sourceTree = "<group>"; };
+		8013958F247B874600C8CD02 /* StackButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StackButton.swift; sourceTree = "<group>"; };
+		80139591247B9F8200C8CD02 /* AdvanceButton2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdvanceButton2.swift; sourceTree = "<group>"; };
 		805CFD6D2478773C005A7447 /* Calculator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Calculator.swift; sourceTree = "<group>"; };
 		805CFD6F24788364005A7447 /* ButtonActions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonActions.swift; sourceTree = "<group>"; };
 		805CFD71247884EF005A7447 /* CalcFunctions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalcFunctions.swift; sourceTree = "<group>"; };
@@ -67,14 +75,16 @@
 		808D58F0247071F3000BBD5F /* HostingController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HostingController.swift; sourceTree = "<group>"; };
 		808D58F224707259000BBD5F /* DataRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataRouter.swift; sourceTree = "<group>"; };
 		808D590024708845000BBD5F /* ButtonGridView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonGridView.swift; sourceTree = "<group>"; };
+		808E207F247C15AE00C34187 /* GuideView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GuideView.swift; sourceTree = "<group>"; };
+		808E2081247C170A00C34187 /* SimpleButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimpleButton.swift; sourceTree = "<group>"; };
 		80DC0A762479741E00694277 /* LastRegister.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LastRegister.swift; sourceTree = "<group>"; };
 		80DC0A7824799F5000694277 /* HelpView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelpView.swift; sourceTree = "<group>"; };
 		80DC0A7A2479AF0200694277 /* FunctionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FunctionView.swift; sourceTree = "<group>"; };
 		80DC0A7C2479BEF600694277 /* StoreRecall.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreRecall.swift; sourceTree = "<group>"; };
 		80DC0A80247AA55E00694277 /* MyNumberFormatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyNumberFormatter.swift; sourceTree = "<group>"; };
 		80DC0A82247ACD8900694277 /* MyColors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyColors.swift; sourceTree = "<group>"; };
-		80DC0A84247AFD4400694277 /* OtherButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OtherButton.swift; sourceTree = "<group>"; };
-		80DC0A86247B09F200694277 /* SimpleButtons.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimpleButtons.swift; sourceTree = "<group>"; };
+		80DC0A84247AFD4400694277 /* OperatorButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OperatorButton.swift; sourceTree = "<group>"; };
+		80DC0A86247B09F200694277 /* AdvanceButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdvanceButton.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -94,8 +104,13 @@
 				80DC0A7A2479AF0200694277 /* FunctionView.swift */,
 				80139589247B33DC00C8CD02 /* ButtonConfiguratorView.swift */,
 				80DC0A7824799F5000694277 /* HelpView.swift */,
-				80DC0A86247B09F200694277 /* SimpleButtons.swift */,
+				808E207F247C15AE00C34187 /* GuideView.swift */,
+				80DC0A86247B09F200694277 /* AdvanceButton.swift */,
+				80139591247B9F8200C8CD02 /* AdvanceButton2.swift */,
+				808E2081247C170A00C34187 /* SimpleButton.swift */,
 				80139586247B29B200C8CD02 /* FormatButton.swift */,
+				8013958D247B85B700C8CD02 /* StackView.swift */,
+				8013958F247B874600C8CD02 /* StackButton.swift */,
 			);
 			path = "Additional Views";
 			sourceTree = "<group>";
@@ -163,7 +178,7 @@
 				80023B0E2476EB0C00BB62CE /* ThirdRowView.swift */,
 				80023B102476EB3200BB62CE /* FinalRowView.swift */,
 				80023B342477D80700BB62CE /* MainButton.swift */,
-				80DC0A84247AFD4400694277 /* OtherButton.swift */,
+				80DC0A84247AFD4400694277 /* OperatorButton.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -272,29 +287,34 @@
 				805CFD7824788E78005A7447 /* CalcInput.swift in Sources */,
 				808D58F324707259000BBD5F /* DataRouter.swift in Sources */,
 				80023B092476DE8500BB62CE /* MainView.swift in Sources */,
+				808E2082247C170A00C34187 /* SimpleButton.swift in Sources */,
 				80DC0A772479741E00694277 /* LastRegister.swift in Sources */,
 				80DC0A7924799F5000694277 /* HelpView.swift in Sources */,
 				80DC0A81247AA55E00694277 /* MyNumberFormatter.swift in Sources */,
 				80DC0A7D2479BEF600694277 /* StoreRecall.swift in Sources */,
+				80139592247B9F8200C8CD02 /* AdvanceButton2.swift in Sources */,
 				80023B112476EB3200BB62CE /* FinalRowView.swift in Sources */,
 				808D590124708845000BBD5F /* ButtonGridView.swift in Sources */,
-				80DC0A85247AFD4400694277 /* OtherButton.swift in Sources */,
+				80DC0A85247AFD4400694277 /* OperatorButton.swift in Sources */,
+				8013958E247B85B700C8CD02 /* StackView.swift in Sources */,
 				808D58DD247070F8000BBD5F /* AppDelegate.swift in Sources */,
 				808D58DF247070F8000BBD5F /* SceneDelegate.swift in Sources */,
 				80DC0A83247ACD8900694277 /* MyColors.swift in Sources */,
 				805CFD7624788A61005A7447 /* StackManipulation.swift in Sources */,
 				80023B352477D80700BB62CE /* MainButton.swift in Sources */,
+				808E2080247C15AE00C34187 /* GuideView.swift in Sources */,
 				80023AF02475BC9300BB62CE /* FirstRowView.swift in Sources */,
 				80139587247B29B200C8CD02 /* FormatButton.swift in Sources */,
 				808D58F1247071F3000BBD5F /* HostingController.swift in Sources */,
 				805CFD7024788364005A7447 /* ButtonActions.swift in Sources */,
+				80139590247B874600C8CD02 /* StackButton.swift in Sources */,
 				80023B0F2476EB0C00BB62CE /* ThirdRowView.swift in Sources */,
 				80DC0A7B2479AF0200694277 /* FunctionView.swift in Sources */,
 				805CFD72247884EF005A7447 /* CalcFunctions.swift in Sources */,
 				808D58E1247070F8000BBD5F /* ContentView.swift in Sources */,
 				80139585247B12A300C8CD02 /* SliderView.swift in Sources */,
 				80023B0D2476EAD700BB62CE /* SecondRowView.swift in Sources */,
-				80DC0A87247B09F200694277 /* SimpleButtons.swift in Sources */,
+				80DC0A87247B09F200694277 /* AdvanceButton.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

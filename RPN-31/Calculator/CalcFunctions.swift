@@ -40,7 +40,7 @@ extension Calculator {
                 unaryAction = true
             case "%":
                 xRegisterNew = yRegister * xRegister / 100
-            case "% ∆":
+            case "∆ %":
                 xRegisterNew = (xRegister - yRegister) / yRegister
             case "% T":
                 xRegisterNew = xRegister / (yRegister + xRegister)
@@ -78,7 +78,7 @@ extension Calculator {
             case "ACOS":
                 xRegisterNew = acos(yRegister)
                 unaryAction = true
-            case "TAN":
+            case "ATAN":
                 xRegisterNew = atan(yRegister)
                 unaryAction = true
             case "π":

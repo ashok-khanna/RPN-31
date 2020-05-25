@@ -14,9 +14,10 @@ import SwiftUI
 class DataRouter: ObservableObject {
     //MARK: Properties
     let defaults = UserDefaults.standard
-    let defaultButtonList = ["EE", "√x", "1/x", "%", "% ∆", "e^x", "ln x", "y^x", "SIN", "COS", "TAN", "ASIN", "ACOS", "ATAN"]
+    let defaultButtonList = ["EE", "√x", "1/x", "%", "∆ %", "e^x", "ln x", "y^x", "SIN", "COS", "TAN", "ASIN", "ACOS", "ATAN", "14", "15", "16", "17", "18", "19", "20", "21", "22", "23", "24", "25", "26", "27", "28", "29", "30", "31", "32"]
 
     @Published var buttonList = [String]()
+    @Published var altFunctions = false
     
     @Published var isPad: Bool
     @Published var landscape: Bool = false
@@ -54,7 +55,7 @@ class DataRouter: ObservableObject {
     @Published var threeButton = CalculatorButton(digitValue: 3.0, digitString: "3", operatorString: "1/x")
     @Published var fourButton = CalculatorButton(digitValue: 4.0, digitString: "4", operatorString: "%")
     @Published var fiveButton = CalculatorButton(digitValue: 5.0, digitString: "5", operatorString: "ADV")
-    @Published var sixButton = CalculatorButton(digitValue: 6.0, digitString: "6", operatorString: "% ∆")
+    @Published var sixButton = CalculatorButton(digitValue: 6.0, digitString: "6", operatorString: "∆ %")
     @Published var sevenButton = CalculatorButton(digitValue: 7.0, digitString: "7", operatorString: "e^x")
     @Published var eightButton = CalculatorButton(digitValue: 8.0, digitString: "8", operatorString: "ln x")
     @Published var nineButton = CalculatorButton(digitValue: 9.0, digitString: "9", operatorString: "y^x")
@@ -106,10 +107,10 @@ class DataRouter: ObservableObject {
         
         let myButtonList = defaults.stringArray(forKey: "SavedButtonList") ?? [String]()
         
-        if myButtonList.count != 0 {
-            buttonList = myButtonList
-        } else {
+        if myButtonList.count < defaultButtonList.count {
             buttonList = defaultButtonList
+        } else {
+            buttonList = myButtonList
         }
         
         NotificationCenter.default.addObserver(self, selector: #selector(onViewWillTransition(notification:)), name: .my_onViewWillTransition, object: nil)

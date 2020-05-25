@@ -9,7 +9,7 @@
 import Foundation
 import SwiftUI
 
-struct SimpleButton: View {
+struct OperatorButton: View {
 
 @EnvironmentObject var dataRouter: DataRouter
 
@@ -33,8 +33,7 @@ var body: some View {
                 gestureState = true
         }
     .onEnded { value in
-        print(value.translation) // We can use value.translation to see how far away our finger moved and accordingly cancel the action (code not shown here)
-       
+        if(abs(value.translation.width) < (self.width * CGFloat(0.75)) && abs(value.translation.height) < (self.height * CGFloat(0.75))) {
         if self.operatorString == "ENTER" {
             self.dataRouter.calculator.processEnter()
         } else if self.operatorString == "CLR" {
@@ -43,8 +42,10 @@ var body: some View {
 
         } else {
             self.dataRouter.calculator.processOperation(self.operatorString)
-
         }
+        }
+       
+
         
         self.bgColor = self.bgColor1
 

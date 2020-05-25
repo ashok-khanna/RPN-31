@@ -9,19 +9,21 @@
 import Foundation
 import SwiftUI
 
-struct OtherButton: View {
+struct AdvanceButton: View {
 
 @EnvironmentObject var dataRouter: DataRouter
+    
+@State var index: Int
+@State var width: CGFloat
+@State var height: CGFloat
+@Binding var presentFunctionPage: Bool
 
-@State var operatorString: String
 @State var bgColor: Color
 @State var bgColor1: Color
 @State var highlightColor: Color
-@State var highlightColor2: Color
-@State var fontColor: Color
-@State var font: Font
-@State var width: CGFloat
-@State var height: CGFloat
+
+
+
 
 @GestureState var longPress = false
 @GestureState var longDrag = false
@@ -35,15 +37,9 @@ var body: some View {
     .onEnded { value in
         print(value.translation) // We can use value.translation to see how far away our finger moved and accordingly cancel the action (code not shown here)
        
-        if self.operatorString == "ENTER" {
-            self.dataRouter.calculator.processEnter()
-        } else if self.operatorString == "CLR" {
-            self.dataRouter.calculator.clearStack()
-            self.dataRouter.calculator.clearLastRegisters()
-
-        } else {
-            self.dataRouter.calculator.processOperation(self.operatorString)
-
+        if(abs(value.translation.width) < (self.width * CGFloat(0.75)) && abs(value.translation.height) < (self.height * CGFloat(0.75))) {
+            self.dataRouter.calculator.processOperation(self.dataRouter.buttonList[self.dataRouter.altFunctions ? (self.index + 12) : self.index])
+            self.presentFunctionPage = false
         }
         
         self.bgColor = self.bgColor1
@@ -54,14 +50,8 @@ var body: some View {
     let shortPressGesture = LongPressGesture(minimumDuration: 0)
     .onEnded { _ in
         
-        if self.operatorString == "ENTER" {
-            self.dataRouter.calculator.processEnter()
-        } else if self.operatorString == "CLR" {
-            self.dataRouter.calculator.clearLast()
-        } else {
-            self.dataRouter.calculator.processOperation(self.operatorString)
-
-        }
+        self.dataRouter.calculator.processOperation(self.dataRouter.buttonList[self.dataRouter.altFunctions ? (self.index + 12) : self.index])
+        self.presentFunctionPage = false
         
     }
     
@@ -78,17 +68,19 @@ var body: some View {
     return
         
         VStack {
-            Text(self.operatorString)
-                .font(self.font)
-                .foregroundColor(self.fontColor)
+            Text(self.dataRouter.buttonList[self.dataRouter.altFunctions ? (self.index + 12) : self.index])
+                .font(self.dataRouter.operatorFont)
+                .foregroundColor(self.dataRouter.myColors.advanceButtonText(self.dataRouter.darkMode))
                 .fixedSize()
                 .padding(0)
             }
-            .frame(width: width, height: height)
-        .background(self.longPress ? self.highlightColor : (self.longDrag ? self.highlightColor2 : self.bgColor))
+        .frame(width: width, height: height)
+        .background(self.longPress ? self.highlightColor : self.bgColor)
             .cornerRadius(15)
             .gesture(tapBeforeLongGestures)
 
     }
     
 }
+
+
