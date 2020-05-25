@@ -1,5 +1,9 @@
-import Foundation
-
+/*
+ 
+ Handle previous operation (to display and also to allow its reversal)
+ 
+ 
+ */
 
 struct LastRegister {
     
@@ -8,19 +12,13 @@ struct LastRegister {
     var lastOperator = ""
     var unaryAction = false
     var displayText = ""
-    var lRegisterFormatter = NumberFormatter()
-    
-    init(){
-        lRegisterFormatter.numberStyle = .decimal
-        lRegisterFormatter.maximumFractionDigits = 5
-    }
-    
+    var lRegisterFormatter = MyNumberFormatter() // We will use the default special formatter, so no need to define anything
     
     mutating func updateLastDisplayAfterOperation(){
     
     
-    let lastXString = lRegisterFormatter.string(from: NSNumber(value: lastX)) ?? ""
-    let lastYString = lRegisterFormatter.string(from: NSNumber(value: lastY)) ?? ""
+    let lastXString = lRegisterFormatter.string(lastX)
+    let lastYString = lRegisterFormatter.string(lastY)
     
         
     switch lastOperator {

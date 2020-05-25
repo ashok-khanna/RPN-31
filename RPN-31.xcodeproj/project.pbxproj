@@ -20,7 +20,6 @@
 		80139590247B874600C8CD02 /* StackButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8013958F247B874600C8CD02 /* StackButton.swift */; };
 		80139592247B9F8200C8CD02 /* AdvanceButton2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80139591247B9F8200C8CD02 /* AdvanceButton2.swift */; };
 		805CFD6E2478773C005A7447 /* Calculator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 805CFD6D2478773C005A7447 /* Calculator.swift */; };
-		805CFD7024788364005A7447 /* ButtonActions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 805CFD6F24788364005A7447 /* ButtonActions.swift */; };
 		805CFD72247884EF005A7447 /* CalcFunctions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 805CFD71247884EF005A7447 /* CalcFunctions.swift */; };
 		805CFD7624788A61005A7447 /* StackManipulation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 805CFD7524788A61005A7447 /* StackManipulation.swift */; };
 		805CFD7824788E78005A7447 /* CalcInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 805CFD7724788E78005A7447 /* CalcInput.swift */; };
@@ -35,6 +34,7 @@
 		808D590124708845000BBD5F /* ButtonGridView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 808D590024708845000BBD5F /* ButtonGridView.swift */; };
 		808E2080247C15AE00C34187 /* GuideView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 808E207F247C15AE00C34187 /* GuideView.swift */; };
 		808E2082247C170A00C34187 /* SimpleButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 808E2081247C170A00C34187 /* SimpleButton.swift */; };
+		808E2084247C238700C34187 /* ReadMe.md in Resources */ = {isa = PBXBuildFile; fileRef = 808E2083247C238700C34187 /* ReadMe.md */; };
 		80DC0A772479741E00694277 /* LastRegister.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80DC0A762479741E00694277 /* LastRegister.swift */; };
 		80DC0A7924799F5000694277 /* HelpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80DC0A7824799F5000694277 /* HelpView.swift */; };
 		80DC0A7B2479AF0200694277 /* FunctionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80DC0A7A2479AF0200694277 /* FunctionView.swift */; };
@@ -47,7 +47,6 @@
 
 /* Begin PBXFileReference section */
 		80023AEF2475BC9300BB62CE /* FirstRowView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FirstRowView.swift; sourceTree = "<group>"; };
-		80023B072475E3CC00BB62CE /* RPN-31 copy-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "RPN-31 copy-Info.plist"; path = "/Users/Shared/Xcode Projects/RPN-31/RPN-31 copy-Info.plist"; sourceTree = "<absolute>"; };
 		80023B082476DE8500BB62CE /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
 		80023B0C2476EAD700BB62CE /* SecondRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondRowView.swift; sourceTree = "<group>"; };
 		80023B0E2476EB0C00BB62CE /* ThirdRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThirdRowView.swift; sourceTree = "<group>"; };
@@ -60,11 +59,10 @@
 		8013958F247B874600C8CD02 /* StackButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StackButton.swift; sourceTree = "<group>"; };
 		80139591247B9F8200C8CD02 /* AdvanceButton2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdvanceButton2.swift; sourceTree = "<group>"; };
 		805CFD6D2478773C005A7447 /* Calculator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Calculator.swift; sourceTree = "<group>"; };
-		805CFD6F24788364005A7447 /* ButtonActions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonActions.swift; sourceTree = "<group>"; };
 		805CFD71247884EF005A7447 /* CalcFunctions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalcFunctions.swift; sourceTree = "<group>"; };
 		805CFD7524788A61005A7447 /* StackManipulation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StackManipulation.swift; sourceTree = "<group>"; };
 		805CFD7724788E78005A7447 /* CalcInput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalcInput.swift; sourceTree = "<group>"; };
-		808D58D9247070F8000BBD5F /* RPN-31.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "RPN-31.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		808D58D9247070F8000BBD5F /* RPN 30.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "RPN 30.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		808D58DC247070F8000BBD5F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		808D58DE247070F8000BBD5F /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		808D58E0247070F8000BBD5F /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -77,6 +75,7 @@
 		808D590024708845000BBD5F /* ButtonGridView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonGridView.swift; sourceTree = "<group>"; };
 		808E207F247C15AE00C34187 /* GuideView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GuideView.swift; sourceTree = "<group>"; };
 		808E2081247C170A00C34187 /* SimpleButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimpleButton.swift; sourceTree = "<group>"; };
+		808E2083247C238700C34187 /* ReadMe.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = ReadMe.md; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = "<none>"; };
 		80DC0A762479741E00694277 /* LastRegister.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LastRegister.swift; sourceTree = "<group>"; };
 		80DC0A7824799F5000694277 /* HelpView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelpView.swift; sourceTree = "<group>"; };
 		80DC0A7A2479AF0200694277 /* FunctionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FunctionView.swift; sourceTree = "<group>"; };
@@ -101,16 +100,17 @@
 		80139588247B335900C8CD02 /* Additional Views */ = {
 			isa = PBXGroup;
 			children = (
+				8013958D247B85B700C8CD02 /* StackView.swift */,
+				8013958F247B874600C8CD02 /* StackButton.swift */,
 				80DC0A7A2479AF0200694277 /* FunctionView.swift */,
 				80139589247B33DC00C8CD02 /* ButtonConfiguratorView.swift */,
-				80DC0A7824799F5000694277 /* HelpView.swift */,
-				808E207F247C15AE00C34187 /* GuideView.swift */,
 				80DC0A86247B09F200694277 /* AdvanceButton.swift */,
 				80139591247B9F8200C8CD02 /* AdvanceButton2.swift */,
 				808E2081247C170A00C34187 /* SimpleButton.swift */,
+				808E207F247C15AE00C34187 /* GuideView.swift */,
+				80DC0A7824799F5000694277 /* HelpView.swift */,
 				80139586247B29B200C8CD02 /* FormatButton.swift */,
-				8013958D247B85B700C8CD02 /* StackView.swift */,
-				8013958F247B874600C8CD02 /* StackButton.swift */,
+				80139584247B12A300C8CD02 /* SliderView.swift */,
 			);
 			path = "Additional Views";
 			sourceTree = "<group>";
@@ -120,14 +120,13 @@
 			children = (
 				808D58DB247070F8000BBD5F /* RPN-31 */,
 				808D58DA247070F8000BBD5F /* Products */,
-				80023B072475E3CC00BB62CE /* RPN-31 copy-Info.plist */,
 			);
 			sourceTree = "<group>";
 		};
 		808D58DA247070F8000BBD5F /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				808D58D9247070F8000BBD5F /* RPN-31.app */,
+				808D58D9247070F8000BBD5F /* RPN 30.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -199,10 +198,9 @@
 		80DC0A75247955F100694277 /* Other */ = {
 			isa = PBXGroup;
 			children = (
-				80DC0A80247AA55E00694277 /* MyNumberFormatter.swift */,
 				80DC0A82247ACD8900694277 /* MyColors.swift */,
-				805CFD6F24788364005A7447 /* ButtonActions.swift */,
-				80139584247B12A300C8CD02 /* SliderView.swift */,
+				80DC0A80247AA55E00694277 /* MyNumberFormatter.swift */,
+				808E2083247C238700C34187 /* ReadMe.md */,
 			);
 			path = Other;
 			sourceTree = "<group>";
@@ -210,9 +208,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		808D58D8247070F8000BBD5F /* RPN-31 */ = {
+		808D58D8247070F8000BBD5F /* RPN-30 */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 808D58ED247070FF000BBD5F /* Build configuration list for PBXNativeTarget "RPN-31" */;
+			buildConfigurationList = 808D58ED247070FF000BBD5F /* Build configuration list for PBXNativeTarget "RPN-30" */;
 			buildPhases = (
 				808D58D5247070F8000BBD5F /* Sources */,
 				808D58D6247070F8000BBD5F /* Frameworks */,
@@ -222,11 +220,11 @@
 			);
 			dependencies = (
 			);
-			name = "RPN-31";
+			name = "RPN-30";
 			packageProductDependencies = (
 			);
 			productName = "RPN-31";
-			productReference = 808D58D9247070F8000BBD5F /* RPN-31.app */;
+			productReference = 808D58D9247070F8000BBD5F /* RPN 30.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -259,7 +257,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				808D58D8247070F8000BBD5F /* RPN-31 */,
+				808D58D8247070F8000BBD5F /* RPN-30 */,
 			);
 		};
 /* End PBXProject section */
@@ -271,6 +269,7 @@
 			files = (
 				808D58E9247070FF000BBD5F /* LaunchScreen.storyboard in Resources */,
 				808D58E6247070FF000BBD5F /* Preview Assets.xcassets in Resources */,
+				808E2084247C238700C34187 /* ReadMe.md in Resources */,
 				808D58E3247070FF000BBD5F /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -306,7 +305,6 @@
 				80023AF02475BC9300BB62CE /* FirstRowView.swift in Sources */,
 				80139587247B29B200C8CD02 /* FormatButton.swift in Sources */,
 				808D58F1247071F3000BBD5F /* HostingController.swift in Sources */,
-				805CFD7024788364005A7447 /* ButtonActions.swift in Sources */,
 				80139590247B874600C8CD02 /* StackButton.swift in Sources */,
 				80023B0F2476EB0C00BB62CE /* ThirdRowView.swift in Sources */,
 				80DC0A7B2479AF0200694277 /* FunctionView.swift in Sources */,
@@ -460,8 +458,9 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "com.ashok.RPN-31";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				MARKETING_VERSION = 1.99;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.ashok.RPN-30";
+				PRODUCT_NAME = "RPN 30";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -481,8 +480,9 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "com.ashok.RPN-31";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				MARKETING_VERSION = 1.99;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.ashok.RPN-30";
+				PRODUCT_NAME = "RPN 30";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -500,7 +500,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		808D58ED247070FF000BBD5F /* Build configuration list for PBXNativeTarget "RPN-31" */ = {
+		808D58ED247070FF000BBD5F /* Build configuration list for PBXNativeTarget "RPN-30" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				808D58EE247070FF000BBD5F /* Debug */,

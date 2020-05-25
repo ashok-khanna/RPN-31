@@ -1,13 +1,17 @@
+/*
+ 
+ Add-on for store / recall of values. This is an extension of DataRouter and not Calculator since it does not relate to computation
+ and therefore should not be included in the Calculator Struct as to limit its complexity.
+ 
+ 
+ */
 
-import Foundation
 import SwiftUI
 
 extension DataRouter {
     
-    func exitStoreRecallMode() {
+    func exitStoreRecallMode() { // Exit Store/Recall mode. Reset color digit buttons - based on defined color scheme
         storeRecall = false
-        
-        // Reset digit buttons
         
         for i in 1...9 {
             digitColorArray[i] = myColors.mainButton(darkMode)
@@ -18,11 +22,9 @@ extension DataRouter {
 
     }
     
-    func startStoreRecallMode() {
+    func startStoreRecallMode() { // Enter Store/Recall mode. Check if there are non-zero values in storage registers and then color those according to the color scheme
         
         storeRecall = true
-        
-        // Check if there are non-zero values and then color those blue
         
         for i in 1...9 {
             digitHighlightArray[i] = myColors.storeRecallHighlight(darkMode)
@@ -86,7 +88,7 @@ extension DataRouter {
         
     }
     
-    func processStoreRecall(_ storageKey: String) {
+    func processStoreRecall(_ storageKey: String) { // If there is no value in the storage, store your number there. Otherwise recall its value (this is on short press)
         
         if defaults.double(forKey: storageKey) == 0.0 {
             defaults.set(calculator.stackRegisters[0], forKey: storageKey)
@@ -107,7 +109,7 @@ extension DataRouter {
         
     }
     
-    func longPressStoreRecall(_ storageKey: String){
+    func longPressStoreRecall(_ storageKey: String){ // If there is no value in the storage, store your number there. Otherwise clear the storage register (this is on long press)
         
         if defaults.double(forKey: storageKey) == 0.0 {
             defaults.set(calculator.stackRegisters[0], forKey: storageKey)
