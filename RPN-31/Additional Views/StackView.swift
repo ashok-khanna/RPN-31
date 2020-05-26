@@ -42,8 +42,9 @@ struct StackView: View {
                     
                     NavigationView {
                             List {
-                                ForEach(self.dataRouter.calculator.stackRegisters, id: \.self) { user in
-                                    Text(self.dataRouter.displayFormatter.string(user))
+                                ForEach(0..<self.dataRouter.calculator.stackRegisters.count) { i in
+                                    
+                                    Text(self.dataRouter.displayFormatter.string(self.dataRouter.calculator.stackRegisters[i]))
                                 }
                                 .onMove(perform: self.move)
                             }
@@ -51,7 +52,7 @@ struct StackView: View {
                             .environment(\.editMode, .constant(.active))
                             .navigationBarTitle("")
                             .navigationBarHidden(true)
-                    }
+                    } 
 
 
                     }
