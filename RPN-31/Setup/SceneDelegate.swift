@@ -23,23 +23,17 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         
         if let windowScene = scene as? UIWindowScene {
             let window = UIWindow(windowScene: windowScene)
-            
-            
 
-            
-            
-            var fontStyle = Font.title
-            var isPad = false
+            var iPad = false
             
             if UIDevice.current.userInterfaceIdiom == .pad {
-                
 
-                fontStyle = Font.largeTitle
-                isPad = true
+                iPad = true
                 
             }
             
-            var mySizes = MySizes(isPad)
+            var mySizes = MySizes(iPad)
+            let myFonts = MyFonts(iPad)
             
             if windowScene.interfaceOrientation.isLandscape {
                 mySizes.makeLandscape()
@@ -47,7 +41,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
                 mySizes.makePortrait()
             }
             
-            let dataRouter = DataRouter(isPad, mySizes: mySizes, numCols: CGFloat(4), numRows: CGFloat(5), fontStyle, isLandscape: windowScene.interfaceOrientation.isLandscape)
+            let dataRouter = DataRouter(iPad: iPad, mySizes: mySizes, myFonts: myFonts, numCols: CGFloat(4), numRows: CGFloat(5), isLandscape: windowScene.interfaceOrientation.isLandscape)
             let contentView = ContentView().environmentObject(dataRouter)
 
             window.rootViewController = HostingController(rootView: AnyView(contentView))

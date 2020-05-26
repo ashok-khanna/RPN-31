@@ -41,7 +41,7 @@ var body: some View {
             switch self.buttonText {
             case "buttonConfig":
                 self.presentButtonConfigurator = true
-            case "guidePage":
+            case "HELP":
                 self.presentGuidePage = true
             case "ALT":
                 self.dataRouter.altFunctions.toggle()
@@ -68,7 +68,7 @@ var body: some View {
         switch self.buttonText {
         case "Button Configurator":
             self.presentButtonConfigurator = true
-        case "Guide":
+        case "HELP":
             self.presentGuidePage = true
         case "ALT":
             self.dataRouter.altFunctions.toggle()
@@ -102,28 +102,24 @@ var body: some View {
             
             if self.buttonText == "Copy" {
                 Image(systemName:"doc.on.doc.fill")
-                .foregroundColor(self.dataRouter.myColors.advanceButtonText(self.dataRouter.darkMode))
-                .font(Font.title.weight(.regular))
+                .foregroundColor(self.dataRouter.myColors.brightButtonTextColor)
+                    .font(self.dataRouter.myFonts.subPageImageFont)
             } else if self.buttonText == "Paste" {
                 Image(systemName:"doc.richtext")
-                    .foregroundColor(self.dataRouter.myColors.advanceButtonText(self.dataRouter.darkMode))
-                    .font(Font.title.weight(.regular))
-            } else if self.buttonText == "Guide" {
-                Image(systemName:"book.fill")
-                    .foregroundColor(self.dataRouter.myColors.advanceButtonText(self.dataRouter.darkMode))
-                    .font(Font.title.weight(.regular))
+                    .foregroundColor(self.dataRouter.myColors.brightButtonTextColor)
+                    .font(self.dataRouter.myFonts.subPageImageFont)
             }
                         
             Text(self.buttonText)
-                .font(self.dataRouter.operatorFont)
-                .foregroundColor(self.dataRouter.myColors.advanceButtonText(self.dataRouter.darkMode))
+                .font(self.dataRouter.myFonts.textFont)
+                .foregroundColor(self.dataRouter.myColors.brightButtonTextColor)
                 .fixedSize()
                 .padding(0)
             
             Spacer()
                         
             }
-        .frame(width: width, height: height)
+        .frame(minWidth: 0, maxWidth: .infinity, minHeight: 0, maxHeight: .infinity)
         .background(self.longPress ? self.highlightColor : self.bgColor)
             .cornerRadius(15)
             .gesture(tapBeforeLongGestures)

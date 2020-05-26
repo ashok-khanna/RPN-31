@@ -18,7 +18,7 @@ struct MainView: View {
                 
                 ZStack {
                     
-                    // self.dataRouter.myColors.background(self.dataRouter.darkMode)
+                    // self.dataRouter.myColors.primaryBackgroundColor
                        // .edgesIgnoringSafeArea(.all)
                     
                     
@@ -29,7 +29,7 @@ struct MainView: View {
                         HStack(spacing: 0) {
                             
                             Rectangle()
-                                .fill(self.dataRouter.myColors.background(self.dataRouter.darkMode))
+                                .fill(self.dataRouter.myColors.primaryBackgroundColor)
                                 .frame(width: geometry.size.width * self.dataRouter.mySizes.topLeftGapWidth, height: geometry.size.height * self.dataRouter.mySizes.stackHeight)
                             
                             VStack(spacing: 0) {
@@ -37,10 +37,10 @@ struct MainView: View {
                                 Spacer()
                                                                 
                                 Text(self.dataRouter.displayFormatter.string(self.dataRouter.calculator.stackRegisters[1]))
-                                    .font(.title)
+                                    .font(self.dataRouter.myFonts.yRegisterFont)
                                     .minimumScaleFactor(0.01)
                                     .lineLimit(1)
-                                    .foregroundColor(self.dataRouter.myColors.text(self.dataRouter.darkMode))
+                                    .foregroundColor(self.dataRouter.myColors.mainTextColor)
                                     .frame(width: geometry.size.width * self.dataRouter.mySizes.yRegisterWidth, height: geometry.size.height * self.dataRouter.mySizes.yRegisterHeight, alignment: .leading)
                                 .onTapGesture {
                                     self.dataRouter.calculator.swapXY()
@@ -49,10 +49,10 @@ struct MainView: View {
                                 Spacer()
                                                                 
                                 Text(self.dataRouter.calculator.lastRegister.displayText)
-                                    .font(.headline)
+                                    .font(self.dataRouter.myFonts.lRegisterFont)
                                     .minimumScaleFactor(0.01)
                                     .lineLimit(1)
-                                    .foregroundColor(self.dataRouter.myColors.lText(self.dataRouter.darkMode))
+                                    .foregroundColor(self.dataRouter.myColors.lRegisterTextColor)
                                     .frame(width: geometry.size.width * self.dataRouter.mySizes.lRegisterWidth, height: geometry.size.height * self.dataRouter.mySizes.lRegisterHeight, alignment: .leading)
                                 .onTapGesture {
                                     self.dataRouter.calculator.reverseOperation()
@@ -65,14 +65,14 @@ struct MainView: View {
 
                             Spacer()
                             
-                            StackButton(width: geometry.size.width * self.dataRouter.mySizes.stackWidth, height: geometry.size.height * self.dataRouter.mySizes.stackHeight, bgColor1: self.dataRouter.myColors.stackRegisters(self.dataRouter.darkMode), presentStackRegister: self.$presentStackRegister)
+                            StackButton(width: geometry.size.width * self.dataRouter.mySizes.stackWidth, height: geometry.size.height * self.dataRouter.mySizes.stackHeight, bgColor1: self.dataRouter.myColors.sRegistersBackgroundColor, presentStackRegister: self.$presentStackRegister)
                             .frame(width: geometry.size.width * self.dataRouter.mySizes.stackWidth, height: geometry.size.height * self.dataRouter.mySizes.stackHeight)
                                 .sheet(isPresented: self.$presentStackRegister) {
                             StackView(presentStackRegister: self.$presentStackRegister).environmentObject(self.dataRouter)
                             }
                             
                             Rectangle()
-                                .fill(self.dataRouter.myColors.background(self.dataRouter.darkMode))
+                                .fill(self.dataRouter.myColors.primaryBackgroundColor)
                                 .frame(width: geometry.size.width / self.dataRouter.rowUnits * self.dataRouter.mySizes.gapWidth, height: geometry.size.height * self.dataRouter.mySizes.stackHeight)
                             
 
@@ -82,24 +82,24 @@ struct MainView: View {
                         Spacer()
                         
                         Text(self.dataRouter.calculator.showFunction ? self.dataRouter.calculator.functionText : (self.dataRouter.calculator.isNewNumberEntry ? self.dataRouter.displayFormatter.string(self.dataRouter.calculator.stackRegisters[0]) : self.dataRouter.calculator.xRegisterEntryFormatter.string(from: NSNumber(value: self.dataRouter.calculator.stackRegisters[0]))!))
-                            .font(.system(.largeTitle, design: self.dataRouter.calculator.showFunction ? .default : .default))
+                            .font(self.dataRouter.myFonts.xRegisterFont)
                             .minimumScaleFactor(0.01)
                             .lineLimit(1)
-                            .foregroundColor(self.dataRouter.calculator.showFunction ? self.dataRouter.myColors.functionDisplayText(self.dataRouter.darkMode) : self.dataRouter.myColors.text(self.dataRouter.darkMode))
+                            .foregroundColor(self.dataRouter.calculator.showFunction ? self.dataRouter.myColors.functionDisplayTextColor : self.dataRouter.myColors.mainTextColor)
                             .frame(width: geometry.size.width * self.dataRouter.mySizes.xRegisterWidth, height: geometry.size.height * self.dataRouter.mySizes.xRegisterHeight)
                         .onTapGesture {
                             self.dataRouter.calculator.deleteInput()
                         }
                         
                         Rectangle()
-                            .fill(self.dataRouter.myColors.background(self.dataRouter.darkMode))
+                            .fill(self.dataRouter.myColors.primaryBackgroundColor)
                             .frame(width: geometry.size.width, height: geometry.size.width / self.dataRouter.rowUnits * self.dataRouter.mySizes.gapWidth)
 
                         ButtonGridView()
                             .frame(width: geometry.size.width, height: geometry.size.height * self.dataRouter.mySizes.gridHeight)
                         
                         Rectangle()
-                            .fill(self.dataRouter.myColors.background(self.dataRouter.darkMode))
+                            .fill(self.dataRouter.myColors.primaryBackgroundColor)
                             .frame(width: geometry.size.width, height: geometry.size.height * self.dataRouter.mySizes.bottomGap)
                                         
                         

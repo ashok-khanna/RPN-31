@@ -1,162 +1,103 @@
 import Foundation
 import SwiftUI
 
+
 struct MyColors {
+    
+    var primaryBackgroundColor: Color
+    var secondaryBackgroundColor: Color
+    var sRegistersBackgroundColor: Color
+    var sRegistersTextColor: Color
+    var mainTextColor: Color
+    var lRegisterTextColor: Color
+    var functionDisplayTextColor: Color
+    
+    var secondaryButtonColor: Color
+    var secondaryShortPressColor: Color
+    var secondaryLongPressColor: Color
+    var secondaryButtonTextColor: Color
+    
+    var mainButtonColor: Color
+    var mainShortPressColor: Color
+    var mainLongPressColor: Color
+    var mainButtonTextColor: Color
+    
+    var brightButtonColor: Color
+    var brightShortPressColor: Color
+    var brightLongPressColor: Color
+    var brightButtonTextColor: Color
+    
+    var storeRecallMainColor: Color
+    var storeRecallHighlightColor: Color
+    var deleteHighlightColor: Color
+    
+    var specialFillColor: Color
+    var specialFillTextColor: Color
+    var secondarySpecialFillColor: Color
+    var secondarySpecialTextColor: Color
+    
+    var primarySubPageTitleColor: Color
+    var primarySubPageTextColor: Color
+    var primarySubPageHeaderColor: Color
+    var secondarySubPageTitleColor: Color
+    var secondarySubPageTextColor: Color
+    var secondarySubPageHeaderColor: Color
+    
+    var sliderBackgroundColor: Color
+    var sliderPrimaryColor: Color
+    var sliderTextColor: Color
+    
+    init() {
         
-    func background(_ darkMode: Bool) -> Color {
-        if darkMode { return Color(UIColor.black) }
-        else { return Color(UIColor.lightGray.lighter(by: 90.0)) }
+        primaryBackgroundColor = Color(UIColor.black)
+        secondaryBackgroundColor = Color(UIColor.white)
+        sRegistersBackgroundColor = Color(UIColor.darkGray.darker(by: 75.0))
+        sRegistersTextColor = Color(UIColor.white)
+        mainTextColor = Color(UIColor.white)
+        lRegisterTextColor = Color(UIColor.gray)
+        functionDisplayTextColor = Color(UIColor.orange)
+        
+        secondaryButtonColor = Color(UIColor.lightGray)
+        secondaryShortPressColor = Color(UIColor.lightGray.lighter(by: 25.0))
+        secondaryLongPressColor = Color(UIColor.lightGray.lighter(by: 25.0))
+        secondaryButtonTextColor = Color(UIColor.black)
+        
+        mainButtonColor = Color(UIColor.darkGray)
+        mainShortPressColor = Color(UIColor.lightGray)
+        mainLongPressColor = Color(UIColor.orange)
+        mainButtonTextColor = Color(UIColor.white)
+        
+        brightButtonColor = Color(UIColor.orange)
+        brightShortPressColor = Color(UIColor.orange.lighter(by: 37.5))
+        brightLongPressColor = Color(UIColor.orange.lighter(by: 37.5))
+        brightButtonTextColor = Color(UIColor.white)
+        
+        storeRecallMainColor = Color(UIColor.systemBlue)
+        storeRecallHighlightColor = Color(UIColor.systemBlue.lighter(by: 25.0))
+        deleteHighlightColor = Color(UIColor.systemRed)
+        
+        specialFillColor = Color(UIColor.systemPink)
+        specialFillTextColor = Color(UIColor.white)
+        secondarySpecialFillColor = Color(UIColor.systemRed)
+        secondarySpecialTextColor = Color(UIColor.white)
+        
+        primarySubPageTitleColor = Color(UIColor.white)
+        primarySubPageTextColor = Color(UIColor.white)
+        primarySubPageHeaderColor = Color(UIColor.white)
+        secondarySubPageTitleColor = Color(UIColor.black)
+        secondarySubPageTextColor = Color(UIColor.black)
+        secondarySubPageHeaderColor = Color(UIColor.white)
+        
+        sliderBackgroundColor = Color(UIColor.gray)
+        sliderPrimaryColor = Color(UIColor.systemRed)
+        sliderTextColor = Color(UIColor.white)
+        
     }
     
-    func specialBackground(_ darkMode: Bool) -> Color {
-        if darkMode { return Color(UIColor.systemPink) }
-        else { return Color(UIColor.systemPink) }
-    }
-    
-    func stackRegisters(_ darkMode: Bool) -> Color {
-        if darkMode { return Color(UIColor.darkGray.darker(by: 75.0)) }
-        else { return Color(UIColor.darkGray.darker(by: 75.0)) }
-    }
-    
-    func text(_ darkMode: Bool) -> Color {
-        if darkMode { return Color(UIColor.white) }
-        else { return Color(UIColor.black) }
-    }
-    
-    func lText(_ darkMode: Bool) -> Color {
-        if darkMode { return Color(UIColor.gray) }
-        else { return Color(UIColor.darkGray) }
-    }
-    
-    func stackText(_ darkMode: Bool) -> Color {
-        if darkMode { return Color(UIColor.white) }
-        else { return Color(UIColor.white) }
-    }
-    
-    func functionDisplayText(_ darkMode: Bool) -> Color {
-        if darkMode { return Color(UIColor.orange) }
-        else { return Color(UIColor.systemTeal) }
-    }
-    
-    func specialBackgroundText(_ darkMode: Bool) -> Color {
-        if darkMode { return Color(UIColor.white) }
-        else { return Color(UIColor.white) }
-    }
-    
-    
-    func topRowButton(_ darkMode: Bool) -> Color {
-        if darkMode { return Color(UIColor.lightGray) }
-        else { return Color(UIColor.darkGray) }
-    }
-    
-    func topRowShortPress(_ darkMode: Bool) -> Color {
-        if darkMode { return Color(UIColor.lightGray.lighter(by: 25.0)) }
-        else { return Color(UIColor.darkGray.lighter(by: 25.0)) }
-    }
-    
-    func topRowButtonText(_ darkMode: Bool) -> Color {
-        if darkMode { return Color(UIColor.black) }
-        else { return Color(UIColor.white) }
-    }
-    
-    func mainButton(_ darkMode: Bool) -> Color {
-        if darkMode { return Color(UIColor.darkGray) }
-        else { return Color(UIColor.gray) }
-    }
-    
-    func mainShortPress(_ darkMode: Bool) -> Color {
-        if darkMode { return Color(UIColor.lightGray) }
-        else { return Color(UIColor.darkGray) }
-    }
-    
-    func mainLongPress(_ darkMode: Bool) -> Color {
-        if darkMode { return Color(UIColor.orange) }
-        else { return Color(UIColor.blue) }
-    }
-    
-    func mainButtonText(_ darkMode: Bool) -> Color {
-        if darkMode { return Color(UIColor.white) }
-        else { return Color(UIColor.black) }
-    }
-    
-    func brightButton(_ darkMode: Bool) -> Color {
-        if darkMode { return Color(UIColor.orange) }
-        else { return Color(UIColor.blue) }
-    }
-    
-    func brightShortPress(_ darkMode: Bool) -> Color {
-        if darkMode { return Color(UIColor.orange.lighter(by: 37.5)) }
-        else { return Color(UIColor.blue.lighter(by: 37.5)) }
-    }
-    
-    func brightButtonText(_ darkMode: Bool) -> Color {
-        if darkMode { return Color(UIColor.white) }
-        else { return Color(UIColor.white) }
-    }
-    
-    func advanceButton(_ darkMode: Bool) -> Color {
-        if darkMode { return Color(UIColor.orange) }
-        else { return Color(UIColor.blue) }
-    }
-    
-    func advanceHighlight(_ darkMode: Bool) -> Color {
-        if darkMode { return Color(UIColor.lightGray) }
-        else { return Color(UIColor.lightGray) }
-    }
-    
-    func advanceShortPress(_ darkMode: Bool) -> Color {
-        if darkMode { return Color(UIColor.orange.lighter(by: 37.5)) }
-        else { return Color(UIColor.blue.lighter(by: 37.5)) }
-    }
-    
-    func advanceOutline(_ darkMode: Bool) -> Color {
-        if darkMode { return Color(UIColor.orange.lighter(by: 37.5)) }
-        else { return Color(UIColor.blue.lighter(by: 37.5)) }
-    }
-    
-    func advanceButtonText(_ darkMode: Bool) -> Color {
-        if darkMode { return Color(UIColor.white) }
-        else { return Color(UIColor.white) }
-    }
-    
-    func advanceOutlineText(_ darkMode: Bool) -> Color {
-        if darkMode { return Color(UIColor.white) }
-        else { return Color(UIColor.black) }
-    }
-    
-    func storeRecall(_ darkMode: Bool) -> Color {
-        if darkMode { return Color(UIColor.systemBlue) }
-        else { return Color(UIColor.systemTeal) }
-    }
-    
-    func storeRecallHighlight(_ darkMode: Bool) -> Color {
-        if darkMode { return Color(UIColor.systemBlue.lighter(by: 25.0)) }
-        else { return Color(UIColor.systemTeal.lighter(by: 25.0)) }
-    }
-    
-    func deleteHighlight(_ darkMode: Bool) -> Color {
-        if darkMode { return Color(UIColor.systemRed) }
-        else { return Color(UIColor.systemRed) }
-    }
-    
-    func formatButton(_ darkMode: Bool) -> Color {
-        if darkMode { return Color(UIColor.systemPink) }
-        else { return Color(UIColor.green) }
-    }
-    
-    func formatButtonOutline(_ darkMode: Bool) -> Color {
-        if darkMode { return Color(UIColor.darkGray) }
-        else { return Color(UIColor.darkGray) }
-    }
-    
-    func formatButtonText(_ darkMode: Bool) -> Color {
-        if darkMode { return Color(UIColor.white) }
-        else { return Color(UIColor.white) }
-    }
     
 }
 
-
+   
 extension UIColor {
     /**
      Create a ligher color

@@ -51,7 +51,7 @@ struct MainButton: View {
             self.dataRouter.calculator.showFunction = false
             self.dataRouter.calculator.functionText = ""
             
-            self.dataRouter.digitColorArray[Int(self.calculatorButton.digitValue)] = self.dataRouter.myColors.mainButton(self.dataRouter.darkMode)
+            self.dataRouter.digitColorArray[Int(self.calculatorButton.digitValue)] = self.dataRouter.myColors.mainButtonColor
             
         }
         
@@ -101,13 +101,13 @@ struct MainButton: View {
             
             VStack {
                 Text(self.calculatorButton.digitString)
-                    .font(self.dataRouter.digitFont)
-                    .foregroundColor(self.dataRouter.myColors.mainButtonText(self.dataRouter.darkMode))
+                    .font(self.dataRouter.myFonts.digitFont)
+                    .foregroundColor(self.dataRouter.myColors.mainButtonTextColor)
                     .fixedSize()
                     .padding(0)
                 Text(self.dataRouter.buttonList.contains(self.calculatorButton.operatorString) ? (self.calculatorButton.digitValue <= 5 ? self.dataRouter.buttonList[Int(self.calculatorButton.digitValue - 1.0)] : self.dataRouter.buttonList[Int(self.calculatorButton.digitValue - 2.0)]) : self.calculatorButton.operatorString)
-                    .font(self.dataRouter.captionFont)
-                    .foregroundColor(self.dataRouter.myColors.mainButtonText(self.dataRouter.darkMode))
+                    .font(self.dataRouter.myFonts.captionFont)
+                    .foregroundColor(self.dataRouter.myColors.mainButtonTextColor)
                     .fixedSize()
                     .padding(0)
                 }

@@ -26,7 +26,7 @@ struct StackButton: View {
             self.presentStackRegister = true
             }
             
-            self.bgColor1 = self.dataRouter.myColors.stackRegisters(self.dataRouter.darkMode)
+            self.bgColor1 = self.dataRouter.myColors.sRegistersBackgroundColor
             
         }
         
@@ -48,7 +48,7 @@ struct StackButton: View {
                 gestureState = true
         }
         .onEnded { _ in
-             self.bgColor1 = self.dataRouter.myColors.mainButton(self.dataRouter.darkMode)
+             self.bgColor1 = self.dataRouter.myColors.mainButtonColor
                 
             }
             
@@ -62,36 +62,36 @@ struct StackButton: View {
                 Spacer()
                 
                 Text(self.dataRouter.displayFormatter.string(self.dataRouter.calculator.stackRegisters[4]))
-                    .font(.footnote)
+                    .font(self.dataRouter.myFonts.sRegisterFont)
                     .minimumScaleFactor(0.01)
                     .lineLimit(1)
-                    .foregroundColor(self.dataRouter.myColors.stackText(self.dataRouter.darkMode))
+                    .foregroundColor(self.dataRouter.myColors.sRegistersTextColor)
                     .frame(width: self.width * CGFloat(0.8))
                     .padding(self.dataRouter.mySizes.textPadding)
                 
                 Spacer()
                 
                 Text(self.dataRouter.displayFormatter.string(self.dataRouter.calculator.stackRegisters[3]))
-                    .font(.footnote)
+                    .font(self.dataRouter.myFonts.sRegisterFont)
                     .minimumScaleFactor(0.01)
                     .lineLimit(1)
-                    .foregroundColor(self.dataRouter.myColors.stackText(self.dataRouter.darkMode))
+                    .foregroundColor(self.dataRouter.myColors.sRegistersTextColor)
                     .padding(self.dataRouter.mySizes.textPadding)
                 
                 Spacer()
                 
                 Text(self.dataRouter.displayFormatter.string(self.dataRouter.calculator.stackRegisters[2]))
-                    .font(.footnote)
+                    .font(self.dataRouter.myFonts.sRegisterFont)
                     .minimumScaleFactor(0.01)
                     .lineLimit(1)
-                    .foregroundColor(self.dataRouter.myColors.stackText(self.dataRouter.darkMode))
+                    .foregroundColor(self.dataRouter.myColors.sRegistersTextColor)
                     .padding(self.dataRouter.mySizes.textPadding)
                 
                 Spacer()
                 
             }
             .frame(minWidth: 0, maxWidth: .infinity, minHeight: 0, maxHeight: .infinity)
-            .background(self.longPress ? self.dataRouter.myColors.mainButton(self.dataRouter.darkMode) : (self.longDrag ? self.dataRouter.myColors.brightButton(self.dataRouter.darkMode) : self.bgColor1))
+            .background(self.longPress ? self.dataRouter.myColors.mainButtonColor : (self.longDrag ? self.dataRouter.myColors.brightButtonColor : self.bgColor1))
             .cornerRadius(7.5)
             .gesture(tapBeforeLongGestures)
         

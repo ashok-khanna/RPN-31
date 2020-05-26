@@ -13,16 +13,16 @@ struct SliderView: View {
             ZStack(alignment: .leading) {
                 
                 Rectangle()
-                    .foregroundColor(.gray)
+                    .foregroundColor(self.dataRouter.myColors.sliderBackgroundColor)
                 Rectangle()
-                    .foregroundColor(.accentColor)
+                    .foregroundColor(self.dataRouter.myColors.sliderPrimaryColor)
                     .frame(width: geometry.size.width * CGFloat(self.dataRouter.displayFormatter.relevantModeIsDecimals ? self.dataRouter.displayFormatter.maximumFractionDigits : self.dataRouter.displayFormatter.maximumSignificantDigits) / CGFloat(10))
                 
                 Text((self.dataRouter.displayFormatter.relevantModeIsDecimals ? "Decimal Places: " : "Significant Digits: ") + String(self.dataRouter.displayFormatter.relevantModeIsDecimals ? self.dataRouter.displayFormatter.maximumFractionDigits : self.dataRouter.displayFormatter.maximumSignificantDigits))
-                 .foregroundColor(.white)
-                    .font(.headline)
-                 .frame(width: geometry.size.width, alignment: .center)
-                
+                    .foregroundColor(self.dataRouter.myColors.sliderTextColor)
+                    .font(self.dataRouter.myFonts.textFont)
+                 .frame(minWidth: 0, maxWidth: .infinity, minHeight: 0, maxHeight: .infinity)
+
             }
             .cornerRadius(12)
             .gesture(DragGesture(minimumDistance: 0)

@@ -39,6 +39,8 @@ var body: some View {
             case "Reset to Defaults":
                 self.dataRouter.buttonList = self.dataRouter.defaultButtonList
                 self.dataRouter.defaults.set(self.dataRouter.buttonList, forKey: "SavedButtonList")
+            case "Reset Stack Registers":
+                self.dataRouter.calculator.stackRegisters = self.dataRouter.defaults.array(forKey: "tempStackRegisterStore") as! [Double]
             default:
                 break
             }
@@ -57,6 +59,9 @@ var body: some View {
              case "Reset to Defaults":
                  self.dataRouter.buttonList = self.dataRouter.defaultButtonList
                  self.dataRouter.defaults.set(self.dataRouter.buttonList, forKey: "SavedButtonList")
+            case "Reset Stack Registers":
+                          self.dataRouter.calculator.stackRegisters = self.dataRouter.defaults.array(forKey: "tempStackRegisterStore") as! [Double]
+            
              default:
                  break
              }
@@ -77,28 +82,14 @@ var body: some View {
     return
         
         HStack {
-            
-            if self.buttonText == "Copy" {
-                Image(systemName:"doc.on.doc.fill")
-                .foregroundColor(self.dataRouter.myColors.advanceButtonText(self.dataRouter.darkMode))
-                .font(Font.title.weight(.regular))
-            } else if self.buttonText == "Paste" {
-                Image(systemName:"doc.richtext")
-                    .foregroundColor(self.dataRouter.myColors.advanceButtonText(self.dataRouter.darkMode))
-                    .font(Font.title.weight(.regular))
-            } else if self.buttonText == "Guide" {
-                Image(systemName:"book.fill")
-                    .foregroundColor(self.dataRouter.myColors.advanceButtonText(self.dataRouter.darkMode))
-                    .font(Font.title.weight(.regular))
-            }
-            
+                        
             Text(self.buttonText)
-                .font(self.dataRouter.operatorFont)
-                .foregroundColor(self.dataRouter.myColors.advanceButtonText(self.dataRouter.darkMode))
+                .font(self.dataRouter.myFonts.textFont)
+                .foregroundColor(self.dataRouter.myColors.secondarySpecialTextColor)
                 .fixedSize()
                 .padding(0)
             }
-        .frame(width: width, height: height)
+        .frame(minWidth: 0, maxWidth: .infinity, minHeight: 0, maxHeight: .infinity)
         .background(self.longPress ? self.highlightColor : self.bgColor)
             .cornerRadius(15)
             .gesture(tapBeforeLongGestures)

@@ -45,7 +45,6 @@
 		80DC0A83247ACD8900694277 /* MyColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80DC0A82247ACD8900694277 /* MyColors.swift */; };
 		80DC0A85247AFD4400694277 /* OperatorButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80DC0A84247AFD4400694277 /* OperatorButton.swift */; };
 		80DC0A87247B09F200694277 /* AdvanceButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80DC0A86247B09F200694277 /* AdvanceButton.swift */; };
-		80F10E70247D2FDB00E4613F /* TestView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80F10E6F247D2FDB00E4613F /* TestView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -89,7 +88,6 @@
 		80DC0A82247ACD8900694277 /* MyColors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyColors.swift; sourceTree = "<group>"; };
 		80DC0A84247AFD4400694277 /* OperatorButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OperatorButton.swift; sourceTree = "<group>"; };
 		80DC0A86247B09F200694277 /* AdvanceButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdvanceButton.swift; sourceTree = "<group>"; };
-		80F10E6F247D2FDB00E4613F /* TestView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -106,16 +104,14 @@
 		80139588247B335900C8CD02 /* Additional Views */ = {
 			isa = PBXGroup;
 			children = (
-				8013958D247B85B700C8CD02 /* StackView.swift */,
-				80F10E6F247D2FDB00E4613F /* TestView.swift */,
-				8013958F247B874600C8CD02 /* StackButton.swift */,
 				80DC0A7A2479AF0200694277 /* FunctionView.swift */,
 				80139589247B33DC00C8CD02 /* ButtonConfiguratorView.swift */,
+				808E207F247C15AE00C34187 /* GuideView.swift */,
+				8013958D247B85B700C8CD02 /* StackView.swift */,
+				80DC0A7824799F5000694277 /* HelpView.swift */,
 				80DC0A86247B09F200694277 /* AdvanceButton.swift */,
 				80139591247B9F8200C8CD02 /* AdvanceButton2.swift */,
 				808E2081247C170A00C34187 /* SimpleButton.swift */,
-				808E207F247C15AE00C34187 /* GuideView.swift */,
-				80DC0A7824799F5000694277 /* HelpView.swift */,
 				80139586247B29B200C8CD02 /* FormatButton.swift */,
 				80139584247B12A300C8CD02 /* SliderView.swift */,
 			);
@@ -185,6 +181,7 @@
 				80023B102476EB3200BB62CE /* FinalRowView.swift */,
 				80023B342477D80700BB62CE /* MainButton.swift */,
 				80DC0A84247AFD4400694277 /* OperatorButton.swift */,
+				8013958F247B874600C8CD02 /* StackButton.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -311,7 +308,6 @@
 				805CFD7624788A61005A7447 /* StackManipulation.swift in Sources */,
 				80023B352477D80700BB62CE /* MainButton.swift in Sources */,
 				808E2088247C554A00C34187 /* MyFonts.swift in Sources */,
-				80F10E70247D2FDB00E4613F /* TestView.swift in Sources */,
 				808E2080247C15AE00C34187 /* GuideView.swift in Sources */,
 				80023AF02475BC9300BB62CE /* FirstRowView.swift in Sources */,
 				80139587247B29B200C8CD02 /* FormatButton.swift in Sources */,

@@ -33,8 +33,7 @@ var body: some View {
                 gestureState = true
         }
     .onEnded { value in
-        print(value.translation) // We can use value.translation to see how far away our finger moved and accordingly cancel the action (code not shown here)
-       
+      
         if(abs(value.translation.width) < (self.width * CGFloat(0.75)) && abs(value.translation.height) < (self.height * CGFloat(0.75))) {
             self.dataRouter.calculator.processOperation(self.dataRouter.buttonList[self.dataRouter.altFunctions ? (self.index + 12) : self.index])
             self.presentFunctionPage = false
@@ -68,12 +67,12 @@ var body: some View {
         
         VStack {
             Text(self.dataRouter.buttonList[self.dataRouter.altFunctions ? (self.index + 12) : self.index])
-                .font(self.dataRouter.operatorFont)
-                .foregroundColor(self.dataRouter.myColors.advanceButtonText(self.dataRouter.darkMode))
+                .font(self.dataRouter.myFonts.textFont)
+                .foregroundColor(self.dataRouter.myColors.mainButtonTextColor)
                 .fixedSize()
                 .padding(0)
             }
-        .frame(width: width, height: height)
+        .frame(minWidth: 0, maxWidth: .infinity, minHeight: 0, maxHeight: .infinity)
         .background(self.longPress ? self.highlightColor : self.bgColor)
             .cornerRadius(15)
             .gesture(tapBeforeLongGestures)

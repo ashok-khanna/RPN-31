@@ -17,13 +17,13 @@ struct ContentView: View {
             
             ZStack {
                 
-                self.dataRouter.myColors.background(self.dataRouter.darkMode)
+                self.dataRouter.myColors.primaryBackgroundColor
                     .edgesIgnoringSafeArea(.all)
                 
                 
                 VStack(spacing: 0) {
                     
-                    if self.dataRouter.isPad {
+                    if self.dataRouter.iPad {
                         MainView()
                     }
                     else {

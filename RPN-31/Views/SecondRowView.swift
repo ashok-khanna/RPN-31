@@ -22,35 +22,35 @@ struct SecondRowView: View {
 
                 
                 Rectangle()
-                    .fill(self.dataRouter.myColors.background(self.dataRouter.darkMode))
+                    .fill(self.dataRouter.myColors.primaryBackgroundColor)
                     .frame(width: geometry.size.width / self.dataRouter.rowUnits * self.dataRouter.mySizes.gapWidth, height: geometry.size.height)
                 
                 MainButton(width: geometry.size.width / self.dataRouter.rowUnits, height: geometry.size.height, calculatorButton: self.dataRouter.sevenButton, presentFunctionPage: self.$presentFunctionPage, presentHelpPage: self.$presentHelpPage)
                            .frame(width: geometry.size.width / self.dataRouter.rowUnits, height: geometry.size.height)
                 Rectangle()
-                    .fill(self.dataRouter.myColors.background(self.dataRouter.darkMode))
+                    .fill(self.dataRouter.myColors.primaryBackgroundColor)
                     .frame(width: geometry.size.width / self.dataRouter.rowUnits * self.dataRouter.mySizes.gapWidth, height: geometry.size.height)
                 
                 MainButton(width: geometry.size.width / self.dataRouter.rowUnits, height: geometry.size.height, calculatorButton: self.dataRouter.eightButton, presentFunctionPage: self.$presentFunctionPage, presentHelpPage: self.$presentHelpPage)
                            .frame(width: geometry.size.width / self.dataRouter.rowUnits, height: geometry.size.height)
 
                 Rectangle()
-                    .fill(self.dataRouter.myColors.background(self.dataRouter.darkMode))
+                    .fill(self.dataRouter.myColors.primaryBackgroundColor)
                     .frame(width: geometry.size.width / self.dataRouter.rowUnits * self.dataRouter.mySizes.gapWidth, height: geometry.size.height)
                 
                 MainButton(width: geometry.size.width / self.dataRouter.rowUnits, height: geometry.size.height, calculatorButton: self.dataRouter.nineButton, presentFunctionPage: self.$presentFunctionPage, presentHelpPage: self.$presentHelpPage)
                            .frame(width: geometry.size.width / self.dataRouter.rowUnits, height: geometry.size.height)
 
                 Rectangle()
-                    .fill(self.dataRouter.myColors.background(self.dataRouter.darkMode))
+                    .fill(self.dataRouter.myColors.primaryBackgroundColor)
                     .frame(width: geometry.size.width / self.dataRouter.rowUnits * self.dataRouter.mySizes.gapWidth, height: geometry.size.height)
                 
-                OperatorButton(operatorString: "-", bgColor: self.dataRouter.myColors.brightButton(self.dataRouter.darkMode), bgColor1: self.dataRouter.myColors.brightButton(self.dataRouter.darkMode), highlightColor: self.dataRouter.myColors.brightShortPress(self.dataRouter.darkMode),highlightColor2: self.dataRouter.myColors.brightShortPress(self.dataRouter.darkMode), fontColor: self.dataRouter.myColors.brightButtonText(self.dataRouter.darkMode),  font: self.dataRouter.digitFont, width: geometry.size.width / self.dataRouter.rowUnits, height: geometry.size.height)
+                OperatorButton(operatorString: "-", bgColor: self.dataRouter.myColors.brightButtonColor, bgColor1: self.dataRouter.myColors.brightButtonColor, highlightColor: self.dataRouter.myColors.brightShortPressColor,highlightColor2: self.dataRouter.myColors.brightShortPressColor, fontColor: self.dataRouter.myColors.brightButtonTextColor,  font: self.dataRouter.myFonts.digitFont, width: geometry.size.width / self.dataRouter.rowUnits, height: geometry.size.height)
                 .frame(width: geometry.size.width / self.dataRouter.rowUnits, height: geometry.size.height)
 
                 
                 Rectangle()
-                    .fill(self.dataRouter.myColors.background(self.dataRouter.darkMode))
+                    .fill(self.dataRouter.myColors.primaryBackgroundColor)
                     .frame(width: geometry.size.width / self.dataRouter.rowUnits * self.dataRouter.mySizes.gapWidth, height: geometry.size.height)
                 
             }

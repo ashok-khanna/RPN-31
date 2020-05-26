@@ -56,13 +56,13 @@ var body: some View {
         VStack {
             Text(self.operatorString)
                 .font(self.font)
-                .foregroundColor(self.dataRouter.myColors.formatButtonText(self.dataRouter.darkMode))
+                .foregroundColor(self.dataRouter.myColors.mainTextColor)
                 .fixedSize()
                 .padding(0)
             
             }
-            .frame(width: width, height: height)
-        .background(self.defaults.string(forKey: "displayMode") == self.operatorString ? self.dataRouter.myColors.formatButton(self.dataRouter.darkMode) : self.dataRouter.myColors.formatButtonOutline(self.dataRouter.darkMode))
+            .frame(minWidth: 0, maxWidth: .infinity, minHeight: 0, maxHeight: .infinity)
+            .background(self.defaults.string(forKey: "displayMode") == self.operatorString ? self.dataRouter.myColors.specialFillColor : self.dataRouter.myColors.mainButtonColor)
             .cornerRadius(15)
             .gesture(tapBeforeLongGestures)
 

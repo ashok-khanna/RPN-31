@@ -14,9 +14,9 @@ extension DataRouter {
         storeRecall = false
         
         for i in 1...9 {
-            digitColorArray[i] = myColors.mainButton(darkMode)
-            digitHighlightArray[i] = myColors.mainShortPress(darkMode)
-            digitBrightArray[i] = myColors.mainLongPress(darkMode)
+            digitColorArray[i] = myColors.mainButtonColor
+            digitHighlightArray[i] = myColors.mainShortPressColor
+            digitBrightArray[i] = myColors.mainLongPressColor
         }
     
 
@@ -27,61 +27,61 @@ extension DataRouter {
         storeRecall = true
         
         for i in 1...9 {
-            digitHighlightArray[i] = myColors.storeRecallHighlight(darkMode)
-            digitBrightArray[i] = myColors.storeRecallHighlight(darkMode)
+            digitHighlightArray[i] = myColors.storeRecallHighlightColor
+            digitBrightArray[i] = myColors.storeRecallHighlightColor
         }
         
         if defaults.double(forKey: "1") != 0.0 {
-            digitColorArray[1] = myColors.storeRecall(darkMode)
-            digitBrightArray[1] = myColors.deleteHighlight(darkMode)
+            digitColorArray[1] = myColors.storeRecallMainColor
+            digitBrightArray[1] = myColors.deleteHighlightColor
 
         }
         
         if defaults.double(forKey: "2") != 0.0 {
-            digitColorArray[2]  = myColors.storeRecall(darkMode)
-            digitBrightArray[2] = myColors.deleteHighlight(darkMode)
+            digitColorArray[2]  = myColors.storeRecallMainColor
+            digitBrightArray[2] = myColors.deleteHighlightColor
 
         }
         
         if defaults.double(forKey: "3") != 0.0 {
-            digitColorArray[3]  = myColors.storeRecall(darkMode)
-            digitBrightArray[3] = myColors.deleteHighlight(darkMode)
+            digitColorArray[3]  = myColors.storeRecallMainColor
+            digitBrightArray[3] = myColors.deleteHighlightColor
 
         }
         
         if defaults.double(forKey: "4") != 0.0 {
-            digitColorArray[4]  = myColors.storeRecall(darkMode)
-            digitBrightArray[4] = myColors.deleteHighlight(darkMode)
+            digitColorArray[4]  = myColors.storeRecallMainColor
+            digitBrightArray[4] = myColors.deleteHighlightColor
 
         }
         
         if defaults.double(forKey: "5") != 0.0 {
-            digitColorArray[5]  = myColors.storeRecall(darkMode)
-            digitBrightArray[5] = myColors.deleteHighlight(darkMode)
+            digitColorArray[5]  = myColors.storeRecallMainColor
+            digitBrightArray[5] = myColors.deleteHighlightColor
 
         }
         
         if defaults.double(forKey: "6") != 0.0 {
-            digitColorArray[6]  = myColors.storeRecall(darkMode)
-            digitBrightArray[6] = myColors.deleteHighlight(darkMode)
+            digitColorArray[6]  = myColors.storeRecallMainColor
+            digitBrightArray[6] = myColors.deleteHighlightColor
 
         }
         
         if defaults.double(forKey: "7") != 0.0 {
-            digitColorArray[7]  = myColors.storeRecall(darkMode)
-            digitBrightArray[7] = myColors.deleteHighlight(darkMode)
+            digitColorArray[7]  = myColors.storeRecallMainColor
+            digitBrightArray[7] = myColors.deleteHighlightColor
 
         }
         
         if defaults.double(forKey: "8") != 0.0 {
-            digitColorArray[8]  = myColors.storeRecall(darkMode)
-            digitBrightArray[8] = myColors.deleteHighlight(darkMode)
+            digitColorArray[8]  = myColors.storeRecallMainColor
+            digitBrightArray[8] = myColors.deleteHighlightColor
 
         }
         
         if defaults.double(forKey: "9") != 0.0 {
-            digitColorArray[9]  = myColors.storeRecall(darkMode)
-            digitBrightArray[9] = myColors.deleteHighlight(darkMode)
+            digitColorArray[9]  = myColors.storeRecallMainColor
+            digitBrightArray[9] = myColors.deleteHighlightColor
 
         }
         

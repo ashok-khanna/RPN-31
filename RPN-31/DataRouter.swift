@@ -19,9 +19,10 @@ class DataRouter: ObservableObject {
     @Published var buttonList = [String]()
     @Published var altFunctions = false
     
-    @Published var isPad: Bool
+    @Published var iPad: Bool
     @Published var landscape: Bool = false
     @Published var mySizes: MySizes
+    @Published var myFonts: MyFonts
 
     @Published var darkMode:Bool = true
     @Published var myColors = MyColors()
@@ -36,10 +37,6 @@ class DataRouter: ObservableObject {
     @Published var digitColorArray = [Color]()
     @Published var digitHighlightArray = [Color]()
     @Published var digitBrightArray = [Color]()
-    
-    @Published var digitFont = Font.title
-    @Published var operatorFont = Font.headline
-    @Published var captionFont = Font.caption
        
     // Set up Buttons (advance buttons, need to push this to read from user settings in future)
     @Published var zeroButton = CalculatorButton(digitValue: 0.0, digitString: "0", operatorString: "STORE/RECALL")
@@ -59,23 +56,22 @@ class DataRouter: ObservableObject {
             
     @Published var calculator = Calculator()
      
-    init(_ isPad: Bool, mySizes: MySizes, numCols: CGFloat, numRows: CGFloat, _ fontStyle: Font, isLandscape: Bool) {
+    init(iPad: Bool, mySizes: MySizes, myFonts: MyFonts, numCols: CGFloat, numRows: CGFloat, isLandscape: Bool) {
         
-        self.isPad = isPad
+        self.iPad = iPad
+        self.landscape = isLandscape
+
         self.mySizes = mySizes
-        self.digitFont = fontStyle
+        self.myFonts = myFonts
         
         self.numCols  = numCols
         self.numRows = numRows
-        
-        self.landscape = isLandscape
-    
         self.rowUnits = numCols + (numCols + CGFloat(1)) * mySizes.gapWidth
         
         for _ in 0...10 {
-            digitColorArray.append(myColors.mainButton(darkMode))
-            digitHighlightArray.append(myColors.mainShortPress(darkMode))
-            digitBrightArray.append(myColors.mainLongPress(darkMode))
+            digitColorArray.append(myColors.mainButtonColor)
+            digitHighlightArray.append(myColors.mainShortPressColor)
+            digitBrightArray.append(myColors.mainLongPressColor)
         }
         
         let myButtonList = defaults.stringArray(forKey: "SavedButtonList") ?? [String]()
@@ -94,12 +90,8 @@ class DataRouter: ObservableObject {
     
     @objc func onViewWillTransition(notification: Notification) {
         guard let size = notification.userInfo?["size"] as? CGSize else { return }
-
-        print("test")
         
         landscape = size.width > size.height
-        
-        print(landscape)
         
         if landscape {
             mySizes.makeLandscape()
@@ -111,7 +103,6 @@ class DataRouter: ObservableObject {
         
         rowUnits = numCols + (numCols + CGFloat(1)) * mySizes.gapWidth
         
-        print(rowUnits)
     }
 }
    
