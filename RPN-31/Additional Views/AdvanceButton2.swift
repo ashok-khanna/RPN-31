@@ -36,7 +36,7 @@ var body: some View {
     .onEnded { value in
         print(value.translation) // We can use value.translation to see how far away our finger moved and accordingly cancel the action (code not shown here)
        
-        if(abs(value.translation.width) < (self.width * CGFloat(0.75)) && abs(value.translation.height) < (self.height * CGFloat(0.75))) {
+        if(abs(value.translation.width) < (self.width * self.dataRouter.mySizes.hitBox) && abs(value.translation.height) < (self.height * self.dataRouter.mySizes.hitBox)) {
             
             switch self.buttonText {
             case "buttonConfig":
@@ -50,6 +50,8 @@ var body: some View {
                 self.presentFunctionPage = false
             case "Paste":
                 self.dataRouter.calculator.pasteFromClipboard()
+                self.presentFunctionPage = false
+            case "EXIT":
                 self.presentFunctionPage = false
             default:
                 break
@@ -77,6 +79,8 @@ var body: some View {
             self.presentFunctionPage = false
         case "Paste":
             self.dataRouter.calculator.pasteFromClipboard()
+            self.presentFunctionPage = false
+        case "EXIT":
             self.presentFunctionPage = false
         default:
             break
@@ -121,7 +125,7 @@ var body: some View {
             }
         .frame(minWidth: 0, maxWidth: .infinity, minHeight: 0, maxHeight: .infinity)
         .background(self.longPress ? self.highlightColor : self.bgColor)
-            .cornerRadius(15)
+        .cornerRadius(self.dataRouter.mySizes.cornerRadius)
             .gesture(tapBeforeLongGestures)
 
     }

@@ -20,33 +20,60 @@ struct ButtonConfiguratorView: View {
                         VStack(spacing: 0) {
                             
                             Rectangle()
-                                .fill(self.dataRouter.myColors.secondarySubPageHeaderColor)
-                                .frame(width: geometry.size.width * self.dataRouter.mySizes.subPageMainButtonWidth, height: geometry.size.height * self.dataRouter.mySizes.subPageTopDivider)
+                                .fill(Color.clear)
+                                .frame(width: 0, height: geometry.size.height * self.dataRouter.mySizes.subPageTopDivider)
                             
-                            Text("Button Configurator")
-                                .foregroundColor(self.dataRouter.myColors.secondarySubPageTitleColor)
-                                .font(self.dataRouter.myFonts.subPageTitleFont)
-                                .fontWeight(.medium)
+                            
+                            HStack(spacing: 0){
+                                
+                                Spacer()
+                                
+                                Text("Button Configurator")
+                                    .foregroundColor(self.dataRouter.myColors.secondarySubPageTitleColor)
+                                    .font(self.dataRouter.myFonts.subPageTitleFont)
+                                    .fontWeight(.medium)
+                                
+                                
+                                Spacer()
+                                
+                            }.frame(width: geometry.size.width * self.dataRouter.mySizes.subPageMainButtonWidth)
                             
                             Rectangle()
                                 .fill(self.dataRouter.myColors.secondaryBackgroundColor)
                                 .frame(width: self.dataRouter.mySizes.nilSize, height: geometry.size.height * self.dataRouter.mySizes.subPageBodyGap)
                             
-                            Text("Reorder by touching down on the three grey lines to the right and then drag the row up or down. Dismiss this page when done (all changes are autosaved).")
-                                .foregroundColor(self.dataRouter.myColors.secondarySubPageTextColor)
-                                .font(self.dataRouter.myFonts.subPageTextFont)
-                                .minimumScaleFactor(self.dataRouter.mySizes.minimumScaleFactor)
+                            HStack(spacing: 0){
+                                
+                                Spacer()
+                                
+                                Text("Reorder by touching down on the three grey lines to the right and then drag the row up or down. Dismiss this page when done (all changes are autosaved).")
+                                    .foregroundColor(self.dataRouter.myColors.secondarySubPageTextColor)
+                                    .font(self.dataRouter.myFonts.subPageTextFont)
+                                    .minimumScaleFactor(self.dataRouter.mySizes.minimumScaleFactor)
+                                
+                                Spacer()
+                                
+                            }.frame(width: geometry.size.width * self.dataRouter.mySizes.subPageMainButtonWidth)
+                            
                             
                             Rectangle()
-                                .fill(self.dataRouter.myColors.secondaryBackgroundColor)
-                                .frame(width: self.dataRouter.mySizes.nilSize, height: geometry.size.height * self.dataRouter.mySizes.subPageTableGap)
+                            .fill(Color.clear)
+                            .frame(width: 0, height: geometry.size.height * self.dataRouter.mySizes.subPageBodyGap)
                             
-                            SimpleButton(buttonText: "Reset to Defaults", width: geometry.size.width * self.dataRouter.mySizes.subPageSecondaryButtonWidth, height: geometry.size.height * self.dataRouter.mySizes.subPageSecondaryButtonHeight, bgColor: self.dataRouter.myColors.secondarySpecialFillColor, bgColor1: self.dataRouter.myColors.secondarySpecialFillColor, highlightColor: self.dataRouter.myColors.brightButtonColor)
-                                .frame(width: geometry.size.width * self.dataRouter.mySizes.subPageMainButtonWidth, height: geometry.size.height * self.dataRouter.mySizes.subPageSecondaryButtonHeight)
+                            HStack(spacing: 0){
+                                
+                                Spacer()
+                                
+                                SimpleButton(buttonText: "Reset to Defaults", width: geometry.size.width * self.dataRouter.mySizes.subPageMainButtonWidth, height: geometry.size.height * self.dataRouter.mySizes.subPageMainButtonHeight, bgColor: self.dataRouter.myColors.secondarySpecialFillColor, bgColor1: self.dataRouter.myColors.secondarySpecialFillColor, highlightColor: self.dataRouter.myColors.purpleButtonColor)
+                                    .frame(width: geometry.size.width * self.dataRouter.mySizes.subPageMainButtonWidth, height: geometry.size.height * self.dataRouter.mySizes.subPageMainButtonHeight)
+                                
+                                Spacer()
+                                
+                            }
                             
                             Rectangle()
-                                .fill(self.dataRouter.myColors.secondaryBackgroundColor)
-                                .frame(width: self.dataRouter.mySizes.nilSize, height: geometry.size.height * self.dataRouter.mySizes.subPageTableGap)
+                                .fill(Color.clear)
+                                .frame(width: 0, height: geometry.size.height * self.dataRouter.mySizes.subPageEditableTableGap)
                             
                         }
                         

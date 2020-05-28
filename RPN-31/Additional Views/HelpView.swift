@@ -16,14 +16,14 @@ struct HelpView: View {
                 self.dataRouter.myColors.secondaryBackgroundColor
                 .edgesIgnoringSafeArea(.all)
                 
-                VStack(alignment: .center, spacing: 0) {
+                VStack(spacing: 0) {
                     
                     List {
                         
-                        VStack(alignment: .center, spacing: 0) {
+                        VStack(spacing: 0) {
                             
                             Rectangle()
-                                .fill(self.dataRouter.myColors.secondaryBackgroundColor)
+                                .fill(Color.clear)
                                 .frame(width: 0, height: geometry.size.height * self.dataRouter.mySizes.subPageHeaderGap)
                             
                             
@@ -35,19 +35,19 @@ struct HelpView: View {
                             HStack(spacing: 0) {
                                                                     
                                 FormatButton(operatorString: "DECIMAL", font: self.dataRouter.myFonts.textFont, width: geometry.size.width * CGFloat(0.25), height: geometry.size.width * self.dataRouter.mySizes.subPageMainButtonHeight)
-                                    .frame(width: geometry.size.width * CGFloat(0.25), height: geometry.size.width * self.dataRouter.mySizes.subPageMainButtonHeight)
+                                    .frame(width: geometry.size.width * CGFloat(0.25), height: geometry.size.height * self.dataRouter.mySizes.subPageMainButtonHeight)
                                 
                                 Spacer()
                                 
                                 FormatButton(operatorString: "SCIENCE", font: self.dataRouter.myFonts.textFont, width: geometry.size.width * CGFloat(0.25), height: geometry.size.width * self.dataRouter.mySizes.subPageMainButtonHeight)
-                                    .frame(width: geometry.size.width * CGFloat(0.25), height: geometry.size.width * self.dataRouter.mySizes.subPageMainButtonHeight)
+                                    .frame(width: geometry.size.width * CGFloat(0.25), height: geometry.size.height * self.dataRouter.mySizes.subPageMainButtonHeight)
                                 Spacer()
                                 
                                 FormatButton(operatorString: "SPECIAL", font: self.dataRouter.myFonts.textFont, width: geometry.size.width * CGFloat(0.25), height: geometry.size.width * self.dataRouter.mySizes.subPageMainButtonHeight)
-                                    .frame(width: geometry.size.width * CGFloat(0.25), height: geometry.size.width * self.dataRouter.mySizes.subPageMainButtonHeight)
+                                    .frame(width: geometry.size.width * CGFloat(0.25), height: geometry.size.height * self.dataRouter.mySizes.subPageMainButtonHeight)
                                                                     
                             }
-                            .frame(width: geometry.size.width * self.dataRouter.mySizes.subPageMainButtonWidth, alignment: .center)
+                            .frame(width: geometry.size.width * self.dataRouter.mySizes.subPageMainButtonWidth)
                             
                             Spacer()
                                 
@@ -63,7 +63,7 @@ struct HelpView: View {
                                 
                                 SliderView()
                                     .accentColor(.red)
-                                    .frame(width: geometry.size.width * self.dataRouter.mySizes.subPageMainButtonWidth, height: geometry.size.width * self.dataRouter.mySizes.subPageMainButtonHeight, alignment: .center)
+                                    .frame(width: geometry.size.width * self.dataRouter.mySizes.subPageMainButtonWidth, height: geometry.size.height * self.dataRouter.mySizes.subPageMainButtonHeight)
                                 
                                 Spacer()
                                 
@@ -72,7 +72,7 @@ struct HelpView: View {
 
     
                             Rectangle()
-                                .fill(self.dataRouter.myColors.secondaryBackgroundColor)
+                                .fill(Color.clear)
                                 .frame(width: 0, height: geometry.size.height * self.dataRouter.mySizes.subPageTableGap)
                             
                             

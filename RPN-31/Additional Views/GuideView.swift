@@ -1,3 +1,5 @@
+/* Status: Completed */
+
 import SwiftUI
 
 struct GuideView: View {
@@ -18,27 +20,46 @@ struct GuideView: View {
                         VStack(spacing: 0) {
                             
                             Rectangle()
-                                .fill(self.dataRouter.myColors.secondarySubPageHeaderColor)
+                                .fill(Color.clear)
                                 .frame(width: geometry.size.width * self.dataRouter.mySizes.subPageMainButtonWidth, height: geometry.size.height * self.dataRouter.mySizes.subPageTopDivider)
                             
-                            Text("Function Guide")
-                                .foregroundColor(self.dataRouter.myColors.secondarySubPageTitleColor)
-                                .font(self.dataRouter.myFonts.subPageTitleFont)
-                                .fontWeight(.medium)
+                            
+                            HStack(spacing: 0){
+                                
+                                Spacer()
+                                
+                                Text("Function Guide")
+                                    .foregroundColor(self.dataRouter.myColors.secondarySubPageTitleColor)
+                                    .font(self.dataRouter.myFonts.subPageTitleFont)
+                                    .fontWeight(.medium)
+                                
+                                Spacer()
+                                
+                            }.frame(width: geometry.size.width * self.dataRouter.mySizes.subPageMainButtonWidth)
                             
                             Rectangle()
-                                .fill(self.dataRouter.myColors.secondaryBackgroundColor)
-                                .frame(width: self.dataRouter.mySizes.nilSize, height: geometry.size.height * self.dataRouter.mySizes.subPageBodyGap)
+                                .fill(Color.clear)
+                                .frame(width: 0, height: geometry.size.height * self.dataRouter.mySizes.subPageBodyGap)
                             
-                            Text("Below is a guide of how to use the various functions in RPN 30. In general, functions either are computed on the last number entered (the \"xRegister\") or on last number entered and the number entered before it (the \"yRegister\"). For example if you input the following: 7 ENTER 3, the xRegister will be 3 and the yRegister will be 7.")
-                                .foregroundColor(self.dataRouter.myColors.secondarySubPageTextColor)
-                                .font(self.dataRouter.myFonts.subPageTextFont)
-                                .minimumScaleFactor(self.dataRouter.mySizes.minimumScaleFactor)
-                                .padding(self.dataRouter.mySizes.textPadding)
-                            
+                            HStack(spacing: 0){
+                                
+                                Spacer()
+                                
+                                Text("Below is a guide of how to use the various functions in RPN 30. In general, functions either are computed on the last number entered (the \"xRegister\") or on last number entered and the number entered before it (the \"yRegister\"). For example if you input the following: 7 ENTER 3, the xRegister will be 3 and the yRegister will be 7.")
+                                    .foregroundColor(self.dataRouter.myColors.secondarySubPageTextColor)
+                                    .font(self.dataRouter.myFonts.subPageTextFont)
+                                    .minimumScaleFactor(self.dataRouter.mySizes.minimumScaleFactor)
+                                    .padding(self.dataRouter.mySizes.textPadding)
+                                
+                                Spacer()
+                                
+                            }.frame(width: geometry.size.width * self.dataRouter.mySizes.subPageMainButtonWidth)
+                        
                             Rectangle()
-                                .fill(self.dataRouter.myColors.secondaryBackgroundColor)
-                                .frame(width: self.dataRouter.mySizes.nilSize, height: geometry.size.height * self.dataRouter.mySizes.subPageTableGap)
+                                .fill(Color.clear)
+                                .frame(width: 0, height: geometry.size.height * self.dataRouter.mySizes.subPageBodyGap)
+                            
+
                         }
                         
                         ForEach(self.myGuide.guideList) { guideEntry in

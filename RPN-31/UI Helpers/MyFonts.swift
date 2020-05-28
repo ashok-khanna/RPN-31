@@ -24,9 +24,9 @@ struct MyFonts {
               sRegisterFont = Font.body
               digitFont = Font.largeTitle
               textFont = Font.headline
-              captionFont = Font.caption
+              captionFont = Font.headline
               subPageTitleFont = Font.title
-            subPageHeaderFont = Font.headline
+              subPageHeaderFont = Font.headline
               subPageImageFont = Font.body
               subPageTextFont = Font.body
             

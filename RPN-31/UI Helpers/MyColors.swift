@@ -48,22 +48,15 @@ struct MyColors {
     var sliderPrimaryColor: Color
     var sliderTextColor: Color
     
+    var purpleButtonColor: Color
+    
     init() {
-        
-        // White Slider Colors //
         
         secondaryBackgroundColor = Color(UIColor.white)
         lighterBackgroundColor = Color(UIColor.darkGray.darker(by: 75.0))
-        
-        
-        
-        
-        
-        
-        // Outstanding //
-        
+        purpleButtonColor = Color(UIColor.systemPurple)
+    
         primaryBackgroundColor = Color(UIColor.black)
-
 
         sRegistersBackgroundColor = Color(UIColor.black)
         sRegistersTextColor = Color(UIColor.white)

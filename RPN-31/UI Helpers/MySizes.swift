@@ -48,8 +48,6 @@ struct MySizes {
     var subPageTableGapPortrait: CGFloat
     var subPageMainButtonWidthPortrait: CGFloat
     var subPageMainButtonHeightPortrait: CGFloat
-    var subPageSecondaryButtonWidthPortrait: CGFloat
-    var subPageSecondaryButtonHeightPortrait: CGFloat
     var subPageListTableDividerPortrait: CGFloat
     
     var subPageTopDividerLandscape: CGFloat
@@ -58,8 +56,6 @@ struct MySizes {
     var subPageTableGapLandscape: CGFloat
     var subPageMainButtonWidthLandscape: CGFloat
     var subPageMainButtonHeightLandscape: CGFloat
-    var subPageSecondaryButtonWidthLandscape: CGFloat
-    var subPageSecondaryButtonHeightLandscape: CGFloat
     var subPageListTableDividerLandscape: CGFloat
     
     var cornerRadius: CGFloat
@@ -94,9 +90,11 @@ struct MySizes {
     
     var subPageMainButtonWidth: CGFloat
     var subPageMainButtonHeight: CGFloat
-    var subPageSecondaryButtonWidth: CGFloat
-    var subPageSecondaryButtonHeight: CGFloat
     var subPageListTableDivider: CGFloat
+    
+    var subPageEditableTableGapPortrait: CGFloat
+    var subPageEditableTableGapLandscape: CGFloat
+    var subPageEditableTableGap: CGFloat
     
     init(_ iPad : Bool) {
         
@@ -105,6 +103,10 @@ struct MySizes {
             
             
             // Reviewed & Approved //
+            
+            subPageTopDividerPortrait = CGFloat(0.04)
+            subPageTopDividerLandscape = CGFloat(0.04)
+            subPageTopDivider = CGFloat(0.04)
             
             subPageHeaderGapPortrait = CGFloat(0.03)
             subPageHeaderGapLandscape = CGFloat(0.03)
@@ -118,13 +120,17 @@ struct MySizes {
             subPageTableGapLandscape = CGFloat(0.06)
             subPageTableGap = CGFloat(0.06)
             
+            subPageEditableTableGapPortrait = CGFloat(0.08)
+            subPageEditableTableGapLandscape = CGFloat(0.08)
+            subPageEditableTableGap = CGFloat(0.08)
+            
             subPageMainButtonWidthPortrait = CGFloat(0.90)
             subPageMainButtonWidthLandscape = CGFloat(0.90)
             subPageMainButtonWidth = CGFloat(0.90)
             
-            subPageMainButtonHeightPortrait = CGFloat(0.125)
-            subPageMainButtonHeightLandscape = CGFloat(0.125)
-            subPageMainButtonHeight = CGFloat(0.125)
+            subPageMainButtonHeightPortrait = CGFloat(0.1)
+            subPageMainButtonHeightLandscape = CGFloat(0.1)
+            subPageMainButtonHeight = CGFloat(0.1)
             
             subPageListTableDividerPortrait = CGFloat(0.005)
             subPageListTableDividerLandscape = CGFloat(0.005)
@@ -168,17 +174,6 @@ struct MySizes {
             bottomGapLandscape = CGFloat(0.05)
             bottomGap = CGFloat(0.05)
             
-            subPageTopDividerPortrait = CGFloat(0.04)
-            subPageTopDividerLandscape = CGFloat(0.04)
-            
-            subPageSecondaryButtonWidthPortrait = CGFloat(0.90)
-            subPageSecondaryButtonHeightPortrait = CGFloat(0.1)
-
-            
-            subPageSecondaryButtonWidthLandscape = CGFloat(0.90)
-            subPageSecondaryButtonHeightLandscape = CGFloat(0.1)
-
-            
 
             textPadding = CGFloat(20)
             helpPadding = CGFloat(40)
@@ -203,11 +198,7 @@ struct MySizes {
             xRegisterHeight = CGFloat(0.1)
             xRegisterWidth = CGFloat(0.9)
             
-            subPageTopDivider = CGFloat(0.02)
 
-            
-            subPageSecondaryButtonWidth = CGFloat(0.9)
-            subPageSecondaryButtonHeight = CGFloat(0.25)
 
             
             
@@ -215,6 +206,10 @@ struct MySizes {
             
             
             // Reviewed & Approved //
+            subPageTopDividerPortrait = CGFloat(0.04)
+            subPageTopDividerLandscape = CGFloat(0.04)
+            subPageTopDivider = CGFloat(0.04)
+            
             subPageHeaderGapPortrait = CGFloat(0.03)
             subPageHeaderGapLandscape = CGFloat(0.03)
             subPageHeaderGap = CGFloat(0.03)
@@ -226,6 +221,10 @@ struct MySizes {
             subPageTableGapPortrait = CGFloat(0.06)
             subPageTableGapLandscape = CGFloat(0.06)
             subPageTableGap = CGFloat(0.06)
+            
+            subPageEditableTableGapPortrait = CGFloat(0.065)
+            subPageEditableTableGapLandscape = CGFloat(0.065)
+            subPageEditableTableGap = CGFloat(0.065)
             
             subPageMainButtonWidthPortrait = CGFloat(0.90)
             subPageMainButtonWidthLandscape = CGFloat(0.90)
@@ -277,17 +276,6 @@ struct MySizes {
             bottomGapLandscape = CGFloat(0.01)
             bottomGap = CGFloat(0.01)
             
-            subPageTopDividerPortrait = CGFloat(0.04)
-
-
-            subPageSecondaryButtonWidthPortrait = CGFloat(0.90)
-            subPageSecondaryButtonHeightPortrait = CGFloat(0.075)
-
-
-            subPageTopDividerLandscape = CGFloat(0.02)
-
-            subPageSecondaryButtonWidthLandscape = CGFloat(0.90)
-            subPageSecondaryButtonHeightLandscape = CGFloat(0.075)
             
 
             textPadding = CGFloat(5)
@@ -314,10 +302,6 @@ struct MySizes {
             xRegisterHeight = CGFloat(0.1)
             xRegisterWidth = CGFloat(0.9)
             
-            subPageTopDivider = CGFloat(0.02)
-
-            subPageSecondaryButtonWidth = CGFloat(0.9)
-            subPageSecondaryButtonHeight = CGFloat(0.075)
 
         }
     
@@ -332,8 +316,8 @@ struct MySizes {
         subPageMainButtonWidth = subPageMainButtonWidthLandscape
         subPageMainButtonHeight = subPageMainButtonHeightLandscape
         subPageListTableDivider = subPageListTableDividerLandscape
-        
-        
+        subPageTopDivider = subPageTopDividerLandscape
+        subPageEditableTableGap = subPageEditableTableGapLandscape
         
         // Outstanding //
         
@@ -356,11 +340,7 @@ struct MySizes {
         xRegisterWidth = xRegisterWidthLandscape
         
         bottomGap = bottomGapLandscape
-        
-        subPageTopDivider = subPageTopDividerLandscape
-        
-        subPageSecondaryButtonWidth = subPageSecondaryButtonWidthLandscape
-        subPageSecondaryButtonHeight = subPageSecondaryButtonHeightLandscape
+
 
     }
     
@@ -374,6 +354,8 @@ struct MySizes {
         subPageMainButtonWidth = subPageMainButtonWidthPortrait
         subPageMainButtonHeight = subPageMainButtonHeightPortrait
         subPageListTableDivider = subPageListTableDividerPortrait
+        subPageTopDivider = subPageTopDividerPortrait
+        subPageEditableTableGap = subPageEditableTableGapPortrait
         
         // Outstanding //
         
@@ -398,10 +380,7 @@ struct MySizes {
         
         bottomGap = bottomGapPortrait
         
-        subPageTopDivider = subPageTopDividerPortrait
 
-        subPageSecondaryButtonWidth = subPageSecondaryButtonWidthPortrait
-        subPageSecondaryButtonHeight = subPageSecondaryButtonHeightPortrait
 
         
     }

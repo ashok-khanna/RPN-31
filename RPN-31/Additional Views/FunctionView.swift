@@ -21,26 +21,62 @@ struct FunctionView: View {
                         .fill(self.dataRouter.myColors.primaryBackgroundColor)
                           .frame(width: geometry.size.width, height: geometry.size.height * self.dataRouter.mySizes.subPageHeaderGap)
                     
-                        Text("Advance Functions")
-                            .foregroundColor(self.dataRouter.myColors.primarySubPageTitleColor)
-                            .font(self.dataRouter.myFonts.subPageTitleFont)
-                            .fontWeight(.medium)
+                    
+                    HStack {
+                        
+                        Spacer()
+                        
+                        ZStack {
+                                                 
+                            HStack(spacing: 0){
+                                
+                                AdvanceButton2(buttonText: "EXIT", width: geometry.size.width  * CGFloat(0.2), height: geometry.size.width  * CGFloat(0.075), presentFunctionPage: self.$presentFunctionPage, presentButtonConfigurator: self.$presentButtonConfigurator, presentGuidePage: self.$presentGuidePage, bgColor: self.dataRouter.myColors.brightButtonColor, bgColor1: self.dataRouter.myColors.brightButtonColor, highlightColor: self.dataRouter.myColors.brightShortPressColor)
+                                .frame(width: geometry.size.height * self.dataRouter.mySizes.subPageMainButtonHeight, height: geometry.size.height * self.dataRouter.mySizes.subPageMainButtonHeight)
+                                
+                                Spacer()
+                            }.frame(width: geometry.size.width * CGFloat(0.92))
+                            
+                            HStack(spacing: 0){
+                                
+                            
+                            Spacer()
+                            
+                            Text("Advance Functions")
+                                    .foregroundColor(self.dataRouter.myColors.primarySubPageTitleColor)
+                                    .font(self.dataRouter.myFonts.subPageTitleFont)
+                                    .fontWeight(.medium)
+                                .frame(height: geometry.size.height * self.dataRouter.mySizes.subPageMainButtonHeight)
+                            
+                            Spacer()
+                            
+                            
+                        }.frame(width: geometry.size.width * CGFloat(0.92))
+                        
+                        
+                        }
+                        
+                        Spacer()
+                        
+                        
+                    }.frame(width: geometry.size.width * CGFloat(0.92))
+                    
+
                     
                     Rectangle()
-                        .fill(self.dataRouter.myColors.primaryBackgroundColor)
-                        .frame(width: geometry.size.width, height: geometry.size.height * self.dataRouter.mySizes.subPageBodyGap)
+                        .fill(Color.clear)
+                        .frame(width: geometry.size.width, height: geometry.size.height * self.dataRouter.mySizes.subPageHeaderGap)
 
                     Spacer()
                     
-                    AdvanceButton2(buttonText: "Button Configurator", width: geometry.size.width * self.dataRouter.mySizes.subPageMainButtonWidth, height: geometry.size.height * self.dataRouter.mySizes.subPageMainButtonHeight, presentFunctionPage: self.$presentFunctionPage, presentButtonConfigurator: self.$presentButtonConfigurator, presentGuidePage: self.$presentGuidePage, bgColor: self.dataRouter.myColors.specialFillColor, bgColor1: self.dataRouter.myColors.specialFillColor, highlightColor: self.dataRouter.myColors.brightButtonColor)
-                        .frame(width: geometry.size.width * self.dataRouter.mySizes.subPageMainButtonWidth, height: geometry.size.height * self.dataRouter.mySizes.subPageMainButtonHeight)
+                    AdvanceButton2(buttonText: "Button Configurator", width: geometry.size.width * CGFloat(0.92), height: geometry.size.height * CGFloat(0.075), presentFunctionPage: self.$presentFunctionPage, presentButtonConfigurator: self.$presentButtonConfigurator, presentGuidePage: self.$presentGuidePage, bgColor: self.dataRouter.myColors.specialFillColor, bgColor1: self.dataRouter.myColors.specialFillColor, highlightColor: self.dataRouter.myColors.brightButtonColor)
+                        .frame(width: geometry.size.width * CGFloat(0.92), height: geometry.size.height * CGFloat(0.075))
                     .sheet(isPresented: self.$presentButtonConfigurator) {
                     ButtonConfiguratorView(presentButtonConfigurator: self.$presentButtonConfigurator).environmentObject(self.dataRouter)
                     }
                     
                     Rectangle()
-                        .fill(self.dataRouter.myColors.primaryBackgroundColor)
-                          .frame(width: geometry.size.width, height: geometry.size.height * self.dataRouter.mySizes.subPageTableGap)
+                        .fill(Color.clear)
+                          .frame(width: geometry.size.width, height: geometry.size.height * self.dataRouter.mySizes.subPageHeaderGap)
                     
                     Spacer()
                     
@@ -75,7 +111,7 @@ struct FunctionView: View {
                         }
                         
                         Rectangle()
-                            .fill(self.dataRouter.myColors.primaryBackgroundColor)
+                            .fill(Color.clear)
                             .frame(width:geometry.size.width, height: geometry.size.width * 0.04)
                         
                         HStack(spacing: 0) {
@@ -107,7 +143,7 @@ struct FunctionView: View {
                         }
                         
                         Rectangle()
-                            .fill(self.dataRouter.myColors.primaryBackgroundColor)
+                            .fill(Color.clear)
                             .frame(width:geometry.size.width, height: geometry.size.width * 0.04)
                         
                         HStack(spacing: 0) {
@@ -141,7 +177,7 @@ struct FunctionView: View {
                         }
                         
                         Rectangle()
-                            .fill(self.dataRouter.myColors.primaryBackgroundColor)
+                            .fill(Color.clear)
                             .frame(width:geometry.size.width, height: geometry.size.width * 0.04)
                         
                         HStack(spacing: 0) {
@@ -171,7 +207,7 @@ struct FunctionView: View {
                         }
                         
                         Rectangle()
-                            .fill(self.dataRouter.myColors.primaryBackgroundColor)
+                            .fill(Color.clear)
                             .frame(width:geometry.size.width, height: geometry.size.width * 0.04)
                         
                     }

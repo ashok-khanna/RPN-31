@@ -1,3 +1,5 @@
+/* Status: Completed */
+
 import SwiftUI
 
 struct StackView: View {
@@ -18,38 +20,67 @@ struct StackView: View {
                 VStack(spacing: 0) {
                     
                     Rectangle()
-                        .fill(self.dataRouter.myColors.secondarySubPageHeaderColor)
-                        .frame(width: self.dataRouter.mySizes.nilSize, height: geometry.size.height * self.dataRouter.mySizes.subPageTopDivider)
+                        .fill(Color.clear)
+                        .frame(width: 0, height: geometry.size.height * self.dataRouter.mySizes.subPageTopDivider)
                     
+                    
+                    HStack(spacing: 0){
+                        
+                        Spacer()
+                        
                         Text("Stack View")
-                            .foregroundColor(self.dataRouter.myColors.secondarySubPageTitleColor)
-                            .font(self.dataRouter.myFonts.subPageTitleFont)
-                            .fontWeight(.medium)
+                                .foregroundColor(self.dataRouter.myColors.secondarySubPageTitleColor)
+                                .font(self.dataRouter.myFonts.subPageTitleFont)
+                                .fontWeight(.medium)
+                        
+                        Spacer()
+                        
+                    }.frame(width: geometry.size.width * self.dataRouter.mySizes.subPageMainButtonWidth)
                     
                     Rectangle()
                         .fill(self.dataRouter.myColors.secondaryBackgroundColor)
                         .frame(width: self.dataRouter.mySizes.nilSize, height: geometry.size.height * self.dataRouter.mySizes.subPageBodyGap)
                     
+                    HStack(spacing: 0){
+                        
+                        Spacer()
+                        
                         Text("Reorder by touching down on the three grey lines to the right and then drag the row up or down. Dismiss this page when done (all changes are autosaved).")
-                            .foregroundColor(self.dataRouter.myColors.secondarySubPageTextColor)
-                            .font(self.dataRouter.myFonts.subPageTextFont)
-                            .minimumScaleFactor(0.01)
-                            .padding(0)
+                              .foregroundColor(self.dataRouter.myColors.secondarySubPageTextColor)
+                              .font(self.dataRouter.myFonts.subPageTextFont)
+                              .minimumScaleFactor(self.dataRouter.mySizes.minimumScaleFactor)
+                              .padding(0)
+                        
+                        Spacer()
+                        
+                    }.frame(width: geometry.size.width * self.dataRouter.mySizes.subPageMainButtonWidth)
+
                     
                     Rectangle()
                     .fill(Color.clear)
-                    .frame(width:0, height: geometry.size.height * self.dataRouter.mySizes.subPageBodyGap)
+                    .frame(width: 0, height: geometry.size.height * self.dataRouter.mySizes.subPageBodyGap)
                     
-                    SimpleButton(buttonText: "Reset Stack Registers", width: geometry.size.width * self.dataRouter.mySizes.subPageSecondaryButtonWidth, height: geometry.size.height * self.dataRouter.mySizes.subPageSecondaryButtonHeight, bgColor: self.dataRouter.myColors.secondarySpecialFillColor, bgColor1: self.dataRouter.myColors.secondarySpecialFillColor, highlightColor: self.dataRouter.myColors.brightButtonColor)
-                    .frame(width: geometry.size.width * self.dataRouter.mySizes.subPageSecondaryButtonWidth, height: geometry.size.height * self.dataRouter.mySizes.subPageSecondaryButtonHeight)
-                        .onAppear() {
-                            self.dataRouter.defaults.set(self.dataRouter.calculator.stackRegisters, forKey: "tempStackRegisterStore")
+                    HStack(spacing: 0){
+                        
+                        Spacer()
+                        
+                        SimpleButton(buttonText: "Reset Stack Registers", width: geometry.size.width * self.dataRouter.mySizes.subPageMainButtonWidth, height: geometry.size.height * self.dataRouter.mySizes.subPageMainButtonHeight, bgColor: self.dataRouter.myColors.secondarySpecialFillColor, bgColor1: self.dataRouter.myColors.secondarySpecialFillColor, highlightColor: self.dataRouter.myColors.purpleButtonColor)
+                        .frame(width: geometry.size.width * self.dataRouter.mySizes.subPageMainButtonWidth, height: geometry.size.height * self.dataRouter.mySizes.subPageMainButtonHeight)
+                            .onAppear() {
+                                self.dataRouter.defaults.set(self.dataRouter.calculator.stackRegisters, forKey: "tempStackRegisterStore")
+                        }
+                        
+                        Spacer()
+                        
+                        
                     }
                     
                     
                     Rectangle()
-                        .fill(self.dataRouter.myColors.secondaryBackgroundColor)
-                        .frame(width: self.dataRouter.mySizes.nilSize, height: geometry.size.height * self.dataRouter.mySizes.subPageTableGap)
+                        .fill(Color.clear)
+                        .frame(width: 0, height: geometry.size.height * self.dataRouter.mySizes.subPageEditableTableGap)
+                    
+                    
                     }
                     
                     
@@ -77,7 +108,6 @@ struct StackView: View {
             func move(from source: IndexSet, to destination: Int) {
                 self.dataRouter.calculator.stackRegisters.move(fromOffsets: source, toOffset: destination)
         }
-        
 }
 
 
