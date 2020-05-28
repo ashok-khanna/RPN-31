@@ -64,12 +64,13 @@ struct MainView: View {
                             .frame(width: geometry.size.width * self.dataRouter.mySizes.yRegisterWidth, height: geometry.size.height * self.dataRouter.mySizes.stackHeight)
 
                             Spacer()
+                                                            
+                                StackButton(width: geometry.size.width * self.dataRouter.mySizes.stackWidth, height: geometry.size.height * self.dataRouter.mySizes.stackHeight, bgColor1: Color.clear, presentStackRegister: self.$presentStackRegister)
+                                .frame(width: geometry.size.width * self.dataRouter.mySizes.stackWidth, height: geometry.size.height * self.dataRouter.mySizes.stackHeight)
+                                    .sheet(isPresented: self.$presentStackRegister) {
+                                StackView(presentStackRegister: self.$presentStackRegister).environmentObject(self.dataRouter)
+                                }
                             
-                            StackButton(width: geometry.size.width * self.dataRouter.mySizes.stackWidth, height: geometry.size.height * self.dataRouter.mySizes.stackHeight, bgColor1: Color.clear, presentStackRegister: self.$presentStackRegister)
-                            .frame(width: geometry.size.width * self.dataRouter.mySizes.stackWidth, height: geometry.size.height * self.dataRouter.mySizes.stackHeight)
-                                .sheet(isPresented: self.$presentStackRegister) {
-                            StackView(presentStackRegister: self.$presentStackRegister).environmentObject(self.dataRouter)
-                            }
                             
                             Rectangle()
                                 .fill(Color.clear)

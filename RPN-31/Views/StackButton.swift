@@ -57,18 +57,18 @@ struct StackButton: View {
         
         return
             
-            VStack {
+            VStack(alignment: .trailing) {
                 
                 Spacer()
-                
+                    
                 Text(self.dataRouter.displayFormatter.string(self.dataRouter.calculator.stackRegisters[4]))
-                    .font(self.dataRouter.myFonts.sRegisterFont)
-                    .minimumScaleFactor(0.01)
-                    .lineLimit(1)
-                    .foregroundColor(self.dataRouter.myColors.sRegistersTextColor)
-                    .frame(width: self.width * CGFloat(0.8))
-                    .padding(self.dataRouter.mySizes.textPadding)
-                
+                        .font(self.dataRouter.myFonts.sRegisterFont)
+                        .minimumScaleFactor(0.01)
+                        .lineLimit(1)
+                        .foregroundColor(self.dataRouter.myColors.sRegistersTextColor)
+                        .frame(width: self.width * CGFloat(0.8), alignment: .trailing)
+                        .padding(.leading, self.dataRouter.mySizes.textPadding)
+
                 Spacer()
                 
                 Text(self.dataRouter.displayFormatter.string(self.dataRouter.calculator.stackRegisters[3]))
@@ -76,7 +76,8 @@ struct StackButton: View {
                     .minimumScaleFactor(0.01)
                     .lineLimit(1)
                     .foregroundColor(self.dataRouter.myColors.sRegistersTextColor)
-                    .padding(self.dataRouter.mySizes.textPadding)
+                    .frame(width: self.width * CGFloat(0.8), alignment: .trailing)
+                    .padding(.leading, self.dataRouter.mySizes.textPadding)
                 
                 Spacer()
                 
@@ -85,8 +86,9 @@ struct StackButton: View {
                     .minimumScaleFactor(0.01)
                     .lineLimit(1)
                     .foregroundColor(self.dataRouter.myColors.sRegistersTextColor)
-                    .padding(self.dataRouter.mySizes.textPadding)
-                
+                    .frame(width: self.width * CGFloat(0.8), alignment: .trailing)
+                    .padding(.leading, self.dataRouter.mySizes.textPadding)
+
                 Spacer()
                 
             }

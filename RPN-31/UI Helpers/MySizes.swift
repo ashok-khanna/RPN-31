@@ -152,13 +152,13 @@ struct MySizes {
             
             yRegisterHeightPortrait = CGFloat(0.05)
             yRegisterHeightLandscape = CGFloat(0.05)
-            yRegisterWidthPortrait = CGFloat(0.5)
-            yRegisterWidthLandscape = CGFloat(0.5)
+            yRegisterWidthPortrait = CGFloat(0.45)
+            yRegisterWidthLandscape = CGFloat(0.45)
             
             lRegisterHeightPortrait = CGFloat(0.05)
             lRegisterHeightLandscape = CGFloat(0.05)
-            lRegisterWidthPortrait = CGFloat(0.5)
-            lRegisterWidthLandscape = CGFloat(0.5)
+            lRegisterWidthPortrait = CGFloat(0.45)
+            lRegisterWidthLandscape = CGFloat(0.45)
             
             stackHeightPortrait = CGFloat(0.2)
             stackHeightLandscape = CGFloat(0.2)
@@ -187,10 +187,10 @@ struct MySizes {
             gapWidth = CGFloat(0.2)
             
             yRegisterHeight = CGFloat(0.05)
-            yRegisterWidth = CGFloat(0.5)
+            yRegisterWidth = CGFloat(0.45)
             
             lRegisterHeight = CGFloat(0.05)
-            lRegisterWidth = CGFloat(0.5)
+            lRegisterWidth = CGFloat(0.45)
             
             stackHeight = CGFloat(0.2)
             stackWidth = CGFloat(0.3)
@@ -254,13 +254,13 @@ struct MySizes {
             
             yRegisterHeightPortrait = CGFloat(0.05)
             yRegisterHeightLandscape = CGFloat(0.05)
-            yRegisterWidthPortrait = CGFloat(0.5)
-            yRegisterWidthLandscape = CGFloat(0.5)
+            yRegisterWidthPortrait = CGFloat(0.45)
+            yRegisterWidthLandscape = CGFloat(0.45)
             
             lRegisterHeightPortrait = CGFloat(0.05)
             lRegisterHeightLandscape = CGFloat(0.05)
-            lRegisterWidthPortrait = CGFloat(0.5)
-            lRegisterWidthLandscape = CGFloat(0.5)
+            lRegisterWidthPortrait = CGFloat(0.45)
+            lRegisterWidthLandscape = CGFloat(0.45)
             
             stackHeightPortrait = CGFloat(0.15)
             stackHeightLandscape = CGFloat(0.15)
@@ -291,10 +291,10 @@ struct MySizes {
             minimumScaleFactor = CGFloat(0.01)
             
             yRegisterHeight = CGFloat(0.1)
-            yRegisterWidth = CGFloat(0.5)
+            yRegisterWidth = CGFloat(0.45)
             
             lRegisterHeight = CGFloat(0.1)
-            lRegisterWidth = CGFloat(0.5)
+            lRegisterWidth = CGFloat(0.45)
             
             stackHeight = CGFloat(0.2)
             stackWidth = CGFloat(0.3)
