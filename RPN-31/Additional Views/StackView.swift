@@ -19,7 +19,7 @@ struct StackView: View {
                     
                     Rectangle()
                         .fill(self.dataRouter.myColors.secondarySubPageHeaderColor)
-                        .frame(width: geometry.size.width * self.dataRouter.mySizes.subPageMainButtonWidth, height: geometry.size.height * self.dataRouter.mySizes.subPageTopDivider)
+                        .frame(width: self.dataRouter.mySizes.nilSize, height: geometry.size.height * self.dataRouter.mySizes.subPageTopDivider)
                     
                         Text("Stack View")
                             .foregroundColor(self.dataRouter.myColors.secondarySubPageTitleColor)
@@ -52,7 +52,8 @@ struct StackView: View {
                         .frame(width: self.dataRouter.mySizes.nilSize, height: geometry.size.height * self.dataRouter.mySizes.subPageTableGap)
                     }
                     
-                                ForEach(0..<self.dataRouter.calculator.stackRegisters.count) { i in
+                    
+                    ForEach(0..<self.dataRouter.calculator.stackRegisters.count) { i in
                                     
                                     Text(self.dataRouter.displayFormatter.string(self.dataRouter.calculator.stackRegisters[i]))
                                         .font(self.dataRouter.myFonts.subPageTextFont)

@@ -12,6 +12,7 @@ struct MyFonts {
     let subPageTitleFont: Font
     let subPageImageFont: Font
     let subPageTextFont: Font
+    let subPageHeaderFont: Font
     
     init (_ iPad: Bool){
         
@@ -19,12 +20,13 @@ struct MyFonts {
             
               xRegisterFont = Font.largeTitle
               yRegisterFont = Font.title
-              lRegisterFont = Font.title
+              lRegisterFont = Font.headline
               sRegisterFont = Font.body
               digitFont = Font.largeTitle
               textFont = Font.headline
               captionFont = Font.caption
               subPageTitleFont = Font.title
+            subPageHeaderFont = Font.headline
               subPageImageFont = Font.body
               subPageTextFont = Font.body
             
@@ -32,12 +34,13 @@ struct MyFonts {
             
             xRegisterFont = Font.largeTitle
             yRegisterFont = Font.title
-            lRegisterFont = Font.title
+            lRegisterFont = Font.headline
             sRegisterFont = Font.body
             digitFont = Font.title
             textFont = Font.headline
             captionFont = Font.caption
             subPageTitleFont = Font.title
+            subPageHeaderFont = Font.headline
             subPageImageFont = Font.body
             subPageTextFont = Font.body
             

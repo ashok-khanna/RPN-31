@@ -5,6 +5,7 @@ import SwiftUI
 struct MyColors {
     
     var primaryBackgroundColor: Color
+    var lighterBackgroundColor: Color
     var secondaryBackgroundColor: Color
     var sRegistersBackgroundColor: Color
     var sRegistersTextColor: Color
@@ -49,25 +50,38 @@ struct MyColors {
     
     init() {
         
-        primaryBackgroundColor = Color(UIColor.black)
+        // White Slider Colors //
+        
         secondaryBackgroundColor = Color(UIColor.white)
-        sRegistersBackgroundColor = Color(UIColor.darkGray.darker(by: 75.0))
+        lighterBackgroundColor = Color(UIColor.darkGray.darker(by: 75.0))
+        
+        
+        
+        
+        
+        
+        // Outstanding //
+        
+        primaryBackgroundColor = Color(UIColor.black)
+
+
+        sRegistersBackgroundColor = Color(UIColor.black)
         sRegistersTextColor = Color(UIColor.white)
         mainTextColor = Color(UIColor.white)
         lRegisterTextColor = Color(UIColor.gray)
         functionDisplayTextColor = Color(UIColor.orange)
         
-        secondaryButtonColor = Color(UIColor.lightGray)
+        secondaryButtonColor = Color(UIColor.lightGray).opacity(0.75)
         secondaryShortPressColor = Color(UIColor.lightGray.lighter(by: 25.0))
         secondaryLongPressColor = Color(UIColor.lightGray.lighter(by: 25.0))
         secondaryButtonTextColor = Color(UIColor.black)
         
-        mainButtonColor = Color(UIColor.darkGray)
+        mainButtonColor = Color(UIColor.darkGray).opacity(0.5)
         mainShortPressColor = Color(UIColor.lightGray)
         mainLongPressColor = Color(UIColor.orange)
         mainButtonTextColor = Color(UIColor.white)
         
-        brightButtonColor = Color(UIColor.orange)
+        brightButtonColor = Color(UIColor.orange).opacity(0.75)
         brightShortPressColor = Color(UIColor.orange.lighter(by: 37.5))
         brightLongPressColor = Color(UIColor.orange.lighter(by: 37.5))
         brightButtonTextColor = Color(UIColor.white)
