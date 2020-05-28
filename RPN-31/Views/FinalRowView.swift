@@ -20,7 +20,7 @@ struct FinalRowView: View {
             HStack(spacing: 0) {
                 
                 Rectangle()
-                    .fill(self.dataRouter.myColors.primaryBackgroundColor)
+                    .fill(Color.clear)
                     .frame(width: geometry.size.width / self.dataRouter.rowUnits * self.dataRouter.mySizes.gapWidth, height: geometry.size.height)
                 
                 HStack(spacing: 0) {
@@ -33,7 +33,7 @@ struct FinalRowView: View {
                            .frame(width: geometry.size.width / self.dataRouter.rowUnits, height: (geometry.size.height - geometry.size.width / self.dataRouter.rowUnits * self.dataRouter.mySizes.gapWidth)/CGFloat(2))
                             
                             Rectangle()
-                                .fill(self.dataRouter.myColors.primaryBackgroundColor)
+                                .fill(Color.clear)
                                 .frame(width: geometry.size.width / self.dataRouter.rowUnits * self.dataRouter.mySizes.gapWidth, height: (geometry.size.height - geometry.size.width / self.dataRouter.rowUnits * self.dataRouter.mySizes.gapWidth)/CGFloat(2))
                             
                             
@@ -45,7 +45,7 @@ struct FinalRowView: View {
                         .padding(0)
                         
                         Rectangle()
-                            .fill(self.dataRouter.myColors.primaryBackgroundColor)
+                            .fill(Color.clear)
                             .frame(width: geometry.size.width / self.dataRouter.rowUnits * (CGFloat(2) + self.dataRouter.mySizes.gapWidth), height: geometry.size.width / self.dataRouter.rowUnits * self.dataRouter.mySizes.gapWidth)
                         
                         
@@ -59,7 +59,7 @@ struct FinalRowView: View {
                 .padding(0)
                 
                 Rectangle()
-                    .fill(self.dataRouter.myColors.primaryBackgroundColor)
+                    .fill(Color.clear)
                     .frame(width: geometry.size.width / self.dataRouter.rowUnits * self.dataRouter.mySizes.gapWidth, height: geometry.size.height)
                 
                 HStack(spacing: 0) {
@@ -70,7 +70,7 @@ struct FinalRowView: View {
                            .frame(width: geometry.size.width / self.dataRouter.rowUnits, height: (geometry.size.height - geometry.size.width / self.dataRouter.rowUnits * self.dataRouter.mySizes.gapWidth)/CGFloat(2))
                         
                         Rectangle()
-                            .fill(self.dataRouter.myColors.primaryBackgroundColor)
+                            .fill(Color.clear)
                             .frame(width: geometry.size.width / self.dataRouter.rowUnits, height: geometry.size.width / self.dataRouter.rowUnits * self.dataRouter.mySizes.gapWidth)
                         
                         MainButton(width: geometry.size.width / self.dataRouter.rowUnits, height: (geometry.size.height - geometry.size.width / self.dataRouter.rowUnits * self.dataRouter.mySizes.gapWidth)/CGFloat(2), calculatorButton: self.dataRouter.decimalButton, presentFunctionPage: self.$presentFunctionPage, presentHelpPage: self.$presentHelpPage)
@@ -81,7 +81,7 @@ struct FinalRowView: View {
                     }
                     
                     Rectangle()
-                        .fill(self.dataRouter.myColors.primaryBackgroundColor)
+                        .fill(Color.clear)
                         .frame(width: geometry.size.width / self.dataRouter.rowUnits * self.dataRouter.mySizes.gapWidth, height: geometry.size.height)
                     
                     OperatorButton(operatorString: "ENTER", bgColor: self.dataRouter.myColors.brightButtonColor, bgColor1: self.dataRouter.myColors.brightButtonColor, highlightColor: self.dataRouter.myColors.brightShortPressColor, highlightColor2: self.dataRouter.myColors.brightShortPressColor, fontColor: self.dataRouter.myColors.brightButtonTextColor, font: self.dataRouter.myFonts.textFont, width: geometry.size.width / self.dataRouter.rowUnits, height: geometry.size.height)
@@ -93,7 +93,7 @@ struct FinalRowView: View {
                 
                 
                 Rectangle()
-                    .fill(self.dataRouter.myColors.primaryBackgroundColor)
+                    .fill(Color.clear)
                     .frame(width: geometry.size.width / self.dataRouter.rowUnits * self.dataRouter.mySizes.gapWidth, height: geometry.size.height)
                 
             }

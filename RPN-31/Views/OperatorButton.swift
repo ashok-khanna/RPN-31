@@ -33,7 +33,7 @@ var body: some View {
                 gestureState = true
         }
     .onEnded { value in
-        if(abs(value.translation.width) < (self.width * CGFloat(0.75)) && abs(value.translation.height) < (self.height * CGFloat(0.75))) {
+        if(abs(value.translation.width) < (self.width * self.dataRouter.mySizes.hitBox) && abs(value.translation.height) < (self.height * self.dataRouter.mySizes.hitBox)) {
         if self.operatorString == "ENTER" {
             self.dataRouter.calculator.processEnter()
         } else if self.operatorString == "CLR" {
@@ -88,7 +88,7 @@ var body: some View {
             .frame(minWidth: 0, maxWidth: .infinity, minHeight: 0, maxHeight: .infinity)
             //.frame(width: width, height: height)
         .background(self.longPress ? self.highlightColor : (self.longDrag ? self.highlightColor2 : self.bgColor))
-            .cornerRadius(15)
+            .cornerRadius(self.dataRouter.mySizes.cornerRadius)
             .gesture(tapBeforeLongGestures)
 
     }

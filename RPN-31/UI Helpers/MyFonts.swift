@@ -19,11 +19,11 @@ struct MyFonts {
         if iPad {
             
               xRegisterFont = Font.largeTitle
-              yRegisterFont = Font.title
-              lRegisterFont = Font.headline
-              sRegisterFont = Font.body
+              yRegisterFont = Font.largeTitle
+              lRegisterFont = Font.title
+              sRegisterFont = Font.title
               digitFont = Font.largeTitle
-              textFont = Font.headline
+              textFont = Font.title
               captionFont = Font.headline
               subPageTitleFont = Font.title
               subPageHeaderFont = Font.headline
@@ -33,9 +33,9 @@ struct MyFonts {
         } else {
             
             xRegisterFont = Font.largeTitle
-            yRegisterFont = Font.title
-            lRegisterFont = Font.headline
-            sRegisterFont = Font.body
+            yRegisterFont = Font.largeTitle
+            lRegisterFont = Font.body
+            sRegisterFont = Font.headline
             digitFont = Font.title
             textFont = Font.headline
             captionFont = Font.caption

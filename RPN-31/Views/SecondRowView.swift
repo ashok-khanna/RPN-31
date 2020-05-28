@@ -22,27 +22,27 @@ struct SecondRowView: View {
 
                 
                 Rectangle()
-                    .fill(self.dataRouter.myColors.primaryBackgroundColor)
+                    .fill(Color.clear)
                     .frame(width: geometry.size.width / self.dataRouter.rowUnits * self.dataRouter.mySizes.gapWidth, height: geometry.size.height)
                 
                 MainButton(width: geometry.size.width / self.dataRouter.rowUnits, height: geometry.size.height, calculatorButton: self.dataRouter.sevenButton, presentFunctionPage: self.$presentFunctionPage, presentHelpPage: self.$presentHelpPage)
                            .frame(width: geometry.size.width / self.dataRouter.rowUnits, height: geometry.size.height)
                 Rectangle()
-                    .fill(self.dataRouter.myColors.primaryBackgroundColor)
+                    .fill(Color.clear)
                     .frame(width: geometry.size.width / self.dataRouter.rowUnits * self.dataRouter.mySizes.gapWidth, height: geometry.size.height)
                 
                 MainButton(width: geometry.size.width / self.dataRouter.rowUnits, height: geometry.size.height, calculatorButton: self.dataRouter.eightButton, presentFunctionPage: self.$presentFunctionPage, presentHelpPage: self.$presentHelpPage)
                            .frame(width: geometry.size.width / self.dataRouter.rowUnits, height: geometry.size.height)
 
                 Rectangle()
-                    .fill(self.dataRouter.myColors.primaryBackgroundColor)
+                    .fill(Color.clear)
                     .frame(width: geometry.size.width / self.dataRouter.rowUnits * self.dataRouter.mySizes.gapWidth, height: geometry.size.height)
                 
                 MainButton(width: geometry.size.width / self.dataRouter.rowUnits, height: geometry.size.height, calculatorButton: self.dataRouter.nineButton, presentFunctionPage: self.$presentFunctionPage, presentHelpPage: self.$presentHelpPage)
                            .frame(width: geometry.size.width / self.dataRouter.rowUnits, height: geometry.size.height)
 
                 Rectangle()
-                    .fill(self.dataRouter.myColors.primaryBackgroundColor)
+                    .fill(Color.clear)
                     .frame(width: geometry.size.width / self.dataRouter.rowUnits * self.dataRouter.mySizes.gapWidth, height: geometry.size.height)
                 
                 OperatorButton(operatorString: "-", bgColor: self.dataRouter.myColors.brightButtonColor, bgColor1: self.dataRouter.myColors.brightButtonColor, highlightColor: self.dataRouter.myColors.brightShortPressColor,highlightColor2: self.dataRouter.myColors.brightShortPressColor, fontColor: self.dataRouter.myColors.brightButtonTextColor,  font: self.dataRouter.myFonts.digitFont, width: geometry.size.width / self.dataRouter.rowUnits, height: geometry.size.height)
@@ -50,7 +50,7 @@ struct SecondRowView: View {
 
                 
                 Rectangle()
-                    .fill(self.dataRouter.myColors.primaryBackgroundColor)
+                    .fill(Color.clear)
                     .frame(width: geometry.size.width / self.dataRouter.rowUnits * self.dataRouter.mySizes.gapWidth, height: geometry.size.height)
                 
             }

@@ -128,9 +128,9 @@ struct MySizes {
             subPageMainButtonWidthLandscape = CGFloat(0.90)
             subPageMainButtonWidth = CGFloat(0.90)
             
-            subPageMainButtonHeightPortrait = CGFloat(0.1)
-            subPageMainButtonHeightLandscape = CGFloat(0.1)
-            subPageMainButtonHeight = CGFloat(0.1)
+            subPageMainButtonHeightPortrait = CGFloat(0.12)
+            subPageMainButtonHeightLandscape = CGFloat(0.12)
+            subPageMainButtonHeight = CGFloat(0.12)
             
             subPageListTableDividerPortrait = CGFloat(0.005)
             subPageListTableDividerLandscape = CGFloat(0.005)
@@ -150,13 +150,13 @@ struct MySizes {
             gapWidthPortrait = CGFloat(0.17)
             gapWidthLandscape = CGFloat(0.1)
             
-            yRegisterHeightPortrait = CGFloat(0.1)
-            yRegisterHeightLandscape = CGFloat(0.1)
+            yRegisterHeightPortrait = CGFloat(0.05)
+            yRegisterHeightLandscape = CGFloat(0.05)
             yRegisterWidthPortrait = CGFloat(0.5)
             yRegisterWidthLandscape = CGFloat(0.5)
             
-            lRegisterHeightPortrait = CGFloat(0.1)
-            lRegisterHeightLandscape = CGFloat(0.1)
+            lRegisterHeightPortrait = CGFloat(0.05)
+            lRegisterHeightLandscape = CGFloat(0.05)
             lRegisterWidthPortrait = CGFloat(0.5)
             lRegisterWidthLandscape = CGFloat(0.5)
             
@@ -186,10 +186,10 @@ struct MySizes {
             gridHeight = CGFloat(0.65)
             gapWidth = CGFloat(0.2)
             
-            yRegisterHeight = CGFloat(0.1)
+            yRegisterHeight = CGFloat(0.05)
             yRegisterWidth = CGFloat(0.5)
             
-            lRegisterHeight = CGFloat(0.1)
+            lRegisterHeight = CGFloat(0.05)
             lRegisterWidth = CGFloat(0.5)
             
             stackHeight = CGFloat(0.2)
@@ -230,9 +230,9 @@ struct MySizes {
             subPageMainButtonWidthLandscape = CGFloat(0.90)
             subPageMainButtonWidth = CGFloat(0.90)
             
-            subPageMainButtonHeightPortrait = CGFloat(0.125)
-            subPageMainButtonHeightLandscape = CGFloat(0.125)
-            subPageMainButtonHeight = CGFloat(0.125)
+            subPageMainButtonHeightPortrait = CGFloat(0.15)
+            subPageMainButtonHeightLandscape = CGFloat(0.15)
+            subPageMainButtonHeight = CGFloat(0.15)
             
             subPageListTableDividerPortrait = CGFloat(0.01)
             subPageListTableDividerLandscape = CGFloat(0.01)

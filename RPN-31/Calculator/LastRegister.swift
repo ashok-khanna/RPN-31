@@ -12,11 +12,11 @@ struct LastRegister {
     var lastOperator = ""
     var unaryAction = false
     var displayText = ""
-    var lRegisterFormatter = MyNumberFormatter() // We will use the default special formatter, so no need to define anything
     
     mutating func updateLastDisplayAfterOperation(){
     
-    
+    let lRegisterFormatter = MyNumberFormatter()
+        
     let lastXString = lRegisterFormatter.string(lastX)
     let lastYString = lRegisterFormatter.string(lastY)
     

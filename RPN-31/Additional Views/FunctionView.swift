@@ -13,7 +13,12 @@ struct FunctionView: View {
             ZStack {
                 
                 self.dataRouter.myColors.primaryBackgroundColor
-                .edgesIgnoringSafeArea(.all)
+                    .edgesIgnoringSafeArea(.all)
+                 
+                // Image("wallpaper2")
+                  //   .resizable()
+                 //    .aspectRatio(geometry.size, contentMode: .fill)
+                  //   .edgesIgnoringSafeArea(.all)
                 
                 VStack(spacing: 0) {
                       
@@ -30,13 +35,21 @@ struct FunctionView: View {
                                                  
                             HStack(spacing: 0){
                                 
-                                AdvanceButton2(buttonText: "EXIT", width: geometry.size.width  * CGFloat(0.2), height: geometry.size.width  * CGFloat(0.075), presentFunctionPage: self.$presentFunctionPage, presentButtonConfigurator: self.$presentButtonConfigurator, presentGuidePage: self.$presentGuidePage, bgColor: self.dataRouter.myColors.brightButtonColor, bgColor1: self.dataRouter.myColors.brightButtonColor, highlightColor: self.dataRouter.myColors.brightShortPressColor)
-                                .frame(width: geometry.size.height * self.dataRouter.mySizes.subPageMainButtonHeight, height: geometry.size.height * self.dataRouter.mySizes.subPageMainButtonHeight)
+                                AdvanceButton2(buttonText: "EXIT", width: geometry.size.width  * CGFloat(0.2), height: geometry.size.width  * (self.dataRouter.iPad ? self.dataRouter.mySizes.subPageMainButtonHeight : CGFloat(0.2)), presentFunctionPage: self.$presentFunctionPage, presentButtonConfigurator: self.$presentButtonConfigurator, presentGuidePage: self.$presentGuidePage, bgColor: self.dataRouter.myColors.brightButtonColor, bgColor1: self.dataRouter.myColors.brightButtonColor, highlightColor: self.dataRouter.myColors.brightShortPressColor)
+                                .frame(width: geometry.size.width  * CGFloat(0.2), height: geometry.size.width * (self.dataRouter.iPad ? self.dataRouter.mySizes.subPageMainButtonHeight : CGFloat(0.2)))
                                 
                                 Spacer()
                             }.frame(width: geometry.size.width * CGFloat(0.92))
                             
                             HStack(spacing: 0){
+                                
+                                if !self.dataRouter.iPad {
+                                    
+                                    Rectangle()
+                                        .fill(Color.clear)
+                                        .frame(width: geometry.size.width * CGFloat(0.2), height: geometry.size.width * (self.dataRouter.iPad ? self.dataRouter.mySizes.subPageMainButtonHeight : CGFloat(0.2)))
+                                    
+                                }
                                 
                             
                             Spacer()
@@ -68,8 +81,8 @@ struct FunctionView: View {
 
                     Spacer()
                     
-                    AdvanceButton2(buttonText: "Button Configurator", width: geometry.size.width * CGFloat(0.92), height: geometry.size.height * CGFloat(0.075), presentFunctionPage: self.$presentFunctionPage, presentButtonConfigurator: self.$presentButtonConfigurator, presentGuidePage: self.$presentGuidePage, bgColor: self.dataRouter.myColors.specialFillColor, bgColor1: self.dataRouter.myColors.specialFillColor, highlightColor: self.dataRouter.myColors.brightButtonColor)
-                        .frame(width: geometry.size.width * CGFloat(0.92), height: geometry.size.height * CGFloat(0.075))
+                    AdvanceButton2(buttonText: "Button Configurator", width: geometry.size.width * CGFloat(0.92), height: geometry.size.width * self.dataRouter.mySizes.subPageMainButtonHeight, presentFunctionPage: self.$presentFunctionPage, presentButtonConfigurator: self.$presentButtonConfigurator, presentGuidePage: self.$presentGuidePage, bgColor: self.dataRouter.myColors.specialFillColor, bgColor1: self.dataRouter.myColors.specialFillColor, highlightColor: self.dataRouter.myColors.brightButtonColor)
+                        .frame(width: geometry.size.width * CGFloat(0.92), height: geometry.size.width * self.dataRouter.mySizes.subPageMainButtonHeight)
                     .sheet(isPresented: self.$presentButtonConfigurator) {
                     ButtonConfiguratorView(presentButtonConfigurator: self.$presentButtonConfigurator).environmentObject(self.dataRouter)
                     }

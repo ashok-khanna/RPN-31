@@ -22,7 +22,7 @@ struct StackButton: View {
                 gestureState = true
         }
         .onEnded { value in
-            if(abs(value.translation.width) < (self.width * CGFloat(0.75)) && abs(value.translation.height) < (self.height * CGFloat(0.75))) {
+            if(abs(value.translation.width) < (self.width * self.dataRouter.mySizes.hitBox) && abs(value.translation.height) < (self.height * self.dataRouter.mySizes.hitBox)) {
             self.presentStackRegister = true
             }
             

@@ -18,7 +18,7 @@ struct FirstRowView: View {
             HStack(spacing: 0) {
                 
                 Rectangle()
-                    .fill(self.dataRouter.myColors.primaryBackgroundColor)
+                    .fill(Color.clear)
                     .frame(width: geometry.size.width / self.dataRouter.rowUnits * self.dataRouter.mySizes.gapWidth, height: geometry.size.height)
                 
                 
@@ -27,7 +27,7 @@ struct FirstRowView: View {
                 
                 
                 Rectangle()
-                    .fill(self.dataRouter.myColors.primaryBackgroundColor)
+                    .fill(Color.clear)
                     .frame(width: geometry.size.width / self.dataRouter.rowUnits * self.dataRouter.mySizes.gapWidth, height: geometry.size.height)
                 
                 OperatorButton(operatorString: "CHS", bgColor: self.dataRouter.myColors.secondaryButtonColor, bgColor1: self.dataRouter.myColors.secondaryButtonColor, highlightColor: self.dataRouter.myColors.secondaryShortPressColor, highlightColor2: self.dataRouter.myColors.secondaryShortPressColor, fontColor: self.dataRouter.myColors.secondaryButtonTextColor, font: self.dataRouter.myFonts.textFont, width: geometry.size.width / self.dataRouter.rowUnits, height: geometry.size.height)
@@ -35,7 +35,7 @@ struct FirstRowView: View {
 
                 
                 Rectangle()
-                    .fill(self.dataRouter.myColors.primaryBackgroundColor)
+                    .fill(Color.clear)
                     .frame(width: geometry.size.width / self.dataRouter.rowUnits * self.dataRouter.mySizes.gapWidth, height: geometry.size.height)
                 
                 OperatorButton(operatorString: "DIV", bgColor: self.dataRouter.myColors.secondaryButtonColor, bgColor1: self.dataRouter.myColors.secondaryButtonColor, highlightColor: self.dataRouter.myColors.secondaryShortPressColor, highlightColor2: self.dataRouter.myColors.secondaryShortPressColor, fontColor: self.dataRouter.myColors.secondaryButtonTextColor, font: self.dataRouter.myFonts.textFont, width: geometry.size.width / self.dataRouter.rowUnits, height: geometry.size.height)
@@ -43,7 +43,7 @@ struct FirstRowView: View {
 
                 
                 Rectangle()
-                    .fill(self.dataRouter.myColors.primaryBackgroundColor)
+                    .fill(Color.clear)
                     .frame(width: geometry.size.width / self.dataRouter.rowUnits * self.dataRouter.mySizes.gapWidth, height: geometry.size.height)
                 
                 OperatorButton(operatorString: "X", bgColor: self.dataRouter.myColors.brightButtonColor, bgColor1: self.dataRouter.myColors.brightButtonColor, highlightColor: self.dataRouter.myColors.brightShortPressColor, highlightColor2: self.dataRouter.myColors.brightShortPressColor, fontColor: self.dataRouter.myColors.brightButtonTextColor, font: self.dataRouter.myFonts.textFont, width: geometry.size.width / self.dataRouter.rowUnits, height: geometry.size.height)
@@ -51,7 +51,7 @@ struct FirstRowView: View {
 
                 
                 Rectangle()
-                    .fill(self.dataRouter.myColors.primaryBackgroundColor)
+                    .fill(Color.clear)
                     .frame(width: geometry.size.width / self.dataRouter.rowUnits * self.dataRouter.mySizes.gapWidth, height: geometry.size.height)
                 
             }

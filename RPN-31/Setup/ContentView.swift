@@ -17,7 +17,7 @@ struct ContentView: View {
             
             ZStack {
                 
-                self.dataRouter.myColors.primaryBackgroundColor
+               self.dataRouter.myColors.primaryBackgroundColor
                     .edgesIgnoringSafeArea(.all)
                 
                 

@@ -18,8 +18,8 @@ struct MainView: View {
                 
                 ZStack {
                     
-                    // self.dataRouter.myColors.primaryBackgroundColor
-                       // .edgesIgnoringSafeArea(.all)
+                    self.dataRouter.myColors.primaryBackgroundColor
+                       .edgesIgnoringSafeArea(.all)
                     
                     
                     VStack(spacing: 0) {
@@ -29,7 +29,7 @@ struct MainView: View {
                         HStack(spacing: 0) {
                             
                             Rectangle()
-                                .fill(self.dataRouter.myColors.primaryBackgroundColor)
+                                .fill(Color.clear)
                                 .frame(width: geometry.size.width * self.dataRouter.mySizes.topLeftGapWidth, height: geometry.size.height * self.dataRouter.mySizes.stackHeight)
                             
                             VStack(spacing: 0) {
@@ -65,14 +65,14 @@ struct MainView: View {
 
                             Spacer()
                             
-                            StackButton(width: geometry.size.width * self.dataRouter.mySizes.stackWidth, height: geometry.size.height * self.dataRouter.mySizes.stackHeight, bgColor1: self.dataRouter.myColors.sRegistersBackgroundColor, presentStackRegister: self.$presentStackRegister)
+                            StackButton(width: geometry.size.width * self.dataRouter.mySizes.stackWidth, height: geometry.size.height * self.dataRouter.mySizes.stackHeight, bgColor1: Color.clear, presentStackRegister: self.$presentStackRegister)
                             .frame(width: geometry.size.width * self.dataRouter.mySizes.stackWidth, height: geometry.size.height * self.dataRouter.mySizes.stackHeight)
                                 .sheet(isPresented: self.$presentStackRegister) {
                             StackView(presentStackRegister: self.$presentStackRegister).environmentObject(self.dataRouter)
                             }
                             
                             Rectangle()
-                                .fill(self.dataRouter.myColors.primaryBackgroundColor)
+                                .fill(Color.clear)
                                 .frame(width: geometry.size.width / self.dataRouter.rowUnits * self.dataRouter.mySizes.gapWidth, height: geometry.size.height * self.dataRouter.mySizes.stackHeight)
                             
 
@@ -83,6 +83,7 @@ struct MainView: View {
                         
                         Text(self.dataRouter.calculator.showFunction ? self.dataRouter.calculator.functionText : (self.dataRouter.calculator.isNewNumberEntry ? self.dataRouter.displayFormatter.string(self.dataRouter.calculator.stackRegisters[0]) : self.dataRouter.calculator.xRegisterEntryFormatter.string(from: NSNumber(value: self.dataRouter.calculator.stackRegisters[0]))!))
                             .font(self.dataRouter.myFonts.xRegisterFont)
+                            .fontWeight(self.dataRouter.calculator.showFunction ? .medium : .regular)
                             .minimumScaleFactor(0.01)
                             .lineLimit(1)
                             .foregroundColor(self.dataRouter.calculator.showFunction ? self.dataRouter.myColors.functionDisplayTextColor : self.dataRouter.myColors.mainTextColor)
@@ -91,17 +92,20 @@ struct MainView: View {
                             self.dataRouter.calculator.deleteInput()
                         }
                         
+                        Spacer()
+                        
                         Rectangle()
-                            .fill(self.dataRouter.myColors.primaryBackgroundColor)
+                            .fill(Color.clear)
                             .frame(width: geometry.size.width, height: geometry.size.width / self.dataRouter.rowUnits * self.dataRouter.mySizes.gapWidth)
 
                         ButtonGridView()
                             .frame(width: geometry.size.width, height: geometry.size.height * self.dataRouter.mySizes.gridHeight)
                         
                         Rectangle()
-                            .fill(self.dataRouter.myColors.primaryBackgroundColor)
+                            .fill(Color.clear)
                             .frame(width: geometry.size.width, height: geometry.size.height * self.dataRouter.mySizes.bottomGap)
                                         
+                        Spacer()
                         
                     }
                 }
