@@ -63,7 +63,7 @@ struct StackButton: View {
                     
                 Text(self.dataRouter.displayFormatter.string(self.dataRouter.calculator.stackRegisters[4]))
                         .font(self.dataRouter.myFonts.sRegisterFont)
-                        .minimumScaleFactor(0.01)
+                        .minimumScaleFactor(self.dataRouter.mySizes.minimumScaleFactor)
                         .lineLimit(1)
                         .foregroundColor(self.dataRouter.myColors.sRegistersTextColor)
                         .frame(width: self.width * CGFloat(0.8), alignment: .trailing)
@@ -73,7 +73,7 @@ struct StackButton: View {
                 
                 Text(self.dataRouter.displayFormatter.string(self.dataRouter.calculator.stackRegisters[3]))
                     .font(self.dataRouter.myFonts.sRegisterFont)
-                    .minimumScaleFactor(0.01)
+                    .minimumScaleFactor(self.dataRouter.mySizes.minimumScaleFactor)
                     .lineLimit(1)
                     .foregroundColor(self.dataRouter.myColors.sRegistersTextColor)
                     .frame(width: self.width * CGFloat(0.8), alignment: .trailing)
@@ -83,7 +83,7 @@ struct StackButton: View {
                 
                 Text(self.dataRouter.displayFormatter.string(self.dataRouter.calculator.stackRegisters[2]))
                     .font(self.dataRouter.myFonts.sRegisterFont)
-                    .minimumScaleFactor(0.01)
+                    .minimumScaleFactor(self.dataRouter.mySizes.minimumScaleFactor)
                     .lineLimit(1)
                     .foregroundColor(self.dataRouter.myColors.sRegistersTextColor)
                     .frame(width: self.width * CGFloat(0.8), alignment: .trailing)

@@ -38,7 +38,7 @@ struct MainView: View {
                                                                 
                                 Text(self.dataRouter.displayFormatter.string(self.dataRouter.calculator.stackRegisters[1]))
                                     .font(self.dataRouter.myFonts.yRegisterFont)
-                                    .minimumScaleFactor(0.01)
+                                    .minimumScaleFactor(self.dataRouter.mySizes.minimumScaleFactor)
                                     .lineLimit(1)
                                     .foregroundColor(self.dataRouter.myColors.mainTextColor)
                                     .frame(width: geometry.size.width * self.dataRouter.mySizes.yRegisterWidth, height: geometry.size.height * self.dataRouter.mySizes.yRegisterHeight, alignment: .leading)
@@ -50,7 +50,7 @@ struct MainView: View {
                                                                 
                                 Text(self.dataRouter.calculator.lastRegister.displayText)
                                     .font(self.dataRouter.myFonts.lRegisterFont)
-                                    .minimumScaleFactor(0.01)
+                                    .minimumScaleFactor(self.dataRouter.mySizes.minimumScaleFactor)
                                     .lineLimit(1)
                                     .foregroundColor(self.dataRouter.myColors.lRegisterTextColor)
                                     .frame(width: geometry.size.width * self.dataRouter.mySizes.lRegisterWidth, height: geometry.size.height * self.dataRouter.mySizes.lRegisterHeight, alignment: .leading)
@@ -85,7 +85,7 @@ struct MainView: View {
                         Text(self.dataRouter.calculator.showFunction ? self.dataRouter.calculator.functionText : (self.dataRouter.calculator.isNewNumberEntry ? self.dataRouter.displayFormatter.string(self.dataRouter.calculator.stackRegisters[0]) : self.dataRouter.calculator.xRegisterEntryFormatter.string(from: NSNumber(value: self.dataRouter.calculator.stackRegisters[0]))!))
                             .font(self.dataRouter.myFonts.xRegisterFont)
                             .fontWeight(self.dataRouter.calculator.showFunction ? .medium : .regular)
-                            .minimumScaleFactor(0.01)
+                            .minimumScaleFactor(self.dataRouter.mySizes.minimumScaleFactor)
                             .lineLimit(1)
                             .foregroundColor(self.dataRouter.calculator.showFunction ? self.dataRouter.myColors.functionDisplayTextColor : self.dataRouter.myColors.mainTextColor)
                             .frame(width: geometry.size.width * self.dataRouter.mySizes.xRegisterWidth, height: geometry.size.height * self.dataRouter.mySizes.xRegisterHeight)

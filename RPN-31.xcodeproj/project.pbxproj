@@ -457,6 +457,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"RPN-31/Preview Content\"";
 				DEVELOPMENT_TEAM = 7CQ36333N7;
 				ENABLE_PREVIEWS = YES;
@@ -466,7 +467,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.9999;
+				MARKETING_VERSION = 2.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.ashok.RPN-30";
 				PRODUCT_NAME = "RPN 30";
 				SWIFT_VERSION = 5.0;
@@ -479,6 +480,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"RPN-31/Preview Content\"";
 				DEVELOPMENT_TEAM = 7CQ36333N7;
 				ENABLE_PREVIEWS = YES;
@@ -488,7 +490,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.9999;
+				MARKETING_VERSION = 2.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.ashok.RPN-30";
 				PRODUCT_NAME = "RPN 30";
 				SWIFT_VERSION = 5.0;
