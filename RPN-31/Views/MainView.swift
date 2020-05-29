@@ -36,7 +36,7 @@ struct MainView: View {
                                 
                                 Spacer()
                                                                 
-                                Text(self.dataRouter.displayFormatter.string(self.dataRouter.calculator.stackRegisters[1]))
+                                Text(self.dataRouter.calculator.stackRegisters.count > 1 ? self.dataRouter.displayFormatter.string(self.dataRouter.calculator.stackRegisters[1]) : "0")
                                     .font(self.dataRouter.myFonts.yRegisterFont)
                                     .minimumScaleFactor(self.dataRouter.mySizes.minimumScaleFactor)
                                     .lineLimit(1)
@@ -82,7 +82,7 @@ struct MainView: View {
                         
                         Spacer()
                         
-                        Text(self.dataRouter.calculator.showFunction ? self.dataRouter.calculator.functionText : (self.dataRouter.calculator.isNewNumberEntry ? self.dataRouter.displayFormatter.string(self.dataRouter.calculator.stackRegisters[0]) : self.dataRouter.calculator.xRegisterEntryFormatter.string(from: NSNumber(value: self.dataRouter.calculator.stackRegisters[0]))!))
+                        Text(self.dataRouter.calculator.showFunction ? self.dataRouter.calculator.functionText : (self.dataRouter.calculator.stackRegisters.count == 0 ? "" : (self.dataRouter.calculator.isNewNumberEntry ?  self.dataRouter.displayFormatter.string(self.dataRouter.calculator.stackRegisters[0]) : self.dataRouter.calculator.xRegisterEntryFormatter.string(from: NSNumber(value: self.dataRouter.calculator.stackRegisters[0]))!)))
                             .font(self.dataRouter.myFonts.xRegisterFont)
                             .fontWeight(self.dataRouter.calculator.showFunction ? .medium : .regular)
                             .minimumScaleFactor(self.dataRouter.mySizes.minimumScaleFactor)

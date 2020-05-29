@@ -46,7 +46,7 @@ struct ButtonConfiguratorView: View {
                                 
                                 Spacer()
                                 
-                                Text("Reorder by touching down on the three grey lines to the right and then drag the row up or down. Dismiss this page when done (all changes are autosaved).")
+                                Text("Reorder by touching down on the three gray lines to the right and then drag the row up or down. Dismiss this page when done (all changes are autosaved)")
                                     .foregroundColor(self.dataRouter.myColors.secondarySubPageTextColor)
                                     .font(self.dataRouter.myFonts.subPageTextFont)
                                     .minimumScaleFactor(self.dataRouter.mySizes.minimumScaleFactor)

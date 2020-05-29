@@ -34,8 +34,12 @@ struct MyNumberFormatter {
     var maximumFractionDigits: Int
     var maximumSignificantDigits: Int
     
-    init() {
-         
+    var lRegisterFlag = false
+    
+    init(_ lFlag: Bool = false) {
+        
+        lRegisterFlag = lFlag
+        
         decimalFormatter.numberStyle = .decimal
         scientificFormatter.numberStyle = .scientific
 
@@ -132,11 +136,20 @@ struct MyNumberFormatter {
                 return decimalFormatter.string(from: NSNumber(value: number)) ?? ""
             } else {
 
-                return powerString((scientificFormatter.string(from: NSNumber(value: number)) ?? ""))
+                if lRegisterFlag {
+                    return scientificFormatter.string(from: NSNumber(value: number)) ?? ""
+                } else {
+                    return powerString((scientificFormatter.string(from: NSNumber(value: number)) ?? ""))
+                }
+                
             }
 
         case .science:
-            return powerString((scientificFormatter.string(from: NSNumber(value: number)) ?? ""))
+            if lRegisterFlag {
+                return scientificFormatter.string(from: NSNumber(value: number)) ?? ""
+            } else {
+                return powerString((scientificFormatter.string(from: NSNumber(value: number)) ?? ""))
+            }
             
         case .decimal:
             return decimalFormatter.string(from: NSNumber(value: number)) ?? ""

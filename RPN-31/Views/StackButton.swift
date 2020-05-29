@@ -32,14 +32,18 @@ struct StackButton: View {
         
         let shortPressGesture = LongPressGesture(minimumDuration: 0)
             .onEnded { _ in
-                
-                self.dataRouter.calculator.stackRegisters.append(0.0)
-                
-                if self.dataRouter.calculator.stackRegisters[0] == 0.0 {
-                    self.dataRouter.calculator.stackRegisters.removeFirst()
-                    self.dataRouter.calculator.stackRegisters.append(0.0)
+                                
+                if self.dataRouter.calculator.stackRegisters.count > 0 {
+                    
+                    if self.dataRouter.calculator.stackRegisters[0] == 0.0 {
+                        self.dataRouter.calculator.stackRegisters.removeFirst()
+                    }
+                    
                 }
-                self.dataRouter.calculator.stackRegisters.removeFirst()
+                
+                if self.dataRouter.calculator.stackRegisters.count > 0 {
+                    self.dataRouter.calculator.stackRegisters.removeFirst()
+                }
                 
         }
         
@@ -61,7 +65,7 @@ struct StackButton: View {
                 
                 Spacer()
                     
-                Text(self.dataRouter.displayFormatter.string(self.dataRouter.calculator.stackRegisters[4]))
+                Text(self.dataRouter.calculator.stackRegisters.count > 4 ? self.dataRouter.displayFormatter.string(self.dataRouter.calculator.stackRegisters[4]) : "0")
                         .font(self.dataRouter.myFonts.sRegisterFont)
                         .minimumScaleFactor(self.dataRouter.mySizes.minimumScaleFactor)
                         .lineLimit(1)
@@ -71,7 +75,7 @@ struct StackButton: View {
 
                 Spacer()
                 
-                Text(self.dataRouter.displayFormatter.string(self.dataRouter.calculator.stackRegisters[3]))
+                Text(self.dataRouter.calculator.stackRegisters.count > 3 ? self.dataRouter.displayFormatter.string(self.dataRouter.calculator.stackRegisters[3]) : "0")
                     .font(self.dataRouter.myFonts.sRegisterFont)
                     .minimumScaleFactor(self.dataRouter.mySizes.minimumScaleFactor)
                     .lineLimit(1)
@@ -81,7 +85,7 @@ struct StackButton: View {
                 
                 Spacer()
                 
-                Text(self.dataRouter.displayFormatter.string(self.dataRouter.calculator.stackRegisters[2]))
+                Text(self.dataRouter.calculator.stackRegisters.count > 2 ? self.dataRouter.displayFormatter.string(self.dataRouter.calculator.stackRegisters[2]) : "0")
                     .font(self.dataRouter.myFonts.sRegisterFont)
                     .minimumScaleFactor(self.dataRouter.mySizes.minimumScaleFactor)
                     .lineLimit(1)
@@ -93,7 +97,7 @@ struct StackButton: View {
                 
             }
             .frame(minWidth: 0, maxWidth: .infinity, minHeight: 0, maxHeight: .infinity)
-            .background(self.longPress ? self.dataRouter.myColors.mainButtonColor : (self.longDrag ? self.dataRouter.myColors.brightButtonColor : self.bgColor1))
+            .background(self.longPress ? self.dataRouter.myColors.mainButtonColor : (self.longDrag ? self.dataRouter.myColors.purpleButtonColor : self.bgColor1))
             .cornerRadius(7.5)
             .gesture(tapBeforeLongGestures)
         

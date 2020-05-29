@@ -15,7 +15,7 @@ struct LastRegister {
     
     mutating func updateLastDisplayAfterOperation(){
     
-    let lRegisterFormatter = MyNumberFormatter()
+    let lRegisterFormatter = MyNumberFormatter(true)
         
     let lastXString = lRegisterFormatter.string(lastX)
     let lastYString = lRegisterFormatter.string(lastY)
@@ -53,42 +53,54 @@ struct LastRegister {
             displayText = "log2(" + lastXString + ")"
         case "y^x":
             displayText = lastYString + " " + "^" + " " + lastXString
-        case "TRIG":
-            switch lastXString {
-            case "1":
-                displayText = "sin(" + lastYString + ")"
-            case "2":
-                displayText = "cos(" + lastYString + ")"
-            case "3":
-                displayText = "tan(" + lastYString + ")"
-            case "4":
-                displayText = "asin(" + lastYString + ")"
-            case "5":
-                displayText = "acos(" + lastYString + ")"
-            case "6":
-                displayText = "atan(" + lastYString + ")"
-            case "7":
-                displayText = "π"
-            case "8":
-                displayText = "D→R"
-            case "9":
-                displayText = "R→D"
-            default:
-                return
-            }
-            
-        case "sin x":
+        case "IRR":
+            displayText = "Internal Rate of Return"
+        case "NPV":
+            displayText = "Net Present Value"
+        case "D→R":
+            displayText = lastXString + " Degrees → Radians"
+        case "R→D":
+            displayText = lastXString + " Radians → Degrees"
+        case "DICE":
+            displayText = "Dice Roll"
+        case "RAND":
+            displayText = "Random Number in [0,1]"
+        case "PDF":
+            displayText = "Standard Normal Probability Density Function for: " + lastXString
+        case "CDF":
+            displayText = "Standard Normal Cumulative Density Function for: " + lastYString
+        case "e":
+            displayText = "Euler's Constant"
+        case "MEAN":
+            displayText = "Mean"
+        case "SDEV":
+            displayText = "Standard Deviation"
+        case "CASHF":
+            displayText = "Cashflows Added"
+        case "NPR":
+            displayText = "Number of Permuations nPr"
+        case "NCR":
+            displayText = "Number of Combinations nCr"
+        case "SIN":
             displayText = "sin(" + lastYString + ")"
-        case "cos x":
+        case "COS":
             displayText = "cos(" + lastYString + ")"
-        case "tan x":
+        case "TAN":
             displayText = "tan(" + lastYString + ")"
-        case "asin x":
+        case "ASIN":
             displayText = "asin(" + lastYString + ")"
-        case "acos x":
+        case "ACOS":
             displayText = "acos(" + lastYString + ")"
-        case "atan x":
+        case "ATAN":
             displayText = "atan(" + lastYString + ")"
+        case "SINH":
+            displayText = "sinh(" + lastYString + ")"
+        case "COSH":
+            displayText = "cosh(" + lastYString + ")"
+        case "TANH":
+            displayText = "tanh(" + lastYString + ")"
+        case "%":
+            displayText = lastXString + " %  of " + lastYString
         default:
             if unaryAction {
                displayText = lastOperator + "  " + lastXString

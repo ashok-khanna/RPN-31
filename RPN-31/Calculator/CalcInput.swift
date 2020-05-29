@@ -4,6 +4,8 @@ extension Calculator {
     
     mutating func decimalInput(){ // No override of isNewNumberEntry because action depends on state of xRegister
         
+        clearMode = false
+        
         if isNewNumberEntry {
             if stackAutoLift {
                 liftStackRegisters()
@@ -11,7 +13,14 @@ extension Calculator {
                 clearLastRegisters()
             }
             isNewNumberEntry = false
-            stackRegisters[0] = 0.0
+            
+            if stackRegisters.count > 0 {
+                    stackRegisters[0] = 0.0
+            } else {
+                stackRegisters.append(0.0)
+            }
+            
+
             xRegisterDecimals = 0
         }
         
@@ -23,6 +32,7 @@ extension Calculator {
     
     mutating func processDigit(_ sender: CalculatorButton){
         
+        clearMode = false
         
         if sender.digitString == "." {
             decimalInput()
@@ -33,13 +43,22 @@ extension Calculator {
                 clearLastRegisters()
             }
             
-            if isNewNumberEntry && stackRegisters[0] != 0.0 {
-                stackRegisters[0] = 0.0
-                isNewNumberEntry = false
-                xRegisterDecimals = 0
-            }
             
-            if isNewNumberEntry && stackRegisters[0] == 0.0 {
+            if stackRegisters.count > 0 {
+                
+                if isNewNumberEntry && stackRegisters[0] != 0.0 {
+                    stackRegisters[0] = 0.0
+                    isNewNumberEntry = false
+                    xRegisterDecimals = 0
+                }
+                
+                if isNewNumberEntry && stackRegisters[0] == 0.0 {
+                    isNewNumberEntry = false
+                    xRegisterDecimals = 0
+                }
+                
+            } else {
+                stackRegisters.append(0.0)
                 isNewNumberEntry = false
                 xRegisterDecimals = 0
             }
@@ -74,6 +93,9 @@ extension Calculator {
     
     
     mutating func deleteInput(){
+        
+        clearMode = false
+        
         isNewNumberEntry = false //Adding digits after delete key should be editing same number
         stackAutoLift = false
         
@@ -81,6 +103,10 @@ extension Calculator {
         // while 1 is decimal modification invoked) and 2 for 1 decimal, 3 for 2 decimals and so on
         
         // Code for getting decimals if number is from result (since then it will have xRegisterDecimals = 0
+        
+        if stackRegisters.count == 0 {
+            stackRegisters.append(0.0)
+        }
         
         if xRegisterDecimals == 0 {
             xRegisterDecimals = 1
@@ -96,8 +122,6 @@ extension Calculator {
             }
             
         }
-        
-        print(xRegisterDecimals)
         
         if xRegisterDecimals <= 1 {
             
@@ -122,9 +146,7 @@ extension Calculator {
             xRegisterEntryFormatter.minimumFractionDigits = xRegisterDecimals - 1
             xRegisterEntryFormatter.maximumFractionDigits = xRegisterDecimals - 1
         }
-        
-        print(stackRegisters[0])
-        
+
         clearLastRegisters()
     }
     

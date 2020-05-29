@@ -68,8 +68,9 @@ struct Calculator {
     
     var isNewNumberEntry: Bool = true
     var stackAutoLift: Bool = false // User does not expect this behaviour when accessing calculator for first time
+    var clearMode = false
     
-    var stackRegisters: [Double] = [0.0, 0.0, 0.0, 0.0, 0.0] // Ensure there is at least five values here to allow for easy displaying of X and Y registers and the three stack registers
+    var stackRegisters = [Double]() // = [0.0, 0.0, 0.0, 0.0, 0.0] // Ensure there is at least five values here to allow for easy displaying of X and Y registers and the three stack registers
     var xRegisterDecimals: Int = 0
 
     var lastRegister = LastRegister()
