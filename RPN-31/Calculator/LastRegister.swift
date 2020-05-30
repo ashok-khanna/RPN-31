@@ -27,22 +27,26 @@ struct LastRegister {
             displayText = lastYString + " " + lastOperator + " " + lastXString
         case "−":
             displayText = lastYString + " " + lastOperator + " " + lastXString
-        case "x":
-            displayText = lastYString + " " + lastOperator + " " + lastXString
+        case "X":
+            displayText = lastYString + " x " + lastXString
         case "DIV":
             displayText = lastYString + " " + "÷" + " " + lastXString
+        case "π":
+            displayText = "π"
         case "x!":
-            displayText = lastXString + "!"
+            displayText = "Factorial of " + lastXString
         case "√x":
-            displayText = "√" + lastXString
+            displayText = "Square root of " + lastXString
         case "x√y":
             displayText = lastXString + " " + "√" + " " + lastYString
         case "1/x":
             displayText = "1 ÷ " + lastXString
-        case "% Δ":
-            displayText = "% change  of (" + lastXString + " - " + lastYString + ")"
-        case "e^x":
-            displayText = "e ^ " + lastXString
+        case "% ∆":
+            displayText = "% change  of " + lastYString + " to " + lastXString
+        case "e ᵡ":
+            displayText = "e to the power of " + lastXString
+        case "y ᵡ":
+            displayText = lastYString + " to the power of " + lastXString
         case "EE":
             displayText = lastYString + "e" + lastXString
         case "ln x":
@@ -66,9 +70,9 @@ struct LastRegister {
         case "RAND":
             displayText = "Random Number in [0,1]"
         case "PDF":
-            displayText = "Standard Normal Probability Density Function for: " + lastXString
+            displayText = "Std Normal PDF of " + lastXString
         case "CDF":
-            displayText = "Standard Normal Cumulative Density Function for: " + lastYString
+            displayText = "Std Normal CDF of " + lastYString
         case "e":
             displayText = "Euler's Constant"
         case "MEAN":
@@ -78,9 +82,9 @@ struct LastRegister {
         case "CASHF":
             displayText = "Cashflows Added"
         case "NPR":
-            displayText = "Number of Permuations nPr"
+            displayText = "Permuations (n = " + lastYString + ", r = " + lastXString + ")"
         case "NCR":
-            displayText = "Number of Combinations nCr"
+            displayText = "Combinations (n = " + lastYString + ", r = " + lastXString + ")"
         case "SIN":
             displayText = "sin(" + lastYString + ")"
         case "COS":

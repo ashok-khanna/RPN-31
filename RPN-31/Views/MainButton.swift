@@ -33,6 +33,7 @@ struct MainButton: View {
                      case "HELP":
                          self.presentHelpPage = true
                      case "ADV":
+                        self.dataRouter.altFunctions = false
                          self.presentFunctionPage = true
                      default:
                          if self.calculatorButton.digitValue < 5.0 {

@@ -37,6 +37,7 @@
 		808E2084247C238700C34187 /* ReadMe.md in Resources */ = {isa = PBXBuildFile; fileRef = 808E2083247C238700C34187 /* ReadMe.md */; };
 		808E2086247C552800C34187 /* MySizes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 808E2085247C552800C34187 /* MySizes.swift */; };
 		808E2088247C554A00C34187 /* MyFonts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 808E2087247C554A00C34187 /* MyFonts.swift */; };
+		809FDFDE2481C1D300BCA70F /* NotUsed.swift in Sources */ = {isa = PBXBuildFile; fileRef = 809FDFDD2481C1D300BCA70F /* NotUsed.swift */; };
 		80DC0A772479741E00694277 /* LastRegister.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80DC0A762479741E00694277 /* LastRegister.swift */; };
 		80DC0A7924799F5000694277 /* HelpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80DC0A7824799F5000694277 /* HelpView.swift */; };
 		80DC0A7B2479AF0200694277 /* FunctionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80DC0A7A2479AF0200694277 /* FunctionView.swift */; };
@@ -80,6 +81,7 @@
 		808E2083247C238700C34187 /* ReadMe.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = ReadMe.md; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = "<none>"; };
 		808E2085247C552800C34187 /* MySizes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MySizes.swift; sourceTree = "<group>"; };
 		808E2087247C554A00C34187 /* MyFonts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyFonts.swift; sourceTree = "<group>"; };
+		809FDFDD2481C1D300BCA70F /* NotUsed.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotUsed.swift; sourceTree = "<group>"; };
 		80DC0A762479741E00694277 /* LastRegister.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LastRegister.swift; sourceTree = "<group>"; };
 		80DC0A7824799F5000694277 /* HelpView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelpView.swift; sourceTree = "<group>"; };
 		80DC0A7A2479AF0200694277 /* FunctionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FunctionView.swift; sourceTree = "<group>"; };
@@ -206,6 +208,7 @@
 				808E2085247C552800C34187 /* MySizes.swift */,
 				808E2087247C554A00C34187 /* MyFonts.swift */,
 				80DC0A80247AA55E00694277 /* MyNumberFormatter.swift */,
+				809FDFDD2481C1D300BCA70F /* NotUsed.swift */,
 				808E2083247C238700C34187 /* ReadMe.md */,
 			);
 			path = "UI Helpers";
@@ -299,6 +302,7 @@
 				80DC0A7D2479BEF600694277 /* StoreRecall.swift in Sources */,
 				80139592247B9F8200C8CD02 /* AdvanceButton2.swift in Sources */,
 				80023B112476EB3200BB62CE /* FinalRowView.swift in Sources */,
+				809FDFDE2481C1D300BCA70F /* NotUsed.swift in Sources */,
 				808D590124708845000BBD5F /* ButtonGridView.swift in Sources */,
 				80DC0A85247AFD4400694277 /* OperatorButton.swift in Sources */,
 				8013958E247B85B700C8CD02 /* StackView.swift in Sources */,

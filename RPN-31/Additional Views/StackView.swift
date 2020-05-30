@@ -48,7 +48,7 @@ struct StackView: View {
                             
                             Spacer()
                             
-                            Text("Reorder by touching down on the three gray lines to the right and then drag the row up or down. Dismiss this page when done (all changes are autosaved)")
+                            Text("Reorder by touching down on the three gray lines to the right and then drag the row up or down. Dismiss this page when done (all changes are autosaved). Ignore the zeros that are added to the end whenever you delete a row (these will be removed when you dismiss the page)")
                                 .foregroundColor(self.dataRouter.myColors.secondarySubPageTextColor)
                                 .font(self.dataRouter.myFonts.subPageTextFont)
                                 .minimumScaleFactor(self.dataRouter.mySizes.minimumScaleFactor)
@@ -85,7 +85,7 @@ struct StackView: View {
                         
                         
                     }
-                    
+                                       
                     
                     ForEach(0..<self.dataRouter.calculator.stackRegisters.count) { i in
                         
@@ -108,6 +108,10 @@ struct StackView: View {
         }.onDisappear { self.clean() }
         
         
+    }
+    
+    func generateRows() -> [String] {
+        (0..<100).reduce([]) { $0 + ["Row \($1)"] }
     }
     
     func move(from source: IndexSet, to destination: Int) {

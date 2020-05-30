@@ -32,18 +32,9 @@ struct StackButton: View {
         
         let shortPressGesture = LongPressGesture(minimumDuration: 0)
             .onEnded { _ in
-                                
-                if self.dataRouter.calculator.stackRegisters.count > 0 {
-                    
-                    if self.dataRouter.calculator.stackRegisters[0] == 0.0 {
-                        self.dataRouter.calculator.stackRegisters.removeFirst()
-                    }
-                    
-                }
                 
-                if self.dataRouter.calculator.stackRegisters.count > 0 {
-                    self.dataRouter.calculator.stackRegisters.removeFirst()
-                }
+                self.dataRouter.calculator.stackRegisters.insert(self.dataRouter.calculator.lastRegister.lastX, at: 0)
+                self.dataRouter.calculator.processOperation(self.dataRouter.calculator.lastRegister.lastOperator)
                 
         }
         

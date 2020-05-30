@@ -6,12 +6,13 @@ extension Calculator {
         
         clearMode = false
         
+        var financial = true
+        
         if operation == "MAG8" {
             clearLastRegisters()
             
             let quoteList = ["As I see it, yes.", "Ask again later.", "Better not tell you now.", "Cannot predict now.", "Concentrate and ask again.", "Don't count on it.", "It is certain.", "It is decidedly so.", "Most likely.", "My reply is no.", "My sources say no.", "Outlook not so good.", "Outlook good.", "Reply hazy, try again.", "Signs point to yes.", "Very doubtful.", "Without a doubt.", "Yes.", "Yes - definitely.", "You may rely on it."].shuffled()
-            
-            clearLastRegisters()
+
             lastRegister.displayText = quoteList[0]
             return
         }
@@ -169,15 +170,19 @@ extension Calculator {
                 }
                 
                 stackRegisters.append(contentsOf: tempArray.reversed())
+            } else {
+                financial = false
             }
             
             xRegisterNew = 0.0
             unaryAction = true
         case "NPV":
-            xRegisterNew = stackRegisters.npv()
+            xRegisterNew = stackRegisters.npv().0
+            financial = stackRegisters.npv().1
             unaryAction = true
         case "IRR":
-            xRegisterNew = stackRegisters.irr()
+            xRegisterNew = stackRegisters.irr().0
+            financial = stackRegisters.npv().1
             unaryAction = true
         case "PDF":
             xRegisterNew = (1.0/sqrt(2.0 * Double.pi)) * exp(-xRegister * xRegister / 2.0)
@@ -209,7 +214,22 @@ extension Calculator {
         
         isNewNumberEntry = true
         
+        if !financial {
+            
+            switch operation {
+            case "IRR":
+                lastRegister.displayText = "Invalid entries for IRR. Refer Help"
+            case "NPV":
+                lastRegister.displayText = "Invalid entries for NPV. Refer Help"
+            case "CASHF":
+                lastRegister.displayText = "Invalid entries for CASHF. Refer Help"
+            default:
+                break
 
+            }
+            
+        }
+        
         
     }
     
@@ -237,10 +257,10 @@ extension Array where Element == Double {
         return sqrt(v / (Element(self.count) - 1))
     }
     
-    func npv() -> Element {
+    func npv() -> (Element, Bool) {
         
         if self.count < 2 { // Need at least three data points - value at zero, cashflow and cashflow period
-             return 0.0
+             return (0.0, false)
          }
          
          let rate = self.first!
@@ -252,7 +272,7 @@ extension Array where Element == Double {
          // Check that we have even number of flows
          
          if tempCashflowArray.count % 2 == 1 {
-             return 0.0
+             return (0.0, false)
              
          }
          
@@ -273,14 +293,14 @@ extension Array where Element == Double {
             
         }
         
-        return NPV
+        return (NPV, true)
     }
     
     
-    func irr() -> Element {
+    func irr() -> (Element, Bool) {
         
         if self.count < 2 { // Need at least three data points - value at zero, cashflow and cashflow period
-            return 0.0
+            return (0.0, false)
         }
         
         let NPV = self.first!
@@ -292,7 +312,7 @@ extension Array where Element == Double {
         // Check that we have even number of flows
         
         if tempCashflowArray.count % 2 == 1 {
-            return 0.0
+            return (0.0, false)
             
         }
         
@@ -368,17 +388,9 @@ extension Array where Element == Double {
             
         }
         
-        return guessRate
+        return (guessRate, true)
         
         
     }
     
-}
-
-
-
-struct Magic8 {
-    
-
-
 }
