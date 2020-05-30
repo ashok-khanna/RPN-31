@@ -4,6 +4,9 @@ extension Calculator {
     
     mutating func processOperation(_ operation: String){
         
+        // UserDefaults add
+        UserDefaults.standard.set(1 + UserDefaults.standard.integer(forKey: "RunCount"), forKey: "RunCount")
+        
         clearMode = false
         
         var financial = true
@@ -139,10 +142,34 @@ extension Calculator {
             xRegisterNew = tanh(xRegister)
             unaryAction = true
         case "MEAN":
-            xRegisterNew = stackRegisters.avg()
+            
+            var sum = 0.0
+            
+            for number in stackRegisters {
+                sum += number
+            }
+            
+            xRegisterNew = sum/Double(stackRegisters.count)
             unaryAction = true
         case "SDEV":
-            xRegisterNew = stackRegisters.std()
+            
+            var sum = 0.0
+            
+            for number in stackRegisters {
+                sum += number
+            }
+            
+            var mean = sum/Double(stackRegisters.count)
+            
+            var stDevSum = 0.0
+            
+            for number in stackRegisters {
+                
+                stDevSum += (number - mean)*(number - mean)
+                
+            }
+            
+            xRegisterNew = sqrt(stDevSum/Double(stackRegisters.count - 1))
             unaryAction = true
         case "RAND":
             xRegisterNew = Double.random(in: 0 ... 1)
@@ -241,21 +268,6 @@ extension Calculator {
 
 
 extension Array where Element == Double {
-    
-    func sum() -> Element {
-        return self.reduce(0, +)
-    }
-    
-    func avg() -> Element {
-        
-        return self.sum() / Element(self.count)
-    }
-    
-    func std() -> Element {
-        let mean = self.avg()
-        let v = self.reduce(0, { $0 + ($1-mean)*($1-mean) })
-        return sqrt(v / (Element(self.count) - 1))
-    }
     
     func npv() -> (Element, Bool) {
         

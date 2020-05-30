@@ -16,10 +16,12 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
         
+        
         // Here we are defining a "Global" class object that we will access throughout the program
         // For now we are defining the display parameters as constant, however later we should set these based on the device (i.e. customise for iPad, various iPhone sizes, etc.)
         
         // Connecting our global variable to the main entry point of the program (ContentView)
+        
         
         if let windowScene = scene as? UIWindowScene {
             let window = UIWindow(windowScene: windowScene)
@@ -57,6 +59,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     }
 
     func sceneDidBecomeActive(_ scene: UIScene) {
+        
     }
 
     func sceneWillResignActive(_ scene: UIScene) {

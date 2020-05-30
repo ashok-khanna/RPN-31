@@ -10,6 +10,7 @@ import SwiftUI
 
 struct ContentView: View {
     @EnvironmentObject var dataRouter: DataRouter
+    @Environment(\.presentationMode) var presentation
     
     var body: some View {
         
@@ -29,9 +30,11 @@ struct ContentView: View {
                     else {
                         MainView()
                     }
-                }
+                }.onAppear {
+                    self.dataRouter.storeKit()
             }
         }
+    }
     }
 }
 

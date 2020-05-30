@@ -226,7 +226,8 @@ struct FunctionView: View {
 
                         Spacer()
                     
-                }
+                }.navigationBarTitle(Text(""), displayMode: .inline) // relates to bug: https://stackoverflow.com/questions/58512344/swiftui-navigation-bar-button-not-clickable-after-sheet-has-been-presented
+
             }
             
             

@@ -47,6 +47,10 @@ struct LastRegister {
             displayText = "e ^ " + lastXString
         case "y ᵡ":
             displayText = lastYString + " ^ " + lastXString
+        case "2 ᵡ":
+            displayText = "2 ^ " + lastXString
+        case "10 ᵡ":
+            displayText = "10 ^ " + lastXString
         case "EE":
             displayText = lastYString + "e" + lastXString
         case "ln x":

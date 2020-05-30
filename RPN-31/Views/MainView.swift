@@ -10,6 +10,7 @@ import SwiftUI
 
 struct MainView: View {
     @EnvironmentObject var dataRouter: DataRouter
+    @Environment(\.presentationMode) var presentation
     @State var presentStackRegister = false
 
         var body: some View {
@@ -29,7 +30,7 @@ struct MainView: View {
                         HStack(spacing: 0) {
                             
                             Rectangle()
-                                .fill(Color.clear)
+                                .fill(Color.black)
                                 .frame(width: geometry.size.width * self.dataRouter.mySizes.topLeftGapWidth, height: geometry.size.height * self.dataRouter.mySizes.stackHeight)
                             
                             VStack(spacing: 0) {
@@ -42,6 +43,7 @@ struct MainView: View {
                                     .lineLimit(1)
                                     .foregroundColor(self.dataRouter.myColors.mainTextColor)
                                     .frame(width: geometry.size.width * self.dataRouter.mySizes.yRegisterWidth, height: geometry.size.height * self.dataRouter.mySizes.yRegisterHeight, alignment: .leading)
+                                .background(Color.black)
                                 .onTapGesture {
                                     self.dataRouter.calculator.swapXY()
                                 }
@@ -54,6 +56,7 @@ struct MainView: View {
                                     .lineLimit(1)
                                     .foregroundColor(self.dataRouter.myColors.lRegisterTextColor)
                                     .frame(width: geometry.size.width * self.dataRouter.mySizes.lRegisterWidth, height: geometry.size.height * self.dataRouter.mySizes.lRegisterHeight, alignment: .leading)
+                                .background(Color.black)
                                 .onTapGesture {
                                     self.dataRouter.calculator.reverseOperation()
                                 }
@@ -65,7 +68,7 @@ struct MainView: View {
 
                             Spacer()
                                                             
-                                StackButton(width: geometry.size.width * self.dataRouter.mySizes.stackWidth, height: geometry.size.height * self.dataRouter.mySizes.stackHeight, bgColor1: Color.clear, presentStackRegister: self.$presentStackRegister)
+                            StackButton(width: geometry.size.width * self.dataRouter.mySizes.stackWidth, height: geometry.size.height * self.dataRouter.mySizes.stackHeight, bgColor1: Color.black, presentStackRegister: self.$presentStackRegister)
                                 .frame(width: geometry.size.width * self.dataRouter.mySizes.stackWidth, height: geometry.size.height * self.dataRouter.mySizes.stackHeight)
                                     .sheet(isPresented: self.$presentStackRegister) {
                                 StackView(presentStackRegister: self.$presentStackRegister).environmentObject(self.dataRouter)
@@ -110,7 +113,7 @@ struct MainView: View {
                                         
                         Spacer()
                         
-                    }
+                    }.navigationBarTitle(Text(""), displayMode: .inline) // relates to bug: https://stackoverflow.com/questions/58512344/swiftui-navigation-bar-button-not-clickable-after-sheet-has-been-presented
                 }
             }
             

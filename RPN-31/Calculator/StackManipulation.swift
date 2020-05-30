@@ -59,6 +59,8 @@ extension Calculator {
     
     mutating func clearLast(){
         
+        stackAutoLift = false
+        
         if stackRegisters.count > 0 {
             if clearMode {
                 stackRegisters.remove(at: 0)

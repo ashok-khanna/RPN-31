@@ -9,6 +9,7 @@
 
 import Foundation
 import SwiftUI
+import StoreKit
 
 
 class DataRouter: ObservableObject {
@@ -103,7 +104,18 @@ class DataRouter: ObservableObject {
         
         rowUnits = numCols + (numCols + CGFloat(1)) * mySizes.gapWidth
         
+        
     }
 }
    
-  
+
+
+extension DataRouter {
+    
+    func storeKit(){
+        
+        if UserDefaults.standard.integer(forKey: "RunCount") >= 1000 {
+            SKStoreReviewController.requestReview()
+        }
+    }
+}

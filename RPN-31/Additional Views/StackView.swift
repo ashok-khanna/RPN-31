@@ -4,6 +4,7 @@ import SwiftUI
 
 struct StackView: View {
     @EnvironmentObject var dataRouter: DataRouter
+    
     @Binding var presentStackRegister: Bool
     
     @State var rowsDeleted = false
@@ -98,7 +99,7 @@ struct StackView: View {
                 }
                     //.listStyle(GroupedListStyle())
                     .environment(\.editMode, .constant(.active))
-                    .navigationBarTitle("")
+                    .navigationBarTitle(Text(""), displayMode: .inline) // relates to bug: https://stackoverflow.com/questions/58512344/swiftui-navigation-bar-button-not-clickable-after-sheet-has-been-presented
                     .navigationBarHidden(true)
                 
                 Spacer()
