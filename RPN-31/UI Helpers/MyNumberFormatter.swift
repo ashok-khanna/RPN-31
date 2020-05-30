@@ -145,11 +145,8 @@ struct MyNumberFormatter {
             }
 
         case .science:
-            if lRegisterFlag {
-                return scientificFormatter.string(from: NSNumber(value: number)) ?? ""
-            } else {
-                return powerString((scientificFormatter.string(from: NSNumber(value: number)) ?? ""))
-            }
+            
+            return scientificFormatter.string(from: NSNumber(value: number)) ?? ""
             
         case .decimal:
             return decimalFormatter.string(from: NSNumber(value: number)) ?? ""

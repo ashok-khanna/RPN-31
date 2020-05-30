@@ -98,45 +98,45 @@ extension Calculator {
         case "2 ᵡ":
             xRegisterNew = pow(2.0, xRegister)
             unaryAction = true
-        case "NCR":
-            xRegisterNew = tgamma(yRegister + 1)/tgamma(yRegister - xRegister + 1)
         case "NPR":
+            xRegisterNew = tgamma(yRegister + 1)/tgamma(yRegister - xRegister + 1)
+        case "NCR":
             xRegisterNew = tgamma(yRegister + 1)/(tgamma(xRegister + 1) * tgamma(yRegister - xRegister + 1))
         case "SIN":
-            xRegisterNew = sin(yRegister)
+            xRegisterNew = sin(xRegister)
             unaryAction = true
         case "COS":
-            xRegisterNew = cos(yRegister)
+            xRegisterNew = cos(xRegister)
             unaryAction = true
         case "TAN":
-            xRegisterNew = tan(yRegister)
+            xRegisterNew = tan(xRegister)
             unaryAction = true
         case "ASIN":
-            xRegisterNew = asin(yRegister)
+            xRegisterNew = asin(xRegister)
             unaryAction = true
         case "ACOS":
-            xRegisterNew = acos(yRegister)
+            xRegisterNew = acos(xRegister)
             unaryAction = true
         case "ATAN":
-            xRegisterNew = atan(yRegister)
+            xRegisterNew = atan(xRegister)
             unaryAction = true
         case "π":
             xRegisterNew = Double.pi
             unaryAction = true
         case "D→R":
-            xRegisterNew = Double.pi * yRegister / 180.0
+            xRegisterNew = Double.pi * xRegister / 180.0
             unaryAction = true
         case "R→D":
-            xRegisterNew = 180.0 * yRegister / Double.pi
+            xRegisterNew = 180.0 * xRegister / Double.pi
             unaryAction = true
         case "SINH":
-            xRegisterNew = sinh(yRegister)
+            xRegisterNew = sinh(xRegister)
             unaryAction = true
         case "COSH":
-            xRegisterNew = cosh(yRegister)
+            xRegisterNew = cosh(xRegister)
             unaryAction = true
         case "TANH":
-            xRegisterNew = tanh(yRegister)
+            xRegisterNew = tanh(xRegister)
             unaryAction = true
         case "MEAN":
             xRegisterNew = stackRegisters.avg()

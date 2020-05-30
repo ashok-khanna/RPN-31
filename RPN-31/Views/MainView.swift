@@ -79,32 +79,34 @@ struct MainView: View {
 
                         }
                         
-                        
                         Spacer()
                         
+                        Spacer()
+                                                
                         Text(self.dataRouter.calculator.showFunction ? self.dataRouter.calculator.functionText : (self.dataRouter.calculator.stackRegisters.count == 0 ? "" : (self.dataRouter.calculator.isNewNumberEntry ?  self.dataRouter.displayFormatter.string(self.dataRouter.calculator.stackRegisters[0]) : self.dataRouter.calculator.xRegisterEntryFormatter.string(from: NSNumber(value: self.dataRouter.calculator.stackRegisters[0]))!)))
                             .font(self.dataRouter.myFonts.xRegisterFont)
                             .fontWeight(self.dataRouter.calculator.showFunction ? .medium : .regular)
                             .minimumScaleFactor(self.dataRouter.mySizes.minimumScaleFactor)
                             .lineLimit(1)
                             .foregroundColor(self.dataRouter.calculator.showFunction ? self.dataRouter.myColors.functionDisplayTextColor : self.dataRouter.myColors.mainTextColor)
-                            .frame(width: geometry.size.width * self.dataRouter.mySizes.xRegisterWidth, height: geometry.size.height * self.dataRouter.mySizes.xRegisterHeight)
+                            .frame(width: geometry.size.width * self.dataRouter.mySizes.xRegisterWidth, height: geometry.size.height * self.dataRouter.mySizes.xRegisterHeight, alignment: .bottom)
+                        .padding(0)
                         .onTapGesture {
                             self.dataRouter.calculator.deleteInput()
                         }
                         
-                        Spacer()
-                        
+                       // Spacer()
+                                                                        
                         Rectangle()
                             .fill(Color.clear)
-                            .frame(width: geometry.size.width, height: geometry.size.width / self.dataRouter.rowUnits * self.dataRouter.mySizes.gapWidth)
+                            .frame(width: geometry.size.width, height: geometry.size.width / self.dataRouter.rowUnits * self.dataRouter.mySizes.gapWidth * CGFloat(1.75))
 
                         ButtonGridView()
                             .frame(width: geometry.size.width, height: geometry.size.height * self.dataRouter.mySizes.gridHeight)
                         
-                        Rectangle()
+                        /* Rectangle()
                             .fill(Color.clear)
-                            .frame(width: geometry.size.width, height: geometry.size.height * self.dataRouter.mySizes.bottomGap)
+                            .frame(width: geometry.size.width, height: geometry.size.height * self.dataRouter.mySizes.bottomGap) */
                                         
                         Spacer()
                         

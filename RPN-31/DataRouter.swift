@@ -14,7 +14,7 @@ import SwiftUI
 class DataRouter: ObservableObject {
     //MARK: Properties
     let defaults = UserDefaults.standard
-    let defaultButtonList = ["EE", "√x", "1/x", "%", "% ∆", "e ᵡ", "ln x", "y ᵡ", "SIN", "COS", "TAN", "ASIN", "ACOS", "ATAN", "π", "D→R", "R→D", "x!", "x√y", "log10 x", "NPV", "IRR", "CASHF", "MEAN", "SDEV", "NPR", "CDF", "PDF", "NCR", "MAG8", "RAND", "DICE", "SINH", "COSH", "TANH", "e"]
+    let defaultButtonList = ["EE", "√x", "1/x", "%", "% ∆", "e ᵡ", "ln x", "y ᵡ", "SIN", "COS", "TAN", "ASIN", "ACOS", "ATAN", "π", "D→R", "R→D", "x!", "x√y", "log10 x", "NPV", "IRR", "CASHF", "MEAN", "SDEV", "NPR", "CDF", "PDF", "NCR", "MAG8", "RAND", "DICE", "SINH", "COSH", "TANH", "e", "log2 x", "2 ᵡ", "10 ᵡ"]
 
     @Published var buttonList = [String]()
     @Published var altFunctions = false

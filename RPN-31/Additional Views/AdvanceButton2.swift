@@ -34,12 +34,11 @@ var body: some View {
                 gestureState = true
         }
     .onEnded { value in
-        print(value.translation) // We can use value.translation to see how far away our finger moved and accordingly cancel the action (code not shown here)
-       
+        
         if(abs(value.translation.width) < (self.width * self.dataRouter.mySizes.hitBox) && abs(value.translation.height) < (self.height * self.dataRouter.mySizes.hitBox)) {
             
             switch self.buttonText {
-            case "buttonConfig":
+            case "Button Configurator":
                 self.presentButtonConfigurator = true
             case "HELP":
                 self.presentGuidePage = true

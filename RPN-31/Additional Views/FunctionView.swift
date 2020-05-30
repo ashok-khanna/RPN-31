@@ -81,7 +81,7 @@ struct FunctionView: View {
 
                     Spacer()
                     
-                    AdvanceButton2(buttonText: "Button Configurator", width: geometry.size.width * CGFloat(0.92), height: geometry.size.width * self.dataRouter.mySizes.subPageMainButtonHeight, presentFunctionPage: self.$presentFunctionPage, presentButtonConfigurator: self.$presentButtonConfigurator, presentGuidePage: self.$presentGuidePage, bgColor: self.dataRouter.myColors.specialFillColor, bgColor1: self.dataRouter.myColors.specialFillColor, highlightColor: self.dataRouter.myColors.brightButtonColor)
+                    AdvanceButton2(buttonText: "Button Configurator", width: geometry.size.width * CGFloat(0.92), height: geometry.size.width * self.dataRouter.mySizes.subPageMainButtonHeight, presentFunctionPage: self.$presentFunctionPage, presentButtonConfigurator: self.$presentButtonConfigurator, presentGuidePage: self.$presentGuidePage, bgColor: self.dataRouter.myColors.specialFillColor, bgColor1: self.dataRouter.myColors.specialFillColor, highlightColor: self.dataRouter.myColors.purpleButtonColor)
                         .frame(width: geometry.size.width * CGFloat(0.92), height: geometry.size.width * self.dataRouter.mySizes.subPageMainButtonHeight)
                     .sheet(isPresented: self.$presentButtonConfigurator) {
                     ButtonConfiguratorView(presentButtonConfigurator: self.$presentButtonConfigurator).environmentObject(self.dataRouter)
