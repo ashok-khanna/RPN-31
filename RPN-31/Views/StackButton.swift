@@ -61,8 +61,8 @@ struct StackButton: View {
                         .minimumScaleFactor(self.dataRouter.mySizes.minimumScaleFactor)
                         .lineLimit(1)
                         .foregroundColor(self.dataRouter.myColors.sRegistersTextColor)
-                        .frame(width: self.width * CGFloat(0.8), alignment: .trailing)
-                        .padding(.leading, self.dataRouter.mySizes.textPadding)
+                        .frame(minWidth: 0, maxWidth: .infinity, minHeight: 0, maxHeight: .infinity, alignment: .trailing)
+                        //.padding(.leading, self.dataRouter.mySizes.textPadding)
 
                 Spacer()
                 
@@ -71,8 +71,8 @@ struct StackButton: View {
                     .minimumScaleFactor(self.dataRouter.mySizes.minimumScaleFactor)
                     .lineLimit(1)
                     .foregroundColor(self.dataRouter.myColors.sRegistersTextColor)
-                    .frame(width: self.width * CGFloat(0.8), alignment: .trailing)
-                    .padding(.leading, self.dataRouter.mySizes.textPadding)
+                    .frame(minWidth: 0, maxWidth: .infinity, minHeight: 0, maxHeight: .infinity, alignment: .trailing)
+                    //.padding(.leading, self.dataRouter.mySizes.textPadding)
                 
                 Spacer()
                 
@@ -81,8 +81,8 @@ struct StackButton: View {
                     .minimumScaleFactor(self.dataRouter.mySizes.minimumScaleFactor)
                     .lineLimit(1)
                     .foregroundColor(self.dataRouter.myColors.sRegistersTextColor)
-                    .frame(width: self.width * CGFloat(0.8), alignment: .trailing)
-                    .padding(.leading, self.dataRouter.mySizes.textPadding)
+                    .frame(minWidth: 0, maxWidth: .infinity, minHeight: 0, maxHeight: .infinity, alignment: .trailing)
+                   // .padding(.leading, self.dataRouter.mySizes.textPadding)
 
                 Spacer()
                 

@@ -91,7 +91,11 @@ extension DataRouter {
     func processStoreRecall(_ storageKey: String) { // If there is no value in the storage, store your number there. Otherwise recall its value (this is on short press)
         
         if defaults.double(forKey: storageKey) == 0.0 {
-            defaults.set(calculator.stackRegisters[0], forKey: storageKey)
+            
+            if calculator.stackRegisters.count > 0 {
+                defaults.set(calculator.stackRegisters[0], forKey: storageKey)
+            }
+            
 
         } else {
             
@@ -100,7 +104,12 @@ extension DataRouter {
                 calculator.stackAutoLift = false
              }
             
-            calculator.stackRegisters[0] = defaults.double(forKey: storageKey)
+            if calculator.stackRegisters.count > 0 {
+                calculator.stackRegisters[0] = defaults.double(forKey: storageKey)
+            } else {
+                calculator.stackRegisters.insert(defaults.double(forKey: storageKey), at: 0)
+            }
+            
         }
         
         
@@ -112,8 +121,11 @@ extension DataRouter {
     func longPressStoreRecall(_ storageKey: String){ // If there is no value in the storage, store your number there. Otherwise clear the storage register (this is on long press)
         
         if defaults.double(forKey: storageKey) == 0.0 {
-            defaults.set(calculator.stackRegisters[0], forKey: storageKey)
-
+            
+            if calculator.stackRegisters.count > 0 {
+                     defaults.set(calculator.stackRegisters[0], forKey: storageKey)
+            }
+        
         } else {
             defaults.set(0.0, forKey: storageKey)
 

@@ -63,6 +63,7 @@ extension Calculator {
             if clearMode {
                 stackRegisters.remove(at: 0)
             } else {
+                
                 stackRegisters[0] = 0.0
                 clearMode = true
                 
@@ -95,14 +96,23 @@ extension Calculator {
     }
     
     func copyToClipboard(){
-        UIPasteboard.general.string = String(stackRegisters[0])
+        
+        if stackRegisters.count > 0 {
+            UIPasteboard.general.string = String(stackRegisters[0])
+        }
+        
     }
     
     mutating func pasteFromClipboard(){
         if let myString = UIPasteboard.general.string {
             if let xRegisterNew = Double(myString) {
                 if xRegisterNew != 0.0 {
-                stackRegisters[0] = xRegisterNew
+                
+                    if stackRegisters.count > 0 {
+                        stackRegisters[0] = xRegisterNew
+                    } else {
+                        stackRegisters.insert(xRegisterNew, at: 0)
+                    }
                 isNewNumberEntry = true
                 clearLastRegisters()
                 print("hello")

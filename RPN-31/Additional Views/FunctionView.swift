@@ -42,14 +42,13 @@ struct FunctionView: View {
                             }.frame(width: geometry.size.width * CGFloat(0.92))
                             
                             HStack(spacing: 0){
-                                
-                                if !self.dataRouter.iPad {
+
                                     
                                     Rectangle()
                                         .fill(Color.clear)
                                         .frame(width: geometry.size.width * CGFloat(0.2), height: geometry.size.width * (self.dataRouter.iPad ? self.dataRouter.mySizes.subPageMainButtonHeight : CGFloat(0.2)))
                                     
-                                }
+                                
                                 
                             
                             Spacer()

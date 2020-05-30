@@ -34,9 +34,9 @@ struct LastRegister {
         case "π":
             displayText = "π"
         case "x!":
-            displayText = "Factorial of " + lastXString
+            displayText = lastXString + "!"
         case "√x":
-            displayText = "Square root of " + lastXString
+            displayText = "√" + lastXString
         case "x√y":
             displayText = lastXString + " " + "√" + " " + lastYString
         case "1/x":
@@ -44,9 +44,9 @@ struct LastRegister {
         case "% ∆":
             displayText = "% change  of " + lastYString + " to " + lastXString
         case "e ᵡ":
-            displayText = "e to the power of " + lastXString
+            displayText = "e ^ " + lastXString
         case "y ᵡ":
-            displayText = lastYString + " to the power of " + lastXString
+            displayText = lastYString + " ^ " + lastXString
         case "EE":
             displayText = lastYString + "e" + lastXString
         case "ln x":
@@ -125,9 +125,14 @@ extension Calculator {
         if lastRegister.lastOperator != "" {
                
             if lastRegister.unaryAction {
+                    
+                if stackRegisters.count > 0 {
                     stackRegisters[0] = lastRegister.lastX
+                }
                } else {
+                if stackRegisters.count > 0 {
                     stackRegisters.removeFirst()
+                }
                     stackRegisters.insert(lastRegister.lastY, at: 0)
                     stackRegisters.insert(lastRegister.lastX, at: 0)
                }

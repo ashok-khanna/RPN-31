@@ -23,7 +23,7 @@ struct MyFonts {
               lRegisterFont = Font.title
               sRegisterFont = Font.title
               digitFont = Font.largeTitle
-              textFont = Font.title
+              textFont = Font.headline
               captionFont = Font.headline
               subPageTitleFont = Font.title
               subPageHeaderFont = Font.headline

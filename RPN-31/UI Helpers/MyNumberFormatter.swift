@@ -28,7 +28,7 @@ struct MyNumberFormatter {
     
     var relevantModeIsDecimals: Bool // True for both decimal and special modes, false for science mode (since it uses significant digits)
     
-    let defaultDecimals = 4 // Default value is based on 0.0001 being 1 basis point, a standard metric in financial calculations
+    let defaultDecimals = 2 // Default value is based on 0.0001 being 1 basis point, a standard metric in financial calculations
     let defaultSigDigits = 6 // 
     
     var maximumFractionDigits: Int
