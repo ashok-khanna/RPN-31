@@ -90,10 +90,10 @@ extension Calculator {
             xRegisterNew = tgamma(xRegister + 1)
             unaryAction = true
         case "log10 x":
-            xRegisterNew = log(xRegister)/log(10.0)
+            xRegisterNew = log10(xRegister)
             unaryAction = true
         case "log2 x":
-            xRegisterNew = log(xRegister)/log(2.0)
+            xRegisterNew = log2(xRegister)
             unaryAction = true
         case "10 ᵡ":
             xRegisterNew = pow(10.0, xRegister)
