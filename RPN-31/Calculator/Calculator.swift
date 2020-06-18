@@ -13,16 +13,16 @@
  
  Code for Button Coloring:
  
- let lightOrange = UIColor.orange.lighter(by: 25.0)
- let lighterOrange = UIColor.orange.lighter(by: 50.0)
+ let lightblue = UIColor.blue.lighter(by: 25.0)
+ let lighterblue = UIColor.blue.lighter(by: 50.0)
  let lightRed = UIColor.red.lighter(by: 25.0)
  let translucentDarkGray = UIColor.init(white: 1.0 / 3.0, alpha: 0.5)
- let longHighlightColor = UIColor.orange.lighter(by: 25.0)
+ let longHighlightColor = UIColor.blue.lighter(by: 25.0)
  
- let translucentOrange = UIColor.init(displayP3Red: 1.0, green: 0.5, blue: 0.0, alpha: 0.5)
- let translucentLightOrange = UIColor.init(displayP3Red: 1.0, green: 0.5, blue: 0.0, alpha: 0.75)
+ let translucentblue = UIColor.init(displayP3Red: 1.0, green: 0.5, blue: 0.0, alpha: 0.5)
+ let translucentLightblue = UIColor.init(displayP3Red: 1.0, green: 0.5, blue: 0.0, alpha: 0.75)
  let translucentLightGray = UIColor.init(white: 2.0 / 3.0, alpha: 0.5)
- let translucentLighterOrange = translucentLightOrange.lighter(by: 50.0)
+ let translucentLighterblue = translucentLightblue.lighter(by: 50.0)
  
  for case let button as CalculatorButton in self.subviews  {
      button.layer.cornerRadius = 10

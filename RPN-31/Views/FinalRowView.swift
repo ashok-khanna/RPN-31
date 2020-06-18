@@ -19,7 +19,7 @@ struct FinalRowView: View {
             
             HStack(spacing: 0) {
                 
-                Rectangle()
+                Ellipse()
                     .fill(Color.clear)
                     .frame(width: geometry.size.width / self.dataRouter.rowUnits * self.dataRouter.mySizes.gapWidth, height: geometry.size.height)
                 
@@ -32,7 +32,7 @@ struct FinalRowView: View {
                             MainButton(width: geometry.size.width / self.dataRouter.rowUnits, height: (geometry.size.height - geometry.size.width / self.dataRouter.rowUnits * self.dataRouter.mySizes.gapWidth)/CGFloat(2), calculatorButton: self.dataRouter.oneButton, presentFunctionPage: self.$presentFunctionPage, presentHelpPage: self.$presentHelpPage)
                            .frame(width: geometry.size.width / self.dataRouter.rowUnits, height: (geometry.size.height - geometry.size.width / self.dataRouter.rowUnits * self.dataRouter.mySizes.gapWidth)/CGFloat(2))
                             
-                            Rectangle()
+                            Ellipse()
                                 .fill(Color.clear)
                                 .frame(width: geometry.size.width / self.dataRouter.rowUnits * self.dataRouter.mySizes.gapWidth, height: (geometry.size.height - geometry.size.width / self.dataRouter.rowUnits * self.dataRouter.mySizes.gapWidth)/CGFloat(2))
                             
@@ -44,7 +44,7 @@ struct FinalRowView: View {
                         }
                         .padding(0)
                         
-                        Rectangle()
+                        Ellipse()
                             .fill(Color.clear)
                             .frame(width: geometry.size.width / self.dataRouter.rowUnits * (CGFloat(2) + self.dataRouter.mySizes.gapWidth), height: geometry.size.width / self.dataRouter.rowUnits * self.dataRouter.mySizes.gapWidth)
                         
@@ -58,7 +58,7 @@ struct FinalRowView: View {
                 }
                 .padding(0)
                 
-                Rectangle()
+                Ellipse()
                     .fill(Color.clear)
                     .frame(width: geometry.size.width / self.dataRouter.rowUnits * self.dataRouter.mySizes.gapWidth, height: geometry.size.height)
                 
@@ -69,7 +69,7 @@ struct FinalRowView: View {
                             MainButton(width: geometry.size.width / self.dataRouter.rowUnits, height: (geometry.size.height - geometry.size.width / self.dataRouter.rowUnits * self.dataRouter.mySizes.gapWidth)/CGFloat(2), calculatorButton: self.dataRouter.threeButton, presentFunctionPage: self.$presentFunctionPage, presentHelpPage: self.$presentHelpPage)
                            .frame(width: geometry.size.width / self.dataRouter.rowUnits, height: (geometry.size.height - geometry.size.width / self.dataRouter.rowUnits * self.dataRouter.mySizes.gapWidth)/CGFloat(2))
                         
-                        Rectangle()
+                        Ellipse()
                             .fill(Color.clear)
                             .frame(width: geometry.size.width / self.dataRouter.rowUnits, height: geometry.size.width / self.dataRouter.rowUnits * self.dataRouter.mySizes.gapWidth)
                         
@@ -80,7 +80,7 @@ struct FinalRowView: View {
                         
                     }
                     
-                    Rectangle()
+                    Ellipse()
                         .fill(Color.clear)
                         .frame(width: geometry.size.width / self.dataRouter.rowUnits * self.dataRouter.mySizes.gapWidth, height: geometry.size.height)
                     
@@ -92,7 +92,7 @@ struct FinalRowView: View {
                 .padding(0)
                 
                 
-                Rectangle()
+                Ellipse()
                     .fill(Color.clear)
                     .frame(width: geometry.size.width / self.dataRouter.rowUnits * self.dataRouter.mySizes.gapWidth, height: geometry.size.height)
                 
