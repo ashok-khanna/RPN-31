@@ -62,7 +62,7 @@ struct MyColors {
         sRegistersTextColor = Color(UIColor.white)
         mainTextColor = Color(UIColor.white)
         lRegisterTextColor = Color(UIColor.gray)
-        functionDisplayTextColor = Color(UIColor.orange)
+        functionDisplayTextColor = Color(UIColor.green)
         
         secondaryButtonColor = Color(UIColor.lightGray).opacity(0.75)
         secondaryShortPressColor = Color(UIColor.lightGray.lighter(by: 25.0))
@@ -71,12 +71,12 @@ struct MyColors {
         
         mainButtonColor = Color(UIColor.darkGray).opacity(0.5)
         mainShortPressColor = Color(UIColor.lightGray)
-        mainLongPressColor = Color(UIColor.orange)
+        mainLongPressColor = Color(UIColor.green)
         mainButtonTextColor = Color(UIColor.white)
         
-        brightButtonColor = Color(UIColor.orange).opacity(0.75)
-        brightShortPressColor = Color(UIColor.orange.lighter(by: 37.5))
-        brightLongPressColor = Color(UIColor.orange.lighter(by: 37.5))
+        brightButtonColor = Color(UIColor.green).opacity(0.75)
+        brightShortPressColor = Color(UIColor.green.lighter(by: 37.5))
+        brightLongPressColor = Color(UIColor.green.lighter(by: 37.5))
         brightButtonTextColor = Color(UIColor.white)
         
         storeRecallMainColor = Color(UIColor.systemBlue)

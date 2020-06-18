@@ -29,7 +29,7 @@ struct MainView: View {
                         
                         HStack(spacing: 0) {
                             
-                            Rectangle()
+                            Ellipse()
                                 .fill(Color.black)
                                 .frame(width: geometry.size.width * self.dataRouter.mySizes.topLeftGapWidth, height: geometry.size.height * self.dataRouter.mySizes.stackHeight)
                             
@@ -75,7 +75,7 @@ struct MainView: View {
                                 }
                             
                             
-                            Rectangle()
+                            Ellipse()
                                 .fill(Color.clear)
                                 .frame(width: geometry.size.width / self.dataRouter.rowUnits * self.dataRouter.mySizes.gapWidth, height: geometry.size.height * self.dataRouter.mySizes.stackHeight)
                             
@@ -100,14 +100,14 @@ struct MainView: View {
                         
                        // Spacer()
                                                                         
-                        Rectangle()
+                        Ellipse()
                             .fill(Color.clear)
                             .frame(width: geometry.size.width, height: geometry.size.width / self.dataRouter.rowUnits * self.dataRouter.mySizes.gapWidth * CGFloat(1.75))
 
                         ButtonGridView()
                             .frame(width: geometry.size.width, height: geometry.size.height * self.dataRouter.mySizes.gridHeight)
                         
-                        /* Rectangle()
+                        /* Ellipse()
                             .fill(Color.clear)
                             .frame(width: geometry.size.width, height: geometry.size.height * self.dataRouter.mySizes.bottomGap) */
                                         
