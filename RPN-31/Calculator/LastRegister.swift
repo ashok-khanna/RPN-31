@@ -55,12 +55,10 @@ struct LastRegister {
             displayText = lastYString + "e" + lastXString
         case "ln x":
             displayText = "ln(" + lastXString + ")"
-        case "log10 x":
-            displayText = "log10(" + lastXString + ")"
-        case "log2 x":
-            displayText = "log2(" + lastXString + ")"
-        case "y^x":
-            displayText = lastYString + " " + "^" + " " + lastXString
+        case "log₁₀ x":
+            displayText = "log₁₀(" + lastXString + ")"
+        case "log₂ x":
+            displayText = "log₂(" + lastXString + ")"
         case "IRR":
             displayText = "Internal Rate of Return"
         case "NPV":
