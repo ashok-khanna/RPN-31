@@ -35,7 +35,7 @@ struct HelpView: View {
                                 
                             }.frame(width: geometry.size.width * self.dataRouter.mySizes.subPageMainButtonWidth)
                             
-                            Rectangle()
+                            Ellipse()
                                 .fill(self.dataRouter.myColors.secondaryBackgroundColor)
                                 .frame(width: self.dataRouter.mySizes.nilSize, height: geometry.size.height * self.dataRouter.mySizes.subPageBodyGap)
                             
@@ -54,7 +54,7 @@ struct HelpView: View {
                             }.frame(width: geometry.size.width * self.dataRouter.mySizes.subPageMainButtonWidth)
                             
                             
-                            Rectangle()
+                            Ellipse()
                                 .fill(Color.clear)
                                 .frame(width: 0, height: geometry.size.height * self.dataRouter.mySizes.subPageBodyGap)
                             
@@ -77,7 +77,7 @@ struct HelpView: View {
                             
                             Spacer()
                             
-                            Rectangle()
+                            Ellipse()
                                 .fill(Color.clear)
                                 .frame(width:self.dataRouter.mySizes.nilSize, height: geometry.size.height * self.dataRouter.mySizes.subPageBodyGap)
                             
@@ -95,7 +95,7 @@ struct HelpView: View {
                             
 
     
-                            Rectangle()
+                            Ellipse()
                                 .fill(Color.clear)
                                 .frame(width: 0, height: geometry.size.height * self.dataRouter.mySizes.subPageTableGap)
                             
@@ -111,7 +111,7 @@ struct HelpView: View {
                                         .font(self.dataRouter.myFonts.subPageTextFont)
                                         .minimumScaleFactor(self.dataRouter.mySizes.minimumScaleFactor)
                                     
-                                    Rectangle()
+                                    Ellipse()
                                         .fill(self.dataRouter.myColors.secondarySubPageHeaderColor)
                                         .frame(width: geometry.size.width * self.dataRouter.mySizes.subPageMainButtonWidth, height: geometry.size.height * self.dataRouter.mySizes.subPageListTableDivider)
                                 }

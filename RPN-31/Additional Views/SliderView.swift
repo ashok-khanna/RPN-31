@@ -13,9 +13,9 @@ struct SliderView: View {
             // TODO: - there might be a need for horizontal and vertical alignments
             ZStack(alignment: .leading) {
                 
-                Rectangle()
+                Ellipse()
                     .foregroundColor(self.dataRouter.myColors.lighterBackgroundColor)
-                Rectangle()
+                Ellipse()
                     .foregroundColor(self.dataRouter.myColors.sliderPrimaryColor)
                     .frame(width: geometry.size.width * CGFloat(self.dataRouter.displayFormatter.relevantModeIsDecimals ? self.dataRouter.displayFormatter.maximumFractionDigits : self.dataRouter.displayFormatter.maximumSignificantDigits) / CGFloat(10))
                 

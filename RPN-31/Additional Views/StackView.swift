@@ -23,7 +23,7 @@ struct StackView: View {
                     
                     VStack(spacing: 0) {
                         
-                        Rectangle()
+                        Ellipse()
                             .fill(Color.clear)
                             .frame(width: 0, height: geometry.size.height * self.dataRouter.mySizes.subPageTopDivider)
                         
@@ -41,7 +41,7 @@ struct StackView: View {
                             
                         }.frame(width: geometry.size.width * self.dataRouter.mySizes.subPageMainButtonWidth)
                         
-                        Rectangle()
+                        Ellipse()
                             .fill(self.dataRouter.myColors.secondaryBackgroundColor)
                             .frame(width: self.dataRouter.mySizes.nilSize, height: geometry.size.height * self.dataRouter.mySizes.subPageBodyGap)
                         
@@ -60,7 +60,7 @@ struct StackView: View {
                         }.frame(width: geometry.size.width * self.dataRouter.mySizes.subPageMainButtonWidth)
                         
                         
-                        Rectangle()
+                        Ellipse()
                             .fill(Color.clear)
                             .frame(width: 0, height: geometry.size.height * self.dataRouter.mySizes.subPageBodyGap)
                         
@@ -80,7 +80,7 @@ struct StackView: View {
                         }
                         
                         
-                        Rectangle()
+                        Ellipse()
                             .fill(Color.clear)
                             .frame(width: 0, height: geometry.size.height * self.dataRouter.mySizes.subPageEditableTableGap)
                         

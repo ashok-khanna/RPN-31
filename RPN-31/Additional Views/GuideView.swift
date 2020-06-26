@@ -19,7 +19,7 @@ struct GuideView: View {
                         
                         VStack(spacing: 0) {
                             
-                            Rectangle()
+                            Ellipse()
                                 .fill(Color.clear)
                                 .frame(width: geometry.size.width * self.dataRouter.mySizes.subPageMainButtonWidth, height: geometry.size.height * self.dataRouter.mySizes.subPageTopDivider)
                             
@@ -37,7 +37,7 @@ struct GuideView: View {
                                 
                             }.frame(width: geometry.size.width * self.dataRouter.mySizes.subPageMainButtonWidth)
                             
-                            Rectangle()
+                            Ellipse()
                                 .fill(Color.clear)
                                 .frame(width: 0, height: geometry.size.height * self.dataRouter.mySizes.subPageBodyGap)
                             
@@ -55,7 +55,7 @@ struct GuideView: View {
                                 
                             }.frame(width: geometry.size.width * self.dataRouter.mySizes.subPageMainButtonWidth)
                         
-                            Rectangle()
+                            Ellipse()
                                 .fill(Color.clear)
                                 .frame(width: 0, height: geometry.size.height * self.dataRouter.mySizes.subPageBodyGap)
                             
@@ -71,7 +71,7 @@ struct GuideView: View {
                                         .font(self.dataRouter.myFonts.subPageTextFont)
                                         .minimumScaleFactor(self.dataRouter.mySizes.minimumScaleFactor)
                                     
-                                    Rectangle()
+                                    Ellipse()
                                         .fill(self.dataRouter.myColors.secondarySubPageHeaderColor)
                                         .frame(width: geometry.size.width * self.dataRouter.mySizes.subPageMainButtonWidth, height: geometry.size.height * self.dataRouter.mySizes.subPageListTableDivider)
                                 }

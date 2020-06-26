@@ -17,7 +17,7 @@ struct FirstRowView: View {
             
             HStack(spacing: 0) {
                 
-                Rectangle()
+                Ellipse()
                     .fill(Color.clear)
                     .frame(width: geometry.size.width / self.dataRouter.rowUnits * self.dataRouter.mySizes.gapWidth, height: geometry.size.height)
                 
@@ -26,7 +26,7 @@ struct FirstRowView: View {
                     .frame(width: geometry.size.width / self.dataRouter.rowUnits, height: geometry.size.height)
                 
                 
-                Rectangle()
+                Ellipse()
                     .fill(Color.clear)
                     .frame(width: geometry.size.width / self.dataRouter.rowUnits * self.dataRouter.mySizes.gapWidth, height: geometry.size.height)
                 
@@ -34,7 +34,7 @@ struct FirstRowView: View {
                 .frame(width: geometry.size.width / self.dataRouter.rowUnits, height: geometry.size.height)
 
                 
-                Rectangle()
+                Ellipse()
                     .fill(Color.clear)
                     .frame(width: geometry.size.width / self.dataRouter.rowUnits * self.dataRouter.mySizes.gapWidth, height: geometry.size.height)
                 
@@ -42,7 +42,7 @@ struct FirstRowView: View {
                 .frame(width: geometry.size.width / self.dataRouter.rowUnits, height: geometry.size.height)
 
                 
-                Rectangle()
+                Ellipse()
                     .fill(Color.clear)
                     .frame(width: geometry.size.width / self.dataRouter.rowUnits * self.dataRouter.mySizes.gapWidth, height: geometry.size.height)
                 
@@ -50,7 +50,7 @@ struct FirstRowView: View {
                 .frame(width: geometry.size.width / self.dataRouter.rowUnits, height: geometry.size.height)
 
                 
-                Rectangle()
+                Ellipse()
                     .fill(Color.clear)
                     .frame(width: geometry.size.width / self.dataRouter.rowUnits * self.dataRouter.mySizes.gapWidth, height: geometry.size.height)
                 

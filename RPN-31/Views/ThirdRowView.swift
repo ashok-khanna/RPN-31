@@ -20,14 +20,14 @@ struct ThirdRowView: View {
             HStack(spacing: 0) {
 
                 
-                Rectangle()
+                Ellipse()
                     .fill(Color.clear)
                     .frame(width: geometry.size.width / self.dataRouter.rowUnits * self.dataRouter.mySizes.gapWidth, height: geometry.size.height)
                 
                 MainButton(width: geometry.size.width / self.dataRouter.rowUnits, height: geometry.size.height, calculatorButton: self.dataRouter.fourButton, presentFunctionPage: self.$presentFunctionPage, presentHelpPage: self.$presentHelpPage)
                     .frame(width: geometry.size.width / self.dataRouter.rowUnits, height: geometry.size.height)
 
-                Rectangle()
+                Ellipse()
                     .fill(Color.clear)
                     .frame(width: geometry.size.width / self.dataRouter.rowUnits * self.dataRouter.mySizes.gapWidth, height: geometry.size.height)
                 
@@ -37,14 +37,14 @@ struct ThirdRowView: View {
                         FunctionView(presentFunctionPage: self.$presentFunctionPage).environmentObject(self.dataRouter)
                 }
                 
-                Rectangle()
+                Ellipse()
                     .fill(Color.clear)
                     .frame(width: geometry.size.width / self.dataRouter.rowUnits * self.dataRouter.mySizes.gapWidth, height: geometry.size.height)
                 
                 MainButton(width: geometry.size.width / self.dataRouter.rowUnits, height: geometry.size.height, calculatorButton: self.dataRouter.sixButton, presentFunctionPage: self.$presentFunctionPage, presentHelpPage: self.$presentHelpPage)
                     .frame(width: geometry.size.width / self.dataRouter.rowUnits, height: geometry.size.height)
                 
-                Rectangle()
+                Ellipse()
                     .fill(Color.clear)
                     .frame(width: geometry.size.width / self.dataRouter.rowUnits * self.dataRouter.mySizes.gapWidth, height: geometry.size.height)
                 
@@ -52,7 +52,7 @@ struct ThirdRowView: View {
                 .frame(width: geometry.size.width / self.dataRouter.rowUnits, height: geometry.size.height)
 
                 
-                Rectangle()
+                Ellipse()
                     .fill(Color.clear)
                     .frame(width: geometry.size.width / self.dataRouter.rowUnits * self.dataRouter.mySizes.gapWidth, height: geometry.size.height)
                 
