@@ -55,9 +55,9 @@ struct LastRegister {
             displayText = lastYString + "e" + lastXString
         case "ln x":
             displayText = "ln(" + lastXString + ")"
-        case "log10 x":
+        case "log₁₀ x":
             displayText = "log10(" + lastXString + ")"
-        case "log2 x":
+        case "log x":
             displayText = "log2(" + lastXString + ")"
         case "y^x":
             displayText = lastYString + " " + "^" + " " + lastXString

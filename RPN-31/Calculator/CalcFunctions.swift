@@ -89,11 +89,11 @@ extension Calculator {
         case "x!":
             xRegisterNew = tgamma(xRegister + 1)
             unaryAction = true
-        case "log10 x":
-            xRegisterNew = log(xRegister)/log(10.0)
+        case "log₁₀":
+            xRegisterNew = log10(xRegister)
             unaryAction = true
-        case "log2 x":
-            xRegisterNew = log(xRegister)/log(2.0)
+        case "log₂":
+            xRegisterNew = log2(xRegister)
             unaryAction = true
         case "10 ᵡ":
             xRegisterNew = pow(10.0, xRegister)
@@ -179,7 +179,7 @@ extension Calculator {
             unaryAction = true
         case "CASHF":
             
-            if stackRegisters.count > 2 {
+            if stackRegisters.count > 2 && xRegister < 101 {
                 let cashflow = stackRegisters[2]
                 let frequency = stackRegisters[1]
                 
