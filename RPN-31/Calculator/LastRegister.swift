@@ -42,7 +42,7 @@ struct LastRegister {
         case "1/x":
             displayText = "1 ÷ " + lastXString
         case "% ∆":
-            displayText = "% change  of " + lastYString + " to " + lastXString
+            displayText = lastYString + " to " + lastXString
         case "e ᵡ":
             displayText = "e ^ " + lastXString
         case "y ᵡ":
