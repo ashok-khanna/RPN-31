@@ -22,7 +22,7 @@ struct FunctionView: View {
                 
                 VStack(spacing: 0) {
                       
-                    Rectangle()
+                    Ellipse()
                         .fill(self.dataRouter.myColors.primaryBackgroundColor)
                           .frame(width: geometry.size.width, height: geometry.size.height * self.dataRouter.mySizes.subPageHeaderGap)
                     
@@ -44,7 +44,7 @@ struct FunctionView: View {
                             HStack(spacing: 0){
 
                                     
-                                    Rectangle()
+                                    Ellipse()
                                         .fill(Color.clear)
                                         .frame(width: geometry.size.width * CGFloat(0.2), height: geometry.size.width * (self.dataRouter.iPad ? self.dataRouter.mySizes.subPageMainButtonHeight : CGFloat(0.2)))
                                     
@@ -74,7 +74,7 @@ struct FunctionView: View {
                     
 
                     
-                    Rectangle()
+                    Ellipse()
                         .fill(Color.clear)
                         .frame(width: geometry.size.width, height: geometry.size.height * self.dataRouter.mySizes.subPageHeaderGap)
 
@@ -86,7 +86,7 @@ struct FunctionView: View {
                     ButtonConfiguratorView(presentButtonConfigurator: self.$presentButtonConfigurator).environmentObject(self.dataRouter)
                     }
                     
-                    Rectangle()
+                    Ellipse()
                         .fill(Color.clear)
                           .frame(width: geometry.size.width, height: geometry.size.height * self.dataRouter.mySizes.subPageHeaderGap)
                     
@@ -122,7 +122,7 @@ struct FunctionView: View {
                             
                         }
                         
-                        Rectangle()
+                        Ellipse()
                             .fill(Color.clear)
                             .frame(width:geometry.size.width, height: geometry.size.width * 0.04)
                         
@@ -154,7 +154,7 @@ struct FunctionView: View {
                             
                         }
                         
-                        Rectangle()
+                        Ellipse()
                             .fill(Color.clear)
                             .frame(width:geometry.size.width, height: geometry.size.width * 0.04)
                         
@@ -188,7 +188,7 @@ struct FunctionView: View {
                             
                         }
                         
-                        Rectangle()
+                        Ellipse()
                             .fill(Color.clear)
                             .frame(width:geometry.size.width, height: geometry.size.width * 0.04)
                         
@@ -218,7 +218,7 @@ struct FunctionView: View {
                             
                         }
                         
-                        Rectangle()
+                        Ellipse()
                             .fill(Color.clear)
                             .frame(width:geometry.size.width, height: geometry.size.width * 0.04)
                         

@@ -19,21 +19,21 @@ struct ButtonGridView: View {
                 FirstRowView()
                     .frame(width: geometry.size.width, height: (geometry.size.height - CGFloat(4) * self.dataRouter.mySizes.gapWidth * geometry.size.width / self.dataRouter.rowUnits)/self.dataRouter.numRows)
                 
-                Rectangle()
+                Ellipse()
                     .fill(Color.clear)
                 .frame(width: geometry.size.width, height: geometry.size.width / self.dataRouter.rowUnits * self.dataRouter.mySizes.gapWidth) // The gap between each row should be equal to the gap width
                 
                 SecondRowView()
                     .frame(width: geometry.size.width, height: (geometry.size.height - CGFloat(4) * self.dataRouter.mySizes.gapWidth * geometry.size.width / self.dataRouter.rowUnits)/self.dataRouter.numRows)
                 
-                Rectangle()
+                Ellipse()
                     .fill(Color.clear)
                     .frame(width: geometry.size.width, height: geometry.size.width / self.dataRouter.rowUnits * self.dataRouter.mySizes.gapWidth) // The gap between each row should be equal to the gap width
                 
                 ThirdRowView()
                     .frame(width: geometry.size.width, height: (geometry.size.height - CGFloat(4) * self.dataRouter.mySizes.gapWidth * geometry.size.width / self.dataRouter.rowUnits)/self.dataRouter.numRows)
                 
-                Rectangle()
+                Ellipse()
                     .fill(Color.clear)
                     .frame(width: geometry.size.width, height: geometry.size.width / self.dataRouter.rowUnits * self.dataRouter.mySizes.gapWidth) // The gap between each row should be equal to the gap width
                 

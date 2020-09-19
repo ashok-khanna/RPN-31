@@ -136,8 +136,8 @@ struct MySizes {
             subPageListTableDividerLandscape = CGFloat(0.005)
             subPageListTableDivider = CGFloat(0.005)
             
-            cornerRadius = CGFloat(15)
-            hitBox = CGFloat(0.75)
+            cornerRadius = CGFloat(50)
+            hitBox = CGFloat(1.00)
             
             // Outstanding //
             
@@ -238,8 +238,8 @@ struct MySizes {
             subPageListTableDividerLandscape = CGFloat(0.01)
             subPageListTableDivider = CGFloat(0.01)
             
-            cornerRadius = CGFloat(15)
-            hitBox = CGFloat(0.75)
+            cornerRadius = CGFloat(50)
+            hitBox = CGFloat(1.0)
             
             // Outstanding //
             
